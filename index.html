@@ -499,6 +499,7 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
     <div class="card"><h3>The Latent Family: Notes Toward a Description</h3><p>Two paragraphs. Footnoted.</p></div>
     <div class="card"><h3>A Taxonomy of Silence: On Readings That Do Not Arrive</h3><p>Two paragraphs. Footnoted.</p></div>
     <div class="card"><h3><a href="#/about" data-nav>Roland of Hemingstone and the First Recorded Commission</a></h3><p>Runs on the About page.</p></div>
+    <div class="card"><h3><a href="#/ventriloquium" data-nav>Engastrimythos: On the Belly-Voice</a></h3><p>Historical note. Two paragraphs longer than it needs to be.</p></div>
 
     <h2>Manuscript status</h2>
     <table>
@@ -852,6 +853,31 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
   </div>
 </section>
 
+<!-- ================= VENTRILOQUIUM (arrival from The Word Hoard) ========= -->
+<section class="page" id="p-ventriloquium" aria-labelledby="h-vent">
+  <div class="wrap">
+    <p class="kicker">The Journal of Flatulinguistics · Historical note</p>
+    <h1 id="h-vent">Engastrimythos</h1>
+    <p class="lede">On the belly-voice, and the long record of people who took it seriously.</p>
+
+    <p>The word <i>ventriloquism</i> has been misapplied for two hundred years. It does not mean throwing a voice. It is Late Latin — <i>ventriloquus</i>, from <i>venter</i>, "belly," and <i>loquī</i>, "to speak" — and it was turned out of the Greek <i>engastrimythos</i>, "speaking in the belly."</p>
+    <p>It did not describe a performer. It described a rumbling internal speech, understood as a sign of inspiration or, more commonly, of possession. Something was in there. It was talking. The only question was who.</p>
+    <p>We hold that the ancients were correct about the phenomenon and mistaken about the cause. The belly does speak. It is not possessed. It is simply better informed than you are.</p>
+    <p>The record is unbroken. Roland of Hemingstone held a manor in Suffolk for it. The <i>heppiri otoko</i> of Edo Japan competed at it and were painted onto scrolls. By the eighteenth century the word had been handed over to stagecraft, and the field it named was abandoned for two hundred and fifty years.</p>
+    <p>We have resumed the work.</p>
+
+    <div class="note">
+      <p style="margin:0"><b>Sources.</b> Late Latin <i>ventriloquus</i> from <i>venter</i> + <i>loquī</i>, patterned on Greek <i>engastrimythos</i>, "speaking in the belly"; originally a rumbling internal speech regarded as a sign of spiritual inspiration or demonic possession. <i>Ventriloquy</i> is attested from the 1580s, <i>ventriloquism</i> from 1773. Etymology per the Online Etymology Dictionary. Roland of Hemingstone is recorded in the Book of Fees.</p>
+    </div>
+
+    <p class="rule-top" style="padding-top:1.6rem;margin-top:2.4rem">You arrived here through a door that is not listed. The Bureau does not ask how.</p>
+    <p style="text-align:center;margin-top:2rem">
+      <a class="btn" href="#/record" data-nav>Begin Analysis</a>
+    </p>
+    <p style="text-align:center"><a class="method-link" href="#/" data-nav>Or read what this is first.</a></p>
+  </div>
+</section>
+
 <!-- ================= 404 ================= -->
 <section class="page" id="p-404" aria-labelledby="h-404">
   <div class="wrap" style="padding-top:4rem;padding-bottom:6rem">
@@ -1062,7 +1088,7 @@ function nextRequirement(){
 
 const ROUTES = ["home","record","reading","analysis","heritage","wheel","feed","about","journal","paper",
   "guidance","hearing","press","method","changelog","pricing","terms","privacy","accessibility",
-  "status","unassigned","rhineland-day","certificate","exam","404"];
+  "status","unassigned","rhineland-day","certificate","exam","ventriloquium","404"];
 
 function route(){
   let id = (location.hash || "#/").replace(/^#\/?/,"") || "home";
