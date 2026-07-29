@@ -1,0 +1,78 @@
+<!-- =====================================================================
+     THE DROLLERY — hover band
+     George Bickham, The Universal Penman, London 1743 (public domain),
+     traced and recoloured; the plume and the mask's change of expression
+     composited from a matched second frame.
+
+     Paste before </body>. Copy rest.png and gas.png alongside, or adjust
+     the two src paths below.
+
+     >>> SET DROLLERY_URL to wherever The Fart Whisperer is deployed. <<<
+     ===================================================================== -->
+<style>
+  .drollery-band{
+    /* the hover zone: full width of the page, three inches tall, so the
+       cursor meets it on the way past rather than having to be aimed */
+    display:flex; align-items:center; justify-content:center;
+    width:100%; min-height:3in;
+    padding:1rem 1rem 2rem;
+    background:transparent;
+  }
+  .drollery{
+    position:relative; display:block; line-height:0;
+    width:min(100%, 40rem);
+    border:0; text-decoration:none;
+  }
+  .drollery img{
+    display:block; width:100%; height:auto;
+    -webkit-user-drag:none; user-select:none;
+  }
+  .drollery .f-rest{
+    transition:opacity 320ms cubic-bezier(.4,0,.7,1);
+  }
+  .drollery .f-gas{
+    position:absolute; inset:0;
+    opacity:0;
+    /* in fast, out slow — a puff that then disperses. Waggle the cursor
+       across the band and the plumes overlap. */
+    transition:opacity 320ms cubic-bezier(.4,0,.7,1);
+  }
+  /* a true crossfade: the rest frame must leave as the gas frame arrives,
+     or the two faces overlay each other and blend into a smudge */
+  .drollery-band:hover .drollery .f-gas,
+  .drollery:focus-visible .f-gas{
+    opacity:1;
+    transition-duration:110ms;
+    transition-timing-function:cubic-bezier(.2,.8,.3,1);
+  }
+  .drollery-band:hover .drollery .f-rest,
+  .drollery:focus-visible .f-rest{
+    opacity:0;
+    transition-duration:110ms;
+  }
+  .drollery:focus-visible{ outline:2px solid var(--gold,#8a6d2f); outline-offset:14px; }
+
+  /* touch devices have no hover at all: show the plume on press instead */
+  @media (hover:none){
+    .drollery:active .f-gas{opacity:1;transition-duration:60ms}
+    .drollery:active .f-rest{opacity:0;transition-duration:60ms}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .drollery .f-gas,.drollery .f-rest{transition:none}
+  }
+  @media (max-width:520px){ .drollery-band{min-height:2in} }
+</style>
+
+<div class="drollery-band">
+  <a class="drollery" id="drollery" href="#">
+    <img class="f-rest" src="rest.png" alt="An engraved tailpiece: two putti flanking a cartouche.">
+    <img class="f-gas"  src="gas.png"  alt="" aria-hidden="true">
+    <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">The Fart Whisperer</span>
+  </a>
+</div>
+
+<script>
+  /* Set this to wherever The Fart Whisperer is deployed. */
+  var DROLLERY_URL = "https://ventriloquium.thewordhoard.com/#/ventriloquium";
+  document.getElementById('drollery').href = DROLLERY_URL;
+</script>
