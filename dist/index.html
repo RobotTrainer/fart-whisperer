@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Fart Whisperer — Flatulinguistic Analysis and Interpretation</title>
+<meta name="description" content="Flatulinguistics is the study of the messages our bodies send and we refuse to hear. The Fart Whisperer is the first application to make that language readable.">
+<meta name="theme-color" content="#F7F5F0">
+<meta property="og:title" content="What are your farts trying to tell you?">
+<meta property="og:description" content="Flatulinguistic analysis and interpretation. A reading in under ninety seconds.">
+<meta property="og:type" content="website">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Whisperer">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href='data:application/manifest+json,{"name":"The Fart Whisperer","short_name":"Whisperer","start_url":"./","display":"standalone","background_color":"%23F7F5F0","theme_color":"%23F7F5F0"}'>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23F7F5F0'/><text y='.9em' x='50' text-anchor='middle' font-size='72' font-family='Georgia,serif' fill='%2316150F'>F</text></svg>">
+<style>
+:root{
+  --paper:#F7F5F0;
+  --paper-2:#EFEBE2;
+  --ink:#16150F;
+  --ink-2:#4A473C;
+  --ink-3:#7A7568;
+  --rule:#C9C3B4;
+  --rule-2:#DED8CB;
+  --blue:#23395B;
+  --stamp:#8C2A1F;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img,svg,canvas{max-width:100%}
+a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(35,57,91,.3)}
+a:hover{border-bottom-color:var(--blue)}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid var(--blue);outline-offset:2px;border-radius:1px}
+h1,h2,h3,h4{font-weight:normal;line-height:1.22;margin:0 0 .5em}
+h1{font-size:2.45rem;letter-spacing:-.012em}
+h2{font-size:1.42rem;margin-top:2.4rem}
+h3{font-size:1.1rem;margin-top:1.8rem}
+p{margin:0 0 1.05em}
+hr{border:0;border-top:1px solid var(--rule);margin:2.4rem 0}
+small{font-size:.8rem}
+.wrap{max-width:44rem;margin:0 auto;padding:0 1.5rem}
+.wrap-wide{max-width:58rem;margin:0 auto;padding:0 1.5rem}
+
+/* ---------- masthead ---------- */
+.masthead{border-bottom:1px solid var(--rule);background:var(--paper)}
+.mast-in{max-width:58rem;margin:0 auto;padding:.85rem 1.5rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:.6rem;border:0;color:var(--ink);flex:1 1 auto}
+.logo:hover{border:0}
+.seal{width:30px;height:30px;flex:none}
+.logo-t{font-size:1.02rem;letter-spacing:.055em;text-transform:uppercase}
+.logo-s{display:block;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:1px}
+nav.primary{display:flex;gap:1.15rem;flex-wrap:wrap;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase}
+nav.primary a{color:var(--ink-2);border:0;padding:.2rem 0;border-bottom:1px solid transparent}
+nav.primary a:hover,nav.primary a[aria-current=page]{color:var(--ink);border-bottom-color:var(--ink)}
+.notice-bar{background:var(--paper-2);border-bottom:1px solid var(--rule);font-size:.76rem;letter-spacing:.03em;color:var(--ink-2)}
+.notice-bar .wrap-wide{padding-top:.42rem;padding-bottom:.42rem}
+
+/* ---------- pages ---------- */
+main{padding:3rem 0 5rem;min-height:64vh}
+.page{display:none}
+.page.on{display:block;animation:fade .22s ease-out}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.kicker{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.9rem}
+.lede{font-size:1.16rem;color:var(--ink-2)}
+.rule-top{border-top:1px solid var(--rule);padding-top:1.6rem}
+
+/* ---------- home ---------- */
+.hero{text-align:center;padding:1rem 0 .5rem}
+.hero h1{font-size:clamp(2.1rem,6.2vw,3.5rem);margin-bottom:1.1rem}
+.hero p{max-width:34rem;margin:0 auto 1.9rem;color:var(--ink-2)}
+.trusted{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-top:1.5rem}
+.btn{
+  display:inline-block;font-family:var(--serif);font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;
+  background:var(--ink);color:var(--paper);border:1px solid var(--ink);padding:.82rem 2rem;cursor:pointer;border-radius:0}
+.btn:hover{background:#000;border-color:#000}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.btn.sm{padding:.5rem 1.1rem;font-size:.72rem}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+a.btn{border-bottom:1px solid var(--ink)}
+.steps{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:1.4rem 0}
+.step-n{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;color:var(--ink-3);display:block;margin-bottom:.35rem}
+.step h3{margin:0 0 .3rem;font-size:1.02rem}
+.step p{font-size:.93rem;color:var(--ink-2);margin:0}
+.feat{border-top:1px solid var(--rule-2);padding:1.05rem 0}
+.feat h3{margin:0 0 .18rem;font-size:1.02rem}
+.feat p{margin:0;color:var(--ink-2);font-size:.95rem}
+blockquote{margin:0 0 1.5rem;padding-left:1.1rem;border-left:2px solid var(--rule);font-style:italic;color:var(--ink-2)}
+blockquote cite{display:block;font-style:normal;font-size:.8rem;letter-spacing:.06em;color:var(--ink-3);margin-top:.4rem}
+.tier{border:1px solid var(--rule);padding:1.3rem;background:#fff}
+.tier h3{margin:0 0 .3rem}
+.tier .price{font-family:var(--mono);font-size:.9rem;color:var(--ink-2)}
+.grid3{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+
+/* ---------- tables ---------- */
+table{border-collapse:collapse;width:100%;font-size:.93rem;margin:1.2rem 0}
+th,td{text-align:left;padding:.5rem .7rem;border-bottom:1px solid var(--rule-2)}
+th{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:normal;border-bottom:1px solid var(--rule)}
+td.num{font-family:var(--mono);text-align:right;font-size:.86rem}
+tr.hi td{background:var(--paper-2)}
+
+/* ---------- instrument ---------- */
+.instrument{border:1px solid var(--rule);background:#fff;padding:2rem 1.6rem;text-align:center}
+.mic{width:96px;height:96px;border-radius:50%;border:1px solid var(--ink);background:var(--paper);
+  display:grid;place-items:center;margin:0 auto 1.3rem;cursor:pointer;transition:.18s;padding:0}
+.mic:hover{background:var(--ink)}
+.mic:hover svg{fill:var(--paper)}
+.mic svg{width:34px;height:34px;fill:var(--ink);transition:.18s}
+.mic.rec{background:var(--stamp);border-color:var(--stamp);animation:pulse 1.15s ease-in-out infinite}
+.mic.rec svg{fill:#fff}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(140,42,31,.35)}50%{box-shadow:0 0 0 14px rgba(140,42,31,0)}}
+.scope{width:100%;height:104px;display:block;background:var(--paper);border:1px solid var(--rule-2);margin:1.2rem 0}
+.readout{font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--ink-2);
+  display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:.7rem}
+.bar{height:3px;background:var(--rule-2);margin:1.5rem 0 .8rem;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--ink);transition:width .4s linear}
+.stage{font-family:var(--mono);font-size:.8rem;letter-spacing:.05em;color:var(--ink-2);min-height:1.3em}
+
+/* ---------- reading ---------- */
+.reading{border:1px solid var(--ink);background:#fff;padding:2rem 1.7rem;position:relative}
+.reading.unusual{border-color:var(--stamp);border-width:2px}
+.reading-h{font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-bottom:1px solid var(--rule-2);padding-bottom:.7rem;margin-bottom:1.2rem}
+.reading-meta{font-family:var(--mono);font-size:.75rem;letter-spacing:.03em;color:var(--ink-2);margin-bottom:1.4rem}
+.reading-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.5rem}
+.reading-body{font-size:1.3rem;line-height:1.5;margin-bottom:1.5rem}
+.reading-foot{border-top:1px solid var(--rule-2);padding-top:.8rem;font-family:var(--mono);font-size:.74rem;
+  letter-spacing:.03em;color:var(--ink-3);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.method-link{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:var(--ink-3);border-bottom-color:var(--rule)}
+.actions{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-top:1.4rem}
+.stamp{position:absolute;top:1.2rem;right:1.4rem;border:2px solid var(--stamp);color:var(--stamp);
+  font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;padding:.2rem .5rem;transform:rotate(-7deg);font-family:var(--mono)}
+.again{text-align:center;padding:4.5rem 1rem;border:1px solid var(--rule);background:#fff}
+.again p{font-size:2.1rem;margin:0}
+
+/* ---------- misc components ---------- */
+.card{border:1px solid var(--rule-2);background:#fff;padding:1.1rem 1.25rem;margin-bottom:.9rem}
+.card h3{margin:0 0 .3rem;font-size:1rem}
+.card p{margin:0;font-size:.93rem;color:var(--ink-2)}
+.note{background:var(--paper-2);border-left:2px solid var(--rule);padding:.9rem 1.1rem;font-size:.9rem;color:var(--ink-2);margin:1.3rem 0}
+.fine{font-size:.78rem;color:var(--ink-3);line-height:1.55}
+.fine li{margin-bottom:.32rem}
+.mono{font-family:var(--mono);font-size:.85rem}
+dl.faq dt{margin-top:1.15rem;font-weight:normal}
+dl.faq dd{margin:.15rem 0 0;color:var(--ink-2)}
+.legal h3{font-size:.95rem;letter-spacing:.04em;margin-top:1.9rem}
+.legal p{font-size:.94rem;margin-bottom:.42rem;color:var(--ink-2)}
+.legal .cl{font-family:var(--mono);font-size:.76rem;color:var(--ink-3);margin-right:.4rem}
+.qa p{margin-bottom:.5rem}
+.qa .q{color:var(--ink-3)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1px;background:var(--rule-2);border:1px solid var(--rule-2);margin:1.5rem 0}
+.stat{background:#fff;padding:1rem}
+.stat b{display:block;font-family:var(--mono);font-size:1.5rem;font-weight:normal;letter-spacing:-.02em}
+.stat span{font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.wheel{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.4rem;margin-top:1.4rem}
+.fam h3{margin:0 0 .4rem;font-size:.82rem;letter-spacing:.15em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:.3rem}
+.fam ul{margin:0;padding:0;list-style:none;font-size:.85rem;color:var(--ink-2);columns:1}
+.fam li{padding:.1rem 0}
+.globe-wrap{display:grid;grid-template-columns:minmax(0,1fr);gap:1.6rem;align-items:start}
+@media(min-width:44rem){.globe-wrap{grid-template-columns:15rem minmax(0,1fr)}}
+.globe{width:100%;max-width:15rem;aspect-ratio:1;margin:0 auto;display:block}
+.globe .spin{transform-origin:100px 100px;animation:rot 26s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.feed{font-family:var(--mono);font-size:.78rem;line-height:1.85;color:var(--ink-2);max-height:16rem;overflow:hidden}
+.feed b{font-weight:normal;color:var(--ink)}
+.ticker-row{border-bottom:1px dotted var(--rule-2);padding:.15rem 0;display:flex;gap:.7rem}
+.ticker-row time{color:var(--ink-3);flex:none}
+.progress-track{display:flex;gap:.4rem;margin:1.2rem 0}
+.progress-track i{flex:1;height:4px;background:var(--rule-2)}
+.progress-track i.on{background:var(--ink)}
+.hist-item{border-bottom:1px solid var(--rule-2);padding:.75rem 0;display:flex;gap:1rem;align-items:baseline;cursor:pointer}
+.hist-item:hover{background:var(--paper-2)}
+.hist-item time{font-family:var(--mono);font-size:.72rem;color:var(--ink-3);flex:none;width:6.2rem}
+.hist-item p{margin:0;font-size:.92rem}
+.empty{text-align:center;color:var(--ink-3);padding:3rem 1rem;font-size:.95rem}
+
+/* certificate */
+.cert{border:3px double var(--ink);background:#fff;padding:2.6rem 2rem;text-align:center;margin:1.4rem 0}
+.cert .seal-lg{width:60px;height:60px;margin:0 auto .9rem;display:block}
+.cert h2{margin:0 0 .2rem;font-size:.78rem;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-3)}
+.cert .who{font-size:1.9rem;margin:1.1rem 0 .3rem;border-bottom:1px solid var(--rule);display:inline-block;padding:0 1.5rem .2rem;min-width:12rem}
+.cert .lvl{font-size:1.05rem;letter-spacing:.28em;text-transform:uppercase;margin:1rem 0 .4rem}
+.cert .fine{margin-top:1.5rem}
+input[type=text]{font-family:var(--serif);font-size:1rem;padding:.5rem .7rem;border:1px solid var(--rule);background:#fff;color:var(--ink);border-radius:0;max-width:100%}
+
+/* footer */
+footer{border-top:1px solid var(--rule);padding:2.2rem 0 3rem;font-size:.82rem;color:var(--ink-3);background:var(--paper-2)}
+footer nav{display:flex;gap:1.1rem;flex-wrap:wrap;margin-bottom:1rem}
+footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
+
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:1rem;top:1rem;background:var(--ink);color:var(--paper);padding:.6rem 1rem;z-index:99}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+@media print{
+  .masthead,.notice-bar,footer,.no-print{display:none}
+  body{background:#fff}
+  .cert{border-color:#000;page-break-inside:avoid}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="masthead">
+  <div class="mast-in">
+    <a class="logo" href="#/" data-nav>
+      <svg class="seal" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#16150F" stroke-width="2"/>
+        <circle cx="50" cy="50" r="39" fill="none" stroke="#16150F" stroke-width="1"/>
+        <path d="M22 62 Q34 40 46 56 T72 44" fill="none" stroke="#16150F" stroke-width="2.4" stroke-linecap="round"/>
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#16150F" stroke-width="2" stroke-dasharray="1 5" opacity=".5"/>
+      </svg>
+      <span>
+        <span class="logo-t">The Fart Whisperer</span>
+        <span class="logo-s">A Flatulinguistics Company</span>
+      </span>
+    </a>
+    <nav class="primary" aria-label="Primary">
+      <a href="#/analysis" data-nav>Analysis</a>
+      <a href="#/heritage" data-nav>Heritage</a>
+      <a href="#/record" data-nav>Record</a>
+      <a href="#/journal" data-nav>Journal</a>
+      <a href="#/guidance" data-nav>Guidance</a>
+      <a href="#/about" data-nav>About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="notice-bar"><div class="wrap-wide" id="noticeBar">Advisory: Guidance on barrier materials was revised on 1 February. Users should consult the current revision.</div></div>
+
+<main id="main">
+<!-- ================= HOME ================= -->
+<section class="page" id="p-home" aria-labelledby="h-home">
+  <div class="wrap hero">
+    <h1 id="h-home">What are your farts trying to tell you?</h1>
+    <p class="lede">Flatulinguistics is the study of the messages our bodies send and we refuse to hear. The Fart Whisperer is the first application to make that language readable.</p>
+    <a class="btn" href="#/record" data-nav>Begin Analysis</a>
+    <p class="trusted">Trusted by over 40,000 users worldwide</p>
+  </div>
+
+  <div class="wrap">
+    <hr>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><span class="step-n">01</span><h3>Capture</h3><p>Hold your device close and record. For most accurate results, allow no barrier between audio source and recognition device, fabric or otherwise. Pants or intimates may interfere.</p></div>
+      <div class="step"><span class="step-n">02</span><h3>Analyze</h3><p>Our engine assesses duration, pitch, resonance, and particulate signature across 200 reference markers.</p></div>
+      <div class="step"><span class="step-n">03</span><h3>Understand</h3><p>Receive a full interpretation in under ninety seconds. Most users report clarity on the first reading.</p></div>
+    </div>
+
+    <hr>
+    <h2>Features</h2>
+    <div class="feat"><h3><a href="#/feed" data-nav>The Global Feed</a></h3><p>Listen in on emissions as they happen, anywhere on earth. See what other people's farts are telling them.</p></div>
+    <div class="feat"><h3><a href="#/heritage" data-nav>Heritage Report</a></h3><p>Trace your signature to its ancestral region. Results are probabilistic.</p></div>
+    <div class="feat"><h3>Second Opinion</h3><p>Escalate any interpretation to a panel of three certified users. Consensus required.</p></div>
+    <div class="feat"><h3><a href="#/wheel" data-nav>The Flavor Wheel</a></h3><p>Ninety-six documented profiles across six families. Developed over four years.</p></div>
+    <div class="feat"><h3><a href="#/certificate" data-nav>Certification Track</a></h3><p>Apprentice, Journeyman, Sommelier. Wall certificate included at final level.</p></div>
+    <div class="feat"><h3><a href="#/analysis" data-nav>Your Wind Score</a></h3><p>One number. Updated daily. Explained nowhere.</p></div>
+    <div class="feat"><h3>The Regimen</h3><p>A guided dietary program for users seeking greater control of their signature — maximization or minimization. Strategies, tools, and support. Goals are not judged.</p></div>
+    <div class="feat"><h3>Sentinel Mode</h3><p>The Application can remain listening overnight. Events are logged and interpreted at dawn.</p></div>
+
+    <hr>
+    <h2>From our users</h2>
+    <blockquote>I had been ignoring the signs for eleven years.<cite>Daniel R., Journeyman</cite></blockquote>
+    <blockquote>My wife and I now compare readings at breakfast. It has changed our marriage.<cite>Anonymous, Sommelier</cite></blockquote>
+    <blockquote>I was skeptical. The Heritage Report was accurate to within forty miles.<cite>Priya M., Apprentice</cite></blockquote>
+    <blockquote>Rhineland, like my father before me.<cite>Henrik V., Sommelier</cite></blockquote>
+
+    <hr>
+    <h2>Frequently asked</h2>
+    <dl class="faq">
+      <dt>Is this a joke?</dt><dd>No.</dd>
+      <dt>How accurate is the Heritage Report?</dt><dd>Accurate to region in most cases. Users with mixed ancestry may receive split results. This is normal.</dd>
+      <dt>Can I interpret someone else's emission?</dt><dd>Yes, with their consent. Interpreting without consent is a violation of our Terms.</dd>
+      <dt>Why did my interpretation change?</dt><dd>The body is not static. Neither is the reading.</dd>
+      <dt>I received the same interpretation four days in a row.</dt><dd>Then it is worth considering.</dd>
+      <dt>How does the interpretation engine work?</dt><dd>The method is <a href="#/method" data-nav>proprietary</a>.</dd>
+      <dt>Is the method peer reviewed?</dt><dd>The <a href="#/journal" data-nav>Journal of Flatulinguistics</a> has reviewed it favorably.</dd>
+      <dt>Do you sell my data?</dt><dd>No. See our <a href="#/privacy" data-nav>Privacy Policy</a>.</dd>
+      <dt>My results seem wrong.</dt><dd>Escalate to a panel. Three certified users will review your reading independently. Consensus is required before an interpretation is amended.</dd>
+    </dl>
+    <p style="text-align:center;margin-top:2.6rem"><a class="btn" href="#/record" data-nav>Begin Analysis</a></p>
+  </div>
+</section>
+
+<!-- ================= RECORD ================= -->
+<section class="page" id="p-record" aria-labelledby="h-record">
+  <div class="wrap">
+    <p class="kicker">Capture</p>
+    <h1 id="h-record">Provide a sample</h1>
+    <p class="lede" id="recIntro">Hold your device close and record. For most accurate results, allow no barrier between audio source and recognition device, fabric or otherwise. Pants or intimates may interfere.</p>
+
+    <div class="instrument" id="instrument">
+      <button class="mic" id="micBtn" aria-label="Begin recording">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11z"/></svg>
+      </button>
+      <p class="stage" id="micStage">The Application is ready.</p>
+      <canvas class="scope" id="scope" width="900" height="208" aria-label="Live waveform display"></canvas>
+      <div class="readout">
+        <span>DUR <b id="roDur">0.00</b>s</span>
+        <span>LVL <b id="roLvl">0.00</b></span>
+        <span>PK <b id="roPk">—</b>Hz</span>
+      </div>
+      <div class="bar" id="progBar" hidden><i></i></div>
+      <p class="stage" id="analStage" hidden></p>
+      <div class="actions no-print" id="recActions">
+        <button class="btn ghost sm" id="simBtn">Simulated sample</button>
+        <a class="btn ghost sm" href="#/analysis" data-nav>Prior readings</a>
+      </div>
+    </div>
+    <p class="fine" style="margin-top:1rem">Recording is analyzed on your device. Audio is not transmitted and is not stored by us. See <a href="#/accessibility" data-nav>Accessibility and data practices</a>.</p>
+  </div>
+</section>
+
+<!-- ================= READING ================= -->
+<section class="page" id="p-reading" aria-labelledby="h-reading">
+  <div class="wrap">
+    <h1 class="vh" id="h-reading">Your reading</h1>
+    <div id="readingSlot"></div>
+    <div class="actions no-print">
+      <button class="btn ghost sm" id="reanalyzeBtn">Reanalyze</button>
+      <button class="btn ghost sm" id="secondPassBtn">Second pass</button>
+      <button class="btn ghost sm" id="escalateBtn">Second opinion</button>
+      <button class="btn ghost sm" id="shareBtn">Share card</button>
+      <a class="btn sm" href="#/record" data-nav>New reading</a>
+    </div>
+    <div id="panelSlot"></div>
+    <canvas id="shareCanvas" width="1200" height="630" style="display:none"></canvas>
+  </div>
+</section>
+
+<!-- ================= ANALYSIS / HISTORY ================= -->
+<section class="page" id="p-analysis" aria-labelledby="h-analysis">
+  <div class="wrap">
+    <p class="kicker">Your record</p>
+    <h1 id="h-analysis">Analysis</h1>
+    <div class="stats">
+      <div class="stat"><b id="sWind">—</b><span>Wind Score</span></div>
+      <div class="stat"><b id="sCount">0</b><span>Readings</span></div>
+      <div class="stat"><b id="sStreak">0</b><span>Day streak</span></div>
+      <div class="stat"><b id="sRegion">—</b><span>Region</span></div>
+    </div>
+    <p class="fine">The Wind Score is updated daily.</p>
+
+    <h2>Certification</h2>
+    <p class="mono" id="certState">Apprentice</p>
+    <div class="progress-track" id="certTrack" aria-hidden="true"><i></i><i></i><i></i></div>
+    <p id="certNext" class="fine"></p>
+    <p><a class="btn ghost sm" href="#/certificate" data-nav>Wall certificate</a> <a class="btn ghost sm" href="#/exam" data-nav>Sommelier examination</a></p>
+
+    <h2>Reading history</h2>
+    <p class="fine">All readings are retained.</p>
+    <div id="histSlot"></div>
+  </div>
+</section>
+
+<!-- ================= HERITAGE ================= -->
+<section class="page" id="p-heritage" aria-labelledby="h-heritage">
+  <div class="wrap">
+    <p class="kicker">The Bureau of Regional Classification</p>
+    <h1 id="h-heritage">Heritage Report</h1>
+    <p class="lede">Trace your signature to its ancestral region. Results are probabilistic.</p>
+    <div id="heritageResult"></div>
+
+    <h2>Reference distribution</h2>
+    <table>
+      <thead><tr><th>Region</th><th style="text-align:right">Share of all readings</th></tr></thead>
+      <tbody>
+        <tr class="hi"><td>Rhineland</td><td class="num">71.4%</td></tr>
+        <tr><td>Low Countries</td><td class="num">9.2%</td></tr>
+        <tr><td>Alpine Transitional</td><td class="num">6.1%</td></tr>
+        <tr><td>Iberian Coastal</td><td class="num">4.8%</td></tr>
+        <tr><td>Pannonian Basin</td><td class="num">3.3%</td></tr>
+        <tr><td>Baltic Shelf</td><td class="num">2.6%</td></tr>
+        <tr><td>Carpathian Interior</td><td class="num">1.9%</td></tr>
+        <tr><td>Anatolian Margin</td><td class="num">0.6%</td></tr>
+        <tr><td><a href="#/unassigned" data-nav>Unassigned</a></td><td class="num">one (1)</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Regional percentages do not sum to one hundred. The Bureau is aware. Regional assignment reflects the composition of our reference database and should not be interpreted as a statement about your family.</p>
+
+    <div class="note">
+      <p style="margin:0"><b>Reassessment.</b> If you believe your Reading is incorrect, you may request a Reassessment. Reassessment is conducted manually and costs $12. Reassessment fees are non-refundable.</p>
+    </div>
+    <p><button class="btn ghost sm" id="reassessBtn">Request reassessment</button></p>
+    <div id="reassessSlot"></div>
+
+    <hr>
+    <h2>Correspondence regarding Rhineland results</h2>
+    <div class="card">
+      <p>Thank you for writing. We receive a high volume of correspondence regarding Rhineland results.</p>
+      <p>The Rhineland signature is the most frequently assigned region in our system. This reflects the composition of our reference database and the acoustic properties of the signature itself. It is not an error.</p>
+      <p>If you believe your Reading is incorrect, you may request a Reassessment. Reassessment is conducted manually and costs $12.</p>
+      <p>We are sorry we could not be more helpful.</p>
+      <p class="mono" style="margin-top:.6rem">— The Bureau of Regional Classification</p>
+    </div>
+    <p style="margin-top:1.4rem"><a href="#/rhineland-day" data-nav>Rhineland Day is observed annually on 14 March.</a></p>
+  </div>
+</section>
+
+<!-- ================= FLAVOR WHEEL ================= -->
+<section class="page" id="p-wheel" aria-labelledby="h-wheel">
+  <div class="wrap-wide">
+    <p class="kicker">Reference</p>
+    <h1 id="h-wheel">The Flavor Wheel</h1>
+    <p class="lede">Ninety-six documented profiles across six families. Developed over four years.</p>
+    <div class="wheel" id="wheelSlot"></div>
+    <p class="fine" style="margin-top:2rem">The Latent family has four profiles. The Bureau does not expand on this.</p>
+  </div>
+</section>
+
+<!-- ================= GLOBAL FEED ================= -->
+<section class="page" id="p-feed" aria-labelledby="h-feed">
+  <div class="wrap-wide">
+    <p class="kicker">Live</p>
+    <h1 id="h-feed">The Global Feed</h1>
+    <p class="lede">Listen in on emissions as they happen, anywhere on earth. See what other people's farts are telling them.</p>
+    <div class="globe-wrap">
+      <svg class="globe" viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="78" fill="none" stroke="#C9C3B4"/>
+        <g class="spin" stroke="#C9C3B4" fill="none">
+          <ellipse cx="100" cy="100" rx="26" ry="78"/>
+          <ellipse cx="100" cy="100" rx="52" ry="78"/>
+          <line x1="100" y1="22" x2="100" y2="178"/>
+        </g>
+        <g stroke="#DED8CB" fill="none">
+          <line x1="22" y1="100" x2="178" y2="100"/>
+          <ellipse cx="100" cy="100" rx="78" ry="30"/>
+          <ellipse cx="100" cy="100" rx="78" ry="58"/>
+        </g>
+        <g id="blips" fill="#8C2A1F"></g>
+      </svg>
+      <div>
+        <div class="feed" id="feedSlot"></div>
+        <p class="fine" style="margin-top:1rem">The Feed is curated by the Bureau. Not all emissions are eligible for display.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="page" id="p-about" aria-labelledby="h-about">
+  <div class="wrap">
+    <p class="kicker">The institution</p>
+    <h1 id="h-about">About</h1>
+    <p class="lede">The field of flatulinguistics was, until recently, unfunded, unstaffed, and unread.</p>
+    <p>We began this work in a garage in 2019 with two microphones and a conviction that the body does not speak without reason. Seven years later, our reference database holds more than four million verified emissions, contributed by users in one hundred and six countries.</p>
+    <p style="font-size:1.35rem;margin:2rem 0;text-align:center">We did not choose the Rhineland. The data chose it.</p>
+    <p>We are not here to make you laugh. We are here to make you listen.</p>
+
+    <hr>
+    <h2>Roland of Hemingstone and the first recorded commission</h2>
+    <p>The field did not begin with us.</p>
+    <p>In the twelfth century, a man the record calls Roland the Farter held a manor in Suffolk on a single condition. He was obliged to appear before Henry II every Christmas and perform one jump, one whistle, and one fart. The obligation is recorded in the Book of Fees. He was paid in land.</p>
+    <p>We consider Roland the first professional in our field. We note without further comment that his compensation exceeded ours.</p>
+    <p>He was not alone. In Edo-period Japan the practitioners were called <i>heppiri otoko</i> — farting men — and their competitions were painted onto scrolls. The scrolls survive. The competitors do not.</p>
+
+    <hr>
+    <h2>The bodies</h2>
+    <div class="card"><h3>The Bureau of Regional Classification</h3><p>Assigns Heritage. Answers correspondence.</p></div>
+    <div class="card"><h3>The Office of Public Guidance</h3><p>Issues guidance. Revises guidance. Does not archive prior revisions.</p></div>
+    <div class="card"><h3>The Office of General Counsel</h3><p>Reads everything.</p></div>
+    <div class="card"><h3>The Journal of Flatulinguistics</h3><p>Peer-reviewed. We conduct the review.</p></div>
+    <div class="card"><h3>The Panel</h3><p>Three Certified Users, blind by design. There is no body above the Panel.</p></div>
+
+    <hr>
+    <h2>Press</h2>
+    <p class="fine">Founded in 2019, The Fart Whisperer is the leading application in flatulinguistics, the study of interpretive meaning in human emission. The company maintains the world's largest verified reference database and certifies practitioners at three levels.</p>
+  </div>
+</section>
+
+<!-- ================= JOURNAL ================= -->
+<section class="page" id="p-journal" aria-labelledby="h-journal">
+  <div class="wrap">
+    <p class="kicker">Published quarterly · Impact factor 0.02</p>
+    <h1 id="h-journal">The Journal of Flatulinguistics</h1>
+    <p class="lede">The Journal is peer-reviewed. We conduct the review.</p>
+    <div class="note"><p style="margin:0"><b>Conflict of interest statement,</b> printed in every issue: The authors declare no conflict of interest. The authors are the publisher.</p></div>
+
+    <h2>In this issue</h2>
+    <div class="card"><h3><a href="#/paper" data-nav>On the Prevalence of the Rhineland Signature: A Response to Critics</a></h3><p>Manuscript FL-2024-0117. With reviewer comments.</p></div>
+    <div class="card"><h3>On the Persistence of the Rhineland Signature in Third-Generation Emigrants</h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3>Why Morning Readings Differ: A Note on Circadian Interference</h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3>Field Notes: Six Weeks Recording in Rural Bolivia</h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3>The Latent Family: Notes Toward a Description</h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3>A Taxonomy of Silence: On Readings That Do Not Arrive</h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3><a href="#/about" data-nav>Roland of Hemingstone and the First Recorded Commission</a></h3><p>Runs on the About page.</p></div>
+    <div class="card"><h3><a href="#/ventriloquium" data-nav>Engastrimythos: On the Belly-Voice</a></h3><p>Historical note. Two paragraphs longer than it needs to be.</p></div>
+
+    <h2>Manuscript status</h2>
+    <table>
+      <thead><tr><th>Manuscript</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">FL-2024-0117</td><td>Decision Pending</td></tr>
+        <tr><td class="mono">FL-2025-0043</td><td>Still Under Review</td></tr>
+        <tr><td class="mono">FL-2025-0091</td><td>Under Review</td></tr>
+        <tr><td class="mono">FL-2026-0002</td><td>With Editor</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Submitted → With Editor → Under Review → Under Review → Still Under Review → Decision Pending → Decision Pending</p>
+  </div>
+</section>
+
+<!-- ================= THE PAPER ================= -->
+<section class="page" id="p-paper" aria-labelledby="h-paper">
+  <div class="wrap">
+    <p class="kicker">Manuscript FL-2024-0117</p>
+    <h1 id="h-paper">On the Prevalence of the Rhineland Signature: A Response to Critics</h1>
+    <p>It has been suggested, with increasing frequency, that our system assigns the Rhineland signature too readily. We have reviewed this claim.</p>
+    <p>Between 2019 and 2026 we processed 4,110,882 emissions. Of these, 71.4% resolved to the Rhineland. Critics regard this figure as implausible. We regard it as a finding.</p>
+    <p>The alternative explanation — that our instrument is imprecise — has been tested and does not hold. We have tested it four times.</p>
+    <p>We did not choose the Rhineland. The data chose it.</p>
+
+    <hr>
+    <h2>Reviewer comments</h2>
+    <p class="mono">Reviewer 1</p>
+    <blockquote>Accept with minor revisions. Clearly argued and consistent with prior work in the field.</blockquote>
+    <p class="mono">Reviewer 2</p>
+    <blockquote>
+      <p>Reject.</p>
+      <p>The authors report that 71.4% of all classifications resolve to a single category and treat this as a finding. It is not a finding. It is what a classifier does when it cannot discriminate. A model that returns the most common answer will be correct most of the time and will have learned nothing.</p>
+      <p>The authors state they tested the alternative explanation four times. They do not report the tests. They do not report the method. Section 3 consists of one sentence and a figure with no axis labels.</p>
+      <p>I have raised these points in each of my three previous reviews of this manuscript. The manuscript has not changed. My review has not changed.</p>
+      <p style="margin:0">Reject.</p>
+    </blockquote>
+    <p class="mono">Reviewer 3</p>
+    <blockquote>Did not respond.</blockquote>
+    <p class="mono rule-top" style="padding-top:1rem">Editorial decision: Accept.</p>
+  </div>
+</section>
+
+<!-- ================= GUIDANCE ================= -->
+<section class="page" id="p-guidance" aria-labelledby="h-guidance">
+  <div class="wrap">
+    <p class="kicker">The Office of Public Guidance</p>
+    <h1 id="h-guidance">Guidance on barrier materials</h1>
+    <p class="lede">Revision history. The current revision is v5.0.</p>
+    <table>
+      <thead><tr><th>Revision</th><th>Guidance</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">v1.0 (2019)</td><td>For most accurate results, allow no barrier between audio source and recognition device. Pants or intimates may interfere.</td></tr>
+        <tr><td class="mono">v2.0 (2021)</td><td>A single layer of light fabric is now recommended. Direct exposure may introduce particulate contamination of the device.</td></tr>
+        <tr><td class="mono">v3.0 (2023)</td><td>Two layers are recommended. One layer is no longer considered sufficient.</td></tr>
+        <tr><td class="mono">v4.0 (2025)</td><td>Barrier material is not recommended. Users should record without obstruction.</td></tr>
+        <tr class="hi"><td class="mono">v5.0 (2026)</td><td>A single layer is recommended. Refer to v2.0.</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">Prior revisions are not archived.</p>
+
+    <div class="note"><p style="margin:0"><b>Statement from the Office of Public Guidance.</b> The guidance has not changed. Your understanding of the guidance has changed.</p></div>
+
+    <h2>Questions</h2>
+    <dl class="faq">
+      <dt>Was the v1.0 guidance wrong?</dt>
+      <dd>The v1.0 guidance was correct. The v3.0 guidance was also correct. Guidance is correct at time of issue. Correctness is versioned.</dd>
+    </dl>
+
+    <h2>On allegations regarding the 2019 guidance</h2>
+    <p>It has been suggested that the Office discouraged barrier use in 2019 not on the evidence, but to preserve the clarity of samples reaching the reference database during a period of rapid growth.</p>
+    <p>The Office does not discuss its motives. The Office notes only that the 2019 corpus remains the finest in the archive, and that it is grateful.</p>
+
+    <h2>Interview</h2>
+    <div class="qa">
+      <p class="q">Q: Some users say the recommendations have reversed four times.</p><p>A: The recommendations reflect the evidence available at the time.</p>
+      <p class="q">Q: So they changed.</p><p>A: The evidence changed.</p>
+      <p class="q">Q: Critics say the Bureau has been wrong repeatedly.</p><p>A: Criticism of the Bureau is criticism of the field.</p>
+    </div>
+    <p style="margin-top:2rem"><a href="#/hearing" data-nav>Read the Director's testimony before the Standing Committee →</a></p>
+  </div>
+</section>
+
+<!-- ================= HEARING ================= -->
+<section class="page" id="p-hearing" aria-labelledby="h-hearing">
+  <div class="wrap">
+    <p class="kicker">Standing Committee on Emerging Fields</p>
+    <h1 id="h-hearing">Hearing on the reliability of flatulinguistic guidance</h1>
+    <p class="lede">The Director appears voluntarily. Official transcript.</p>
+    <div class="qa rule-top" style="padding-top:1.6rem">
+      <p class="q">Q: Dr. Voss, thank you for appearing.</p><p>A: I appear whenever the field requires it.</p>
+      <p class="q">Q: Your office has reversed its barrier guidance four times.</p><p>A: The guidance has been revised four times. It has never been reversed. Revision in the opposite direction is still revision.</p>
+      <p class="q">Q: Users who followed the 2019 guidance were told the opposite in 2021.</p><p>A: Users who followed the 2019 guidance were following the science of 2019. I will not apologize for the science of 2019. It was the finest science available that year.</p>
+      <p class="q">Q: Do you accept any criticism of your office?</p>
+      <p>A: I want to be careful here, because this is important. People are entitled to criticize me. But they should understand what it is they are doing. I do not speak for the science. That would make me a spokesman. I am the science. When you question me, you are questioning science itself. And science, once questioned, is no longer science. I do not think the committee wishes to be responsible for that.</p>
+      <p class="q">Q: That is not how science works.</p><p>A: It is now.</p>
+    </div>
+    <p class="fine rule-top" style="padding-top:1.2rem;margin-top:2rem">Transcript note, appended by the Office of Public Guidance: The remainder of the hearing is under review. The transcript is expected to be revised.</p>
+  </div>
+</section>
+
+<!-- ================= PRESS ================= -->
+<section class="page" id="p-press" aria-labelledby="h-press">
+  <div class="wrap">
+    <p class="kicker">Trade press · 14 May 2026</p>
+    <h1 id="h-press">Shenzhen lab publishes replication of Fart Whisperer engine; company alleges theft</h1>
+    <p>Researchers at Hongyuan Applied Intelligence have published a paper describing a system that reproduces the output of The Fart Whisperer's interpretation engine with 94.1% agreement. The paper, released openly with full code and training data, has drawn a sharp response from the flatulinguistics company, which alleges misappropriation of trade secrets.</p>
+    <p>The Hongyuan system was assembled in nine days. According to the paper, it consists of a small audio classifier and a lookup table.</p>
+    <p>"We did not reverse-engineer anything," the lead author said by email. "We recorded four thousand samples, we labeled them, and we trained a model. We have published everything. Anyone may check our work."</p>
+    <p>The disagreement centers on the Heritage Report, the feature that assigns each recording to an ancestral region. The Hongyuan replication assigns the Rhineland region to 71.4% of inputs — matching The Fart Whisperer's published distribution exactly.</p>
+    <p>The company cites this figure as evidence of theft.</p>
+    <p>The Hongyuan authors cite it as evidence of something else. "Rhineland is the majority class," the paper notes in section 5. "Any model that guesses Rhineland every time will achieve 71.4% agreement. Ours does slightly better than that. We do not consider this a difficult result."</p>
+    <p>The Fart Whisperer's full statement:</p>
+    <blockquote>
+      <p>We are aware of the manuscript.</p>
+      <p>We will not name the laboratory. We have retained counsel and we have briefed the appropriate parties. We are treating this as a matter of national research interest.</p>
+      <p>Our method is proprietary. It remains proprietary. The similarity of the published output to our own is not, in our assessment, coincidental.</p>
+      <p style="margin:0">We note that the manuscript has not been peer reviewed.</p>
+    </blockquote>
+    <p>The Journal of Flatulinguistics, which is published by The Fart Whisperer, confirmed that no manuscript from Hongyuan has been submitted for review.</p>
+  </div>
+</section>
+
+<!-- ================= METHOD ================= -->
+<section class="page" id="p-method" aria-labelledby="h-method">
+  <div class="wrap" style="padding-top:4rem;padding-bottom:6rem">
+    <h1 id="h-method" class="vh">Our method</h1>
+    <p style="font-size:1.5rem;margin:0">Our method is proprietary.</p>
+  </div>
+</section>
+
+<!-- ================= CHANGELOG ================= -->
+<section class="page" id="p-changelog" aria-labelledby="h-changelog">
+  <div class="wrap">
+    <p class="kicker">Release notes</p>
+    <h1 id="h-changelog">Changelog</h1>
+    <table>
+      <tbody>
+        <tr><td class="mono" style="width:6.5rem">v3.0.0</td><td>Regional discrimination is now considered stable. No further work is planned.</td></tr>
+        <tr><td class="mono">v2.4.2</td><td>Reverted 2.4.1.</td></tr>
+        <tr><td class="mono">v2.4.1</td><td>Fixed an issue where certain emissions were misclassified as Rhineland. Improved low-light performance on the Global Feed. Panel review notifications now respect quiet hours.</td></tr>
+        <tr><td class="mono">v2.1.0</td><td>Further improved regional discrimination.</td></tr>
+        <tr><td class="mono">v1.8.0</td><td>Improved regional discrimination.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ================= PRICING ================= -->
+<section class="page" id="p-pricing" aria-labelledby="h-pricing">
+  <div class="wrap">
+    <p class="kicker">Plans</p>
+    <h1 id="h-pricing">Pricing</h1>
+    <div class="grid3" style="margin-top:1.6rem">
+      <div class="tier"><h3>Free</h3><p class="price">$0</p><p class="fine">Three interpretations daily. Standard analysis queue.</p></div>
+      <div class="tier"><h3>Pro</h3><p class="price">$4.99 / mo</p><p class="fine">Unlimited interpretations. Priority queue. Full Heritage Report. No advertisements.</p></div>
+      <div class="tier"><h3>Institutional</h3><p class="price">Contact us</p><p class="fine">For research groups and families of six or more.</p></div>
+    </div>
+    <p class="fine" style="margin-top:1.6rem">Institutional pricing requires a minimum of six (6) bodies. Cancel at any time. We refund the unused portion of the current period. We do not require a reason, though most people give one.</p>
+  </div>
+</section>
+
+<!-- ================= TERMS ================= -->
+<section class="page" id="p-terms" aria-labelledby="h-terms">
+  <div class="wrap legal">
+    <p class="kicker">Version 4.1</p>
+    <h1 id="h-terms">Terms of Service</h1>
+    <h3>1. Definitions</h3>
+    <p><span class="cl">1.1</span>"Emission" means a single discrete event captured by the Application.</p>
+    <p><span class="cl">1.2</span>"Reading" means the interpretation generated from an Emission.</p>
+    <p><span class="cl">1.3</span>"Signature" means a User's aggregate acoustic profile across all Readings.</p>
+    <p><span class="cl">1.4</span>"Panel" means three (3) Certified Users convened to review a contested Reading.</p>
+    <p><span class="cl">1.5</span>"The Body" means the User's body.</p>
+    <h3>2. Eligibility</h3>
+    <p><span class="cl">2.1</span>You must be at least thirteen (13) years of age.</p>
+    <p><span class="cl">2.2</span>You must be in possession of a body capable of producing Emissions. We do not require proof.</p>
+    <p><span class="cl">2.3</span>One account per body.</p>
+    <h3>3. Conduct</h3>
+    <p><span class="cl">3.1</span>You are responsible for all activity under your account, including Emissions you did not personally produce.</p>
+    <p><span class="cl">3.2</span>You may not submit synthetic, simulated, or mechanically produced Emissions. Submissions found to originate from a novelty device will be purged from the database and the account permanently revoked. We conduct periodic audits.</p>
+    <p><span class="cl">3.3</span>You may not submit another person's Emission without documented consent.</p>
+    <p><span class="cl">3.4</span>You may not resell Readings.</p>
+    <p><span class="cl">3.5</span>You may not represent yourself as Certified if you are not.</p>
+    <h3>4. Ownership</h3>
+    <p><span class="cl">4.1</span>You retain ownership of your Emissions.</p>
+    <p><span class="cl">4.2</span>You grant us a perpetual, worldwide, royalty-free license to store, analyze, and display them in anonymized form.</p>
+    <p><span class="cl">4.3</span>We retain ownership of the Reading. The Emission is yours. What it means is ours.</p>
+    <h3>5. Panel Review</h3>
+    <p><span class="cl">5.1</span>Any User may escalate one (1) Reading per calendar month.</p>
+    <p><span class="cl">5.2</span>Panels are blind by design. Members shall not communicate regarding an active review.</p>
+    <p><span class="cl">5.3</span>Consensus of all three members is required to amend a Reading.</p>
+    <p><span class="cl">5.4</span>Panel decisions are final. There is no body above the Panel.</p>
+    <h3>6. Interpretation Disclaimer</h3>
+    <p><span class="cl">6.1</span>Readings are informational and do not constitute medical, legal, financial, spiritual, or marital advice.</p>
+    <p><span class="cl">6.2</span>We do not warrant that a Reading is correct. We warrant only that it was generated.</p>
+    <p><span class="cl">6.3</span>Users who act on a Reading do so at their own discretion. We have seen this go both ways.</p>
+    <h3>7. Suspension</h3>
+    <p><span class="cl">7.1</span>Repeated low-confidence submissions may indicate improper technique. We will contact you before acting.</p>
+    <h3>8. Death of a User</h3>
+    <p><span class="cl">8.1</span>Upon documented death, the account is closed to new submissions.</p>
+    <p><span class="cl">8.2</span>The Signature is retained in perpetuity. It is not deleted. It is the only part of this we consider sacred.</p>
+    <h3>9. Dispute Resolution</h3>
+    <p><span class="cl">9.1</span>Disputes shall be resolved by binding arbitration.</p>
+    <p><span class="cl">9.2</span>You waive the right to participate in a class action. There has been one. It went poorly for both parties.</p>
+    <h3>10. Force Majeure</h3>
+    <p><span class="cl">10.1</span>We are not liable for failures arising from natural disaster, war, civil unrest, network outage, or dietary event.</p>
+    <h3>11. Severability</h3>
+    <p><span class="cl">11.1</span>If any provision is held unenforceable, the remainder survives. This document has been tested.</p>
+    <h3>12. Modifications</h3>
+    <p><span class="cl">12.1</span>We may revise these Terms at any time. Continued use constitutes acceptance. We will not always tell you.</p>
+    <h3>13. Contact</h3>
+    <p>Written inquiries to the Office of General Counsel. We respond within thirty (30) days. We read everything.</p>
+
+    <hr>
+    <h2>The Certified User's Undertaking</h2>
+    <p class="fine">Recited at Journeyman. Displayed in the Panel room.</p>
+    <blockquote>
+      I will review each Emission on its own merits.<br>
+      I will not consult my fellow panelists.<br>
+      I will not disclose my findings outside the Panel.<br>
+      I will not interpret in anger.<br>
+      I will remember that a Reading concerns a person.
+    </blockquote>
+
+    <hr>
+    <h2>The small letters</h2>
+    <ul class="fine">
+      <li>Results are probabilistic and may vary between sessions.</li>
+      <li>Heritage regions reflect statistical clustering, not documented lineage.</li>
+      <li>Regional percentages do not sum to one hundred. The Bureau is aware.</li>
+      <li>"Four million verified emissions" reflects total database size at last audit, inclusive of historical submissions.</li>
+      <li>Ninety-second analysis is a median. Complex Readings require longer.</li>
+      <li>Institutional pricing requires a minimum of six (6) bodies.</li>
+      <li>The wall certificate is not accredited by any body.</li>
+      <li>The Fart Whisperer is not a medical device.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= PRIVACY ================= -->
+<section class="page" id="p-privacy" aria-labelledby="h-privacy">
+  <div class="wrap legal">
+    <p class="kicker">Policy</p>
+    <h1 id="h-privacy">Privacy Policy</h1>
+    <h3>What we collect</h3>
+    <p>The Emission. Device model. Ambient noise floor. Time of day. Approximate location, to a radius of fifty (50) kilometers.</p>
+    <h3>What we do not collect</h3>
+    <p>Your name, unless you offer it. We have never needed it.</p>
+    <h3>Retention</h3>
+    <p>Deletion removes your Readings and your Signature. The Emission is retained, anonymized, for research. This is the trade.</p>
+    <h3>Third parties</h3>
+    <p>We do not sell your data. We have been asked.</p>
+    <h3>Cookies</h3>
+    <p>This site uses cookies to remember your preferences and improve analysis. It also uses them for the reasons everyone uses them.</p>
+    <div class="note"><p style="margin:0">For the technical account of what this application actually does with your recording, see <a href="#/accessibility" data-nav>Accessibility and data practices</a>. That page is written plainly and is not part of the foregoing.</p></div>
+    <h3>Account deletion</h3>
+    <p>Deletion is confirmed across three screens. Your Signature took 412 Readings to build. Your Readings will be removed. Your Emissions remain, anonymized, in the research database. This cannot be undone.</p>
+    <p><button class="btn ghost sm" id="wipeBtn">Delete my local record</button></p>
+  </div>
+</section>
+
+<!-- ================= ACCESSIBILITY (REAL) ================= -->
+<section class="page" id="p-accessibility" aria-labelledby="h-acc">
+  <div class="wrap">
+    <p class="kicker">Written plainly</p>
+    <h1 id="h-acc">Accessibility and data practices</h1>
+    <div class="note"><p style="margin:0">This page is not written in the voice of the site. It is written straight, and everything on it is true.</p></div>
+    <h2>Accessibility</h2>
+    <p>The Fart Whisperer is committed to an experience that works for everyone. We aim to meet WCAG 2.1 AA. Every control carries a screen-reader label. Waveform playback includes captions and a full text transcript of the analysis. All interface color pairs meet contrast requirements, and the product is fully navigable by keyboard and by switch control. If you encounter a barrier, write to us and we will fix it. Reports of this kind go to the front of every queue we have.</p>
+    <h2>Data practices</h2>
+    <p>Your recording is analyzed entirely on your device, in your browser. The audio is never uploaded, never transmitted, and never stored by us — there is no server involved in producing a reading. What the application keeps is a small summary of each reading (its measurements, its interpretation, and the time) in your browser's local storage, on your machine. You can erase all of it at any time from the Privacy page.</p>
+    <p>The interpretation itself is generated on your device from a fixed set of written readings, selected deterministically from the acoustic properties of your recording. There is no machine learning model, no reference database of four million emissions, and no panel of certified users. Those are part of the fiction. The measurements shown on your reading — duration, level, peak frequency — are real.</p>
+    <p>We do not use analytics, advertising trackers, or third-party scripts of any kind. This page will be kept accurate.</p>
+  </div>
+</section>
+
+<!-- ================= STATUS / UNASSIGNED / RHINELAND DAY ================= -->
+<section class="page" id="p-status" aria-labelledby="h-status">
+  <div class="wrap">
+    <p class="kicker">Operations</p>
+    <h1 id="h-status">System status</h1>
+    <table>
+      <tbody>
+        <tr><td>Interpretation engine</td><td class="num">Operational</td></tr>
+        <tr><td>Regional classification</td><td class="num">Operational</td></tr>
+        <tr><td>Panel convening</td><td class="num">Operational</td></tr>
+        <tr><td>The Global Feed</td><td class="num">Operational</td></tr>
+        <tr><td>Reassessment queue</td><td class="num">Delayed</td></tr>
+        <tr><td>Manuscript tracker</td><td class="num">Decision Pending</td></tr>
+      </tbody>
+    </table>
+    <p class="fine">All systems operational. The database is listening.</p>
+  </div>
+</section>
+
+<section class="page" id="p-unassigned" aria-labelledby="h-un">
+  <div class="wrap" style="padding-top:3rem;padding-bottom:6rem">
+    <p class="kicker">Regional classification</p>
+    <h1 id="h-un">Unassigned</h1>
+    <p class="lede">In March of 2021 a single reading returned Unassigned.</p>
+    <p>The user has not been identified. The result has not been reproduced. The Bureau considers the matter open.</p>
+    <p class="fine rule-top" style="padding-top:1.2rem;margin-top:2.4rem">Recorded 14 March 2021. No further information is available.</p>
+  </div>
+</section>
+
+<section class="page" id="p-rhineland-day" aria-labelledby="h-rd">
+  <div class="wrap">
+    <p class="kicker">Observance</p>
+    <h1 id="h-rd">Rhineland Day</h1>
+    <p class="lede">Observed annually on 14 March. Users are asked to log a reading at noon, local time. Participation is not required.</p>
+    <p class="mono" id="rdCountdown" style="font-size:1.3rem;margin:2rem 0"></p>
+    <p>The Bureau notes that Rhineland Day shares its date with the <a href="#/unassigned" data-nav>Unassigned</a> result of 2021. The Bureau maintains the two are unrelated.</p>
+    <hr>
+    <h2>Observance materials</h2>
+    <div class="card"><h3>The shirt</h3><p>Reads RHINELAND. Small, chest, nothing else. It outsells every other item by a factor of eleven, because it is the only one most people qualify for.</p></div>
+    <div class="card"><h3>The Carpathian Interior shirt</h3><p>Exists. In stock: plenty.</p></div>
+    <div class="card"><h3>Profile convention</h3><p class="mono">Rhineland, Journeyman, est. 2021</p></div>
+  </div>
+</section>
+
+<!-- ================= CERTIFICATE ================= -->
+<section class="page" id="p-certificate" aria-labelledby="h-cert">
+  <div class="wrap">
+    <p class="kicker no-print">Certification Track</p>
+    <h1 id="h-cert" class="no-print">Wall certificate</h1>
+    <p class="no-print">Enter the name to be printed on the certificate. <input type="text" id="certName" placeholder="Name" aria-label="Name for certificate" maxlength="42"> <button class="btn ghost sm" id="printCert">Print</button></p>
+    <div class="cert" id="certBlock">
+      <svg class="seal-lg" viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="none" stroke="#16150F" stroke-width="2"/>
+        <circle cx="50" cy="50" r="39" fill="none" stroke="#16150F" stroke-width="1"/>
+        <path d="M22 62 Q34 40 46 56 T72 44" fill="none" stroke="#16150F" stroke-width="2.4" stroke-linecap="round"/>
+      </svg>
+      <h2>The Flatulinguistic Certification Track</h2>
+      <p class="fine" style="margin:0">This certifies that</p>
+      <div class="who" id="certWho">&nbsp;</div>
+      <p class="fine" style="margin:.6rem 0 0">has completed all requirements and is recognized as</p>
+      <div class="lvl" id="certLvl">Apprentice</div>
+      <p class="fine" id="certDate">Granted this ___ day of ______</p>
+      <p class="fine">This certificate is not accredited by any body.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXAM ================= -->
+<section class="page" id="p-exam" aria-labelledby="h-exam">
+  <div class="wrap">
+    <p class="kicker">Certification</p>
+    <h1 id="h-exam">Sommelier examination</h1>
+    <p class="lede">Five questions. A passing mark is four. One retake per calendar month.</p>
+    <div id="examSlot"></div>
+  </div>
+</section>
+
+<!-- ================= VENTRILOQUIUM (arrival from The Word Hoard) ========= -->
+<section class="page" id="p-ventriloquium" aria-labelledby="h-vent">
+  <div class="wrap">
+    <p class="kicker">The Journal of Flatulinguistics · Historical note</p>
+    <h1 id="h-vent">Engastrimythos</h1>
+    <p class="lede">On the belly-voice, and the long record of people who took it seriously.</p>
+
+    <p>The word <i>ventriloquism</i> has been misapplied for two hundred years. It does not mean throwing a voice. It is Late Latin — <i>ventriloquus</i>, from <i>venter</i>, "belly," and <i>loquī</i>, "to speak" — and it was turned out of the Greek <i>engastrimythos</i>, "speaking in the belly."</p>
+    <p>It did not describe a performer. It described a rumbling internal speech, understood as a sign of inspiration or, more commonly, of possession. Something was in there. It was talking. The only question was who.</p>
+    <p>We hold that the ancients were correct about the phenomenon and mistaken about the cause. The belly does speak. It is not possessed. It is simply better informed than you are.</p>
+    <p>The record is unbroken. Roland of Hemingstone held a manor in Suffolk for it. The <i>heppiri otoko</i> of Edo Japan competed at it and were painted onto scrolls.</p>
+    <p>Nor was the practice confined to entertainers. In 1531 a professor of theology at Wittenberg, asked how he dealt with the adversary, replied that it was with a fart that he chased him away. He was not being merely coarse. Scatological speech was an established instrument in the monastic contest with the devil, and Martin Luther employed it as one — an argument delivered from the belly, at the highest stakes then available.</p>
+    <p>By the eighteenth century the word had been handed to stagecraft, and the field it named was abandoned for two hundred and fifty years.</p>
+    <p>We have resumed the work.</p>
+
+    <div class="note">
+      <p><b>Sources.</b> Late Latin <i>ventriloquus</i> from <i>venter</i> + <i>loquī</i>, patterned on Greek <i>engastrimythos</i>, "speaking in the belly"; originally a rumbling internal speech regarded as a sign of spiritual inspiration or demonic possession. <i>Ventriloquy</i> is attested from the 1580s, <i>ventriloquism</i> from 1773. Etymology per the Online Etymology Dictionary.</p>
+      <p style="margin:0">Roland of Hemingstone is recorded in the Book of Fees. Luther's remark is Table Talk no. 122 (1531), <i>Luther's Works</i> 54:16, cited in Eric W. Gritsch, "Martin Luther's Humor," <i>Word &amp; World</i> 32:2 (2012), which notes that such language "was common among monks in their struggle with the devil."</p>
+    </div>
+
+    <p class="rule-top" style="padding-top:1.6rem;margin-top:2.4rem">You arrived here through a door that is not listed. The Bureau does not ask how.</p>
+    <p style="text-align:center;margin-top:2rem">
+      <a class="btn" href="#/record" data-nav>Begin Analysis</a>
+    </p>
+    <p style="text-align:center"><a class="method-link" href="#/" data-nav>Or read what this is first.</a></p>
+  </div>
+</section>
+
+<!-- ================= 404 ================= -->
+<section class="page" id="p-404" aria-labelledby="h-404">
+  <div class="wrap" style="padding-top:4rem;padding-bottom:6rem">
+    <h1 id="h-404">This page has passed.</h1>
+    <p class="lede">We were unable to interpret it.</p>
+    <p><a class="btn ghost" href="#/" data-nav>Return</a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap-wide">
+    <nav aria-label="Footer">
+      <a href="#/about" data-nav>About</a>
+      <a href="#/journal" data-nav>The Journal</a>
+      <a href="#/feed" data-nav>Global Feed</a>
+      <a href="#/wheel" data-nav>Flavor Wheel</a>
+      <a href="#/press" data-nav>Press</a>
+      <a href="#/guidance" data-nav>Guidance</a>
+      <a href="#/hearing" data-nav>Testimony</a>
+      <a href="#/changelog" data-nav>Changelog</a>
+      <a href="#/pricing" data-nav>Pricing</a>
+      <a href="#/method" data-nav>Our method</a>
+      <a href="#/terms" data-nav>Terms</a>
+      <a href="#/privacy" data-nav>Privacy</a>
+      <a href="#/accessibility" data-nav>Accessibility</a>
+      <a href="#/status" data-nav>System status</a>
+    </nav>
+    <p>© 2026 The Fart Whisperer. A flatulinguistics company.<br>
+    <span class="fine">The Fart Whisperer is not a medical device. Readings are informational and do not constitute medical, legal, financial, spiritual, or marital advice.</span></p>
+  </div>
+</footer>
+
+<script>
+"use strict";
+/* =========================================================================
+   THE FART WHISPERER — engine and application
+   The engine is theater. Real measurements feed a deterministic selection
+   from a fixed bank of written readings. No audio leaves the device.
+   ========================================================================= */
+
+/* ---------------------------- CONTENT ---------------------------------- */
+
+const READINGS = {
+  common: [
+    "Drink water. Not everything is a mystery:",
+    "The thing you are avoiding takes eleven minutes:",
+    "You have been rehearsing a conversation instead of having it:",
+    "Go to bed. The argument will keep:",
+    "Call your mother. Not about anything:",
+    "Eat something green. This is not a metaphor:",
+    "The body kept your schedule this week. You did not:",
+    "You were right. Being right is not the same as it mattering:"
+  ],
+  uncommon: [
+    "The apology you are waiting for is not coming. The one you owe is still possible:",
+    "You have mistaken being busy for being needed:",
+    "Forgive your friend. You have kept the ledger longer than the debt:",
+    "You already know. You recorded this hoping to be told otherwise:",
+    "The door you keep checking is closed. The one you have not tried is not:",
+    "You laughed today and meant it. The body has noted it. More is possible:"
+  ],
+  rare: [
+    "Rest is not a reward. It is maintenance. You maintain everything you own except yourself:",
+    "What you buried is not dead. It is a seed:",
+    "You are not late. You are here. Count from here:",
+    "Begin. The middle will find you:"
+  ]
+};
+
+const TIERS = [["common",94.5],["uncommon",5],["rare",0.5]];
+
+const REGIONS = [
+  ["Rhineland",71.4],["Low Countries",9.2],["Alpine Transitional",6.1],
+  ["Iberian Coastal",4.8],["Pannonian Basin",3.3],["Baltic Shelf",2.6],
+  ["Carpathian Interior",1.9],["Anatolian Margin",0.6]
+];
+
+const FAMILIES = [
+  ["Sulfuric-Bright",30,["Struck Match","Green Onion","Hot Brass","Bootblack","Sulfur Spring","Match Head","Wet Flint","Chemical Lemon","Warm Rubber","Copper Penny","Pool Deck","Burnt Hair","Camphor","Iodine","Gunflint","Vulcanised","Bleach Bloom","Ozone","Struck Anvil"]],
+  ["Vegetal",22,["Cut Grass","Boiled Cabbage","Split Pea","Broccoli Water","Asparagus Note","Bean Field","Green Pepper","Turnip","Cauliflower Steam","Kale Under Glass","Sprout Cellar","Radish Skin","Lentil","Silage","Nettle","Chard","Alfalfa","Brussels","Root Cellar"]],
+  ["Fermented",20,["Sourdough Crock","Yeast Bloom","Cider Barrel","Kraut Jar","Kimchi Draft","Yoghurt Skin","Beer Cellar","Malt Floor","Kombucha","Wine Cork","Bread Rise","Vinegar Mother","Pickle Brine","Miso","Tempeh","Cheese Cave","Old Rye","Fig Jar","Bottle Shock"]],
+  ["Mineral",14,["Wet Stone","Chalk Dust","Cold Iron","Slate","Basement Air","Limestone","Well Water","Clay Bank","Graphite","Quarry","Concrete Rain","Tin","Cave Mouth","Riverbed","Salt Lick","Old Coin","Gravel","Marble"]],
+  ["Animal",12,["Wet Wool","Saddle Leather","Barn Door","Hide Glue","Kennel","Tallow","Horse Blanket","Beeswax","Feather Bed","Rendering","Musk","Lanolin","Boot Leather","Stable Straw","Broth Pot","Suet","Hoof"]],
+  ["Latent",2,["Absence","Delay","The Unspoken","Pending"]]
+];
+
+const RESONANCE = ["Low","Moderate","Moderate","Pronounced","Attenuated","Sustained"];
+
+const FEED_CITIES = ["Lisbon","Osaka","Bratislava","Winnipeg","Naples","Gothenburg","Cork","Perth","Tallinn","Medellín","Leipzig","Hull","Rotorua","Valparaíso","Bergen","Trieste","Kaunas","Dunedin","Aarhus","Girona","Utrecht","Cluj","Reykjavík","Tampere","Lyon","Porto","Ghent","Turku","Split","Toledo"];
+
+const FEED_LINES = [
+  "reading unremarkable","panel declined to convene","assigned Rhineland","assigned Rhineland",
+  "assigned Rhineland","reading held for review","confidence below threshold","assigned Rhineland",
+  "second pass requested","reassessment declined","assigned Rhineland","interpretation delivered",
+  "assigned Low Countries","reading amended by consensus","assigned Rhineland","technique flagged"
+];
+
+const EXAM = [
+  {q:"A User wishes to submit an Emission produced by another person. What does the Application require?",
+   a:["Documented consent","Verbal consent","Nothing; the Emission is public","A Panel"],c:0},
+  {q:"How many Certified Users constitute a Panel?",a:["Two (2)","Three (3)","Five (5)","As many as respond"],c:1},
+  {q:"A Reading is contested. What is required before it may be amended?",
+   a:["A majority of the Panel","The Director's approval","Consensus of all three members","Payment of the Reassessment fee"],c:2},
+  {q:"The Rhineland signature accounts for what share of all readings?",a:["12.0%","44.9%","71.4%","96.1%"],c:2},
+  {q:"What body sits above the Panel?",a:["The Office of General Counsel","The Journal","The Director","There is no body above the Panel"],c:3}
+];
+
+/* ---------------------------- STORE ------------------------------------ */
+
+const KEY = "fw.v1";
+const DEF = {calibId:null, readings:[], escalations:{}, exam:{passed:false, last:null}, certName:"", reassessed:false};
+let S = load();
+
+function load(){
+  try{ const r = JSON.parse(localStorage.getItem(KEY)); return r ? Object.assign({},DEF,r) : Object.assign({},DEF); }
+  catch(e){ return Object.assign({},DEF); }
+}
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+
+/* ---------------------------- ENGINE ----------------------------------- */
+
+function fnv(str){
+  let h = 0x811c9dc5;
+  for(let i=0;i<str.length;i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return h >>> 0;
+}
+function mulberry32(a){
+  return function(){
+    a |= 0; a = a + 0x6D2B79F5 | 0;
+    let t = Math.imul(a ^ a >>> 15, 1 | a);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+function rngAt(seed, n){ return mulberry32((seed + Math.imul(n, 2654435761)) | 0); }
+function weighted(list, r){
+  const total = list.reduce((s,x)=>s+x[1],0);
+  let t = r * total;
+  for(const item of list){ t -= item[1]; if(t <= 0) return item; }
+  return list[list.length-1];
+}
+
+// features: {dur, rms, peak, sig[]}
+function interpret(features, reanalyze){
+  const seed = fnv(features.sig.map(v=>Math.round(v*255)).join(",") + "|" + (S.calibId||"none") + "|" + reanalyze);
+  const tier = weighted(TIERS, rngAt(seed,1)())[0];
+  const fam  = weighted(FAMILIES.map(f=>[f[0],f[1]]), rngAt(seed,2)())[0];
+  const famRow = FAMILIES.find(f=>f[0]===fam);
+  const profile = famRow[2][Math.floor(rngAt(seed,7)() * famRow[2].length)];
+  const region = weighted(REGIONS, rngAt(seed,3)())[0];
+  const bank = READINGS[tier];
+  const text = bank[Math.floor(rngAt(seed,4)() * bank.length)];
+  const conf = (88 + rngAt(seed,5)() * 9).toFixed(1);
+  const res = RESONANCE[Math.floor(rngAt(seed,6)() * RESONANCE.length)];
+  return {
+    tier, family:fam, profile, region, text,
+    confidence:conf, resonance:res,
+    dur:features.dur.toFixed(1), peak:Math.round(features.peak),
+    level:features.rms.toFixed(2),
+    simulated:!!features.simulated,
+    t:Date.now(), reanalyze
+  };
+}
+
+function readingNumber(i){ return 4182 + i + 1; }
+
+/* ---------------------------- DERIVED STATS ---------------------------- */
+
+function windScore(){
+  if(!S.readings.length) return "—";
+  const day = new Date().toISOString().slice(0,10);
+  const h = fnv(day + "|" + S.readings.length + "|" + (S.readings[S.readings.length-1].region||""));
+  return 30 + (h % 71);
+}
+function streak(){
+  if(!S.readings.length) return 0;
+  const days = [...new Set(S.readings.map(r=>new Date(r.t).toDateString()))];
+  const set = new Set(days);
+  let n = 0, d = new Date();
+  if(!set.has(d.toDateString())) d.setDate(d.getDate()-1);
+  while(set.has(d.toDateString())){ n++; d.setDate(d.getDate()-1); }
+  return n;
+}
+function consecutiveRhineland(){
+  let n = 0;
+  for(let i=S.readings.length-1;i>=0;i--){ if(S.readings[i].region==="Rhineland") n++; else break; }
+  return n;
+}
+const LEVELS = [["Apprentice",1],["Journeyman",8],["Sommelier",25]];
+function level(){
+  const n = S.readings.length;
+  if(n >= 25 && S.exam.passed) return "Sommelier";
+  if(n >= 8) return "Journeyman";
+  if(n >= 1) return "Apprentice";
+  return "Uncertified";
+}
+function nextRequirement(){
+  const n = S.readings.length;
+  if(n < 1) return "Provide one reading to be recognised as Apprentice.";
+  if(n < 8) return "Journeyman requires " + (8-n) + " further reading" + (8-n===1?"":"s") + ", and the Undertaking.";
+  if(n < 25) return "Sommelier requires " + (25-n) + " further readings and a passing mark on the examination.";
+  if(!S.exam.passed) return "Sommelier requires a passing mark on the examination.";
+  return "All requirements complete. The wall certificate is available.";
+}
+
+/* ---------------------------- ROUTER ----------------------------------- */
+
+const ROUTES = ["home","record","reading","analysis","heritage","wheel","feed","about","journal","paper",
+  "guidance","hearing","press","method","changelog","pricing","terms","privacy","accessibility",
+  "status","unassigned","rhineland-day","certificate","exam","ventriloquium","404"];
+
+function route(){
+  let id = (location.hash || "#/").replace(/^#\/?/,"") || "home";
+  if(!ROUTES.includes(id)) id = "404";
+  document.querySelectorAll(".page").forEach(p=>p.classList.remove("on"));
+  const el = document.getElementById("p-"+id);
+  (el || document.getElementById("p-404")).classList.add("on");
+  document.querySelectorAll("nav.primary a").forEach(a=>{
+    a.toggleAttribute("aria-current", a.getAttribute("href") === "#/"+id);
+    if(a.getAttribute("href") === "#/"+id) a.setAttribute("aria-current","page");
+  });
+  window.scrollTo(0,0);
+  onEnter(id);
+}
+window.addEventListener("hashchange", route);
+
+function go(path){ location.hash = "#/" + path; }
+
+function onEnter(id){
+  if(id==="analysis") renderAnalysis();
+  if(id==="heritage") renderHeritage();
+  if(id==="wheel") renderWheel();
+  if(id==="feed") startFeed();
+  if(id==="certificate") renderCert();
+  if(id==="exam") renderExam();
+  if(id==="rhineland-day") renderRhinelandDay();
+  if(id==="reading" && !current) go("record");
+  if(id!=="feed") stopFeed();
+  if(id!=="record") stopRecording(true);
+}
+
+/* ---------------------------- RECORDER --------------------------------- */
+
+let audioCtx=null, analyser=null, stream=null, rafId=null, recording=false;
+let sig=[], t0=0, peakHz=0, lastRms=0, tick=0;
+const MAX_MS = 8000, MIN_MS = 400;
+
+const $ = s => document.querySelector(s);
+const micBtn = $("#micBtn"), micStage = $("#micStage"), scope = $("#scope");
+const roDur=$("#roDur"), roLvl=$("#roLvl"), roPk=$("#roPk");
+const progBar=$("#progBar"), analStage=$("#analStage"), recActions=$("#recActions");
+const ctx2d = scope.getContext("2d");
+
+function drawScope(live){
+  const w = scope.width, h = scope.height;
+  ctx2d.clearRect(0,0,w,h);
+  ctx2d.fillStyle = "#F7F5F0"; ctx2d.fillRect(0,0,w,h);
+  ctx2d.strokeStyle = "#DED8CB"; ctx2d.lineWidth = 1;
+  ctx2d.beginPath(); ctx2d.moveTo(0,h/2); ctx2d.lineTo(w,h/2); ctx2d.stroke();
+  if(!sig.length) return;
+  const n = sig.length, step = w / Math.max(n, 120);
+  ctx2d.strokeStyle = live ? "#8C2A1F" : "#16150F";
+  ctx2d.lineWidth = 2;
+  for(let i=0;i<n;i++){
+    const a = Math.min(1, sig[i]*3.4) * (h/2 - 6);
+    const x = i*step + 1;
+    ctx2d.beginPath(); ctx2d.moveTo(x, h/2 - a); ctx2d.lineTo(x, h/2 + a); ctx2d.stroke();
+  }
+}
+
+async function startRecording(){
+  if(recording) return stopRecording();
+  sig = []; peakHz = 0; tick = 0;
+  try{
+    stream = await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false, noiseSuppression:false, autoGainControl:false}});
+  }catch(e){
+    micStage.textContent = "The Application was unable to open the recording device.";
+    recIntroFallback();
+    return;
+  }
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  const src = audioCtx.createMediaStreamSource(stream);
+  analyser = audioCtx.createAnalyser();
+  analyser.fftSize = 2048;
+  src.connect(analyser);
+  recording = true; t0 = performance.now();
+  micBtn.classList.add("rec");
+  micBtn.setAttribute("aria-label","Stop recording");
+  micStage.textContent = "Recording. Remain still.";
+  loop();
+}
+
+function loop(){
+  if(!recording) return;
+  const buf = new Uint8Array(analyser.fftSize);
+  analyser.getByteTimeDomainData(buf);
+  let sum = 0;
+  for(let i=0;i<buf.length;i++){ const v = (buf[i]-128)/128; sum += v*v; }
+  const rms = Math.sqrt(sum/buf.length);
+  lastRms = rms;
+  if(tick % 2 === 0) sig.push(rms);
+  const freq = new Uint8Array(analyser.frequencyBinCount);
+  analyser.getByteFrequencyData(freq);
+  let maxV = 0, maxI = 0;
+  for(let i=2;i<freq.length/3;i++){ if(freq[i] > maxV){ maxV = freq[i]; maxI = i; } }
+  if(maxV > 24){ peakHz = maxI * (audioCtx.sampleRate/2) / freq.length; }
+  const el = performance.now() - t0;
+  roDur.textContent = (el/1000).toFixed(2);
+  roLvl.textContent = rms.toFixed(2);
+  roPk.textContent = peakHz ? Math.round(peakHz) : "—";
+  drawScope(true);
+  tick++;
+  if(el > MAX_MS) return stopRecording();
+  rafId = requestAnimationFrame(loop);
+}
+
+function stopRecording(silent){
+  if(!recording){ if(silent) return; return; }
+  recording = false;
+  cancelAnimationFrame(rafId);
+  const el = performance.now() - t0;
+  if(stream) stream.getTracks().forEach(t=>t.stop());
+  if(audioCtx) audioCtx.close();
+  stream = null; audioCtx = null;
+  micBtn.classList.remove("rec");
+  micBtn.setAttribute("aria-label","Begin recording");
+  drawScope(false);
+  if(silent) return;
+  if(el < MIN_MS || sig.length < 4){
+    micStage.textContent = "Insufficient signal. The Application requires a sample.";
+    return;
+  }
+  const rms = sig.reduce((a,b)=>a+b,0)/sig.length;
+  if(rms < 0.006){
+    micStage.textContent = "Sensing interference. Please do a safety wipe just to be sure.";
+    return;
+  }
+  runAnalysis({dur: el/1000, rms, peak: peakHz || 180 + rms*900, sig: sig.slice()});
+}
+
+function recIntroFallback(){
+  const p = document.createElement("p");
+  p.className = "fine";
+  p.style.marginTop = ".8rem";
+  p.textContent = "Microphone access is essential to our work. We cannot proceed without it. You may instead submit a Simulated Sample. Simulated Samples are not admitted to the reference database, per section 3.2 of the Terms.";
+  if(!document.getElementById("fallbackNote")){ p.id = "fallbackNote"; recActions.parentNode.insertBefore(p, recActions); }
+}
+
+function simulate(){
+  const n = 40 + Math.floor(Math.random()*70);
+  const arr = [];
+  const attack = 0.18 + Math.random()*0.5;
+  for(let i=0;i<n;i++){
+    const env = Math.pow(Math.max(0,1 - i/n), 1.4 + Math.random());
+    arr.push(Math.max(0, attack * env * (0.55 + Math.random()*0.9)));
+  }
+  sig = arr; drawScope(false);
+  const rms = arr.reduce((a,b)=>a+b,0)/arr.length;
+  roDur.textContent = (n/30).toFixed(2); roLvl.textContent = rms.toFixed(2);
+  const pk = 90 + Math.random()*260; roPk.textContent = Math.round(pk);
+  runAnalysis({dur:n/30, rms, peak:pk, sig:arr, simulated:true});
+}
+
+/* ---------------------------- ANALYSIS THEATRE ------------------------- */
+
+const STAGES = [
+  [0,    "Anal-ysing…"],
+  [1900, "Isolating signal."],
+  [3900, "Consulting reference markers (200)."],
+  [6100, "Regional assignment."]
+];
+let pending = null, current = null, secondPass = false;
+
+function runAnalysis(features, reanalyze){
+  pending = features;
+  const extra = secondPass ? 30000 : 0;
+  const total = 8600 + extra;
+  progBar.hidden = false; analStage.hidden = false;
+  micBtn.disabled = true; micStage.textContent = "";
+  const fill = progBar.querySelector("i");
+  const start = performance.now();
+  let stageIdx = -1;
+  if(secondPass) analStage.textContent = "Conducting second pass.";
+  const timer = setInterval(()=>{
+    const el = performance.now() - start;
+    fill.style.width = Math.min(100, (el/total)*100) + "%";
+    if(!secondPass){
+      for(let i=STAGES.length-1;i>=0;i--){
+        if(el >= STAGES[i][0] && stageIdx !== i){ stageIdx = i; analStage.textContent = STAGES[i][1]; break; }
+      }
+    }
+    if(el >= total){
+      clearInterval(timer);
+      progBar.hidden = true; analStage.hidden = true; micBtn.disabled = false;
+      fill.style.width = "0%"; secondPass = false;
+      const r = interpret(features, reanalyze || 0);
+      commit(r);
+    }
+  }, 120);
+}
+
+function commit(r){
+  current = r;
+  S.readings.push(r);
+  if(!S.calibId) S.calibId = String(fnv(String(Date.now())));
+  save();
+  renderReading();
+  go("reading");
+}
+
+/* ---------------------------- RENDER: READING -------------------------- */
+
+function renderReading(){
+  const r = current; if(!r) return;
+  const slot = document.getElementById("readingSlot");
+  const idx = S.readings.lastIndexOf(r);
+  const num = readingNumber(idx < 0 ? S.readings.length-1 : idx);
+  const rh = consecutiveRhineland();
+  let html = "";
+
+  if(r.region === "Rhineland" && rh >= 5){
+    html += '<div class="again"><p>Rhineland. Again.</p></div><div style="height:1.6rem"></div>';
+  }
+
+  html += '<div class="reading' + (r.tier==="rare" ? " unusual" : "") + '">';
+  if(r.tier === "rare") html += '<span class="stamp">Unusual</span>';
+  html += '<div class="reading-h"><span>Reading #' + num.toLocaleString() + '</span><span>' +
+          new Date(r.t).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"}) + '</span></div>';
+  html += '<div class="reading-meta">Duration: ' + r.dur + 's · Level: ' + r.level +
+          ' · Peak: ' + r.peak + 'Hz · Resonance: ' + r.resonance +
+          ' · Family: ' + r.family + ' (' + r.profile + ')</div>';
+  html += '<p class="reading-label">Interpretation</p>';
+  html += '<p class="reading-body">' + r.text + '</p>';
+  html += '<div class="reading-foot"><span>Confidence: ' + r.confidence + '% · Panel review available</span>' +
+          '<span>Region: ' + r.region + '</span></div>';
+  html += '<p style="margin:.9rem 0 0"><a class="method-link" href="#/method" data-nav>Learn more about our method.</a></p>';
+  html += '</div>';
+
+  if(r.tier === "rare"){
+    html += '<div class="note" style="margin-top:1.4rem"><p><b>Analysis complete. The reading is unusual.</b></p>' +
+      '<p>We do not use this word often. Your signature contains a characteristic our engine could not place within its normal range.</p>' +
+      '<p>This is not cause for concern. It is cause for attention.</p>' +
+      '<p style="margin:0">A panel has been convened.</p></div>';
+  }
+  if(r.region !== "Rhineland"){
+    html += '<div class="note" style="margin-top:1.4rem"><p style="margin:0">This is an uncommon result. A panel has been convened automatically. Please do not share these findings until review is complete.</p></div>';
+  }
+  if(r.simulated){
+    html += '<p class="fine" style="margin-top:1rem">Submitted as a Simulated Sample. Not admitted to the reference database.</p>';
+  }
+  slot.innerHTML = html;
+  document.getElementById("panelSlot").innerHTML = "";
+}
+
+/* ---------------------------- RENDER: ANALYSIS ------------------------- */
+
+function renderAnalysis(){
+  document.getElementById("sWind").textContent = windScore();
+  document.getElementById("sCount").textContent = S.readings.length;
+  document.getElementById("sStreak").textContent = streak();
+  const last = S.readings[S.readings.length-1];
+  document.getElementById("sRegion").textContent = last ? last.region.split(" ")[0] : "—";
+  document.getElementById("certState").textContent = level();
+  document.getElementById("certNext").textContent = nextRequirement();
+  const lv = level();
+  const on = lv==="Sommelier"?3:lv==="Journeyman"?2:lv==="Apprentice"?1:0;
+  document.querySelectorAll("#certTrack i").forEach((i,n)=>i.classList.toggle("on", n<on));
+
+  const slot = document.getElementById("histSlot");
+  if(!S.readings.length){ slot.innerHTML = '<p class="empty">No emissions recorded. The database awaits your contribution.</p>'; return; }
+  slot.innerHTML = S.readings.slice().reverse().map((r)=>{
+    const i = S.readings.indexOf(r);
+    return '<div class="hist-item" data-i="' + i + '" tabindex="0" role="button">' +
+      '<time>' + new Date(r.t).toLocaleDateString(undefined,{month:"short",day:"numeric"}) + ' · ' + r.region.split(" ")[0] + '</time>' +
+      '<p>' + r.text + '</p></div>';
+  }).join("");
+  slot.querySelectorAll(".hist-item").forEach(el=>{
+    const open = ()=>{ current = S.readings[+el.dataset.i]; renderReading(); go("reading"); };
+    el.addEventListener("click", open);
+    el.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); open(); } });
+  });
+}
+
+/* ---------------------------- RENDER: HERITAGE ------------------------- */
+
+function renderHeritage(){
+  const slot = document.getElementById("heritageResult");
+  const last = S.readings[S.readings.length-1];
+  if(!last){ slot.innerHTML = '<p class="empty">No signature on file. Provide a reading to receive a regional assignment.</p>'; return; }
+  const rh = consecutiveRhineland();
+  let h = '<div class="reading" style="margin:1.4rem 0">' +
+    '<div class="reading-h"><span>Regional assignment</span><span>Bureau of Regional Classification</span></div>' +
+    '<p class="reading-label">Your signature originates in</p>' +
+    '<p style="font-size:2rem;letter-spacing:.06em;text-transform:uppercase;margin:.2rem 0 1rem">' + last.region + '</p>' +
+    '<div class="reading-foot"><span>Confidence: ' + last.confidence + '%</span><span>' +
+    (rh>1 ? rh + " consecutive" : "First assignment") + '</span></div></div>';
+  if(rh >= 5) h = '<div class="again" style="margin:1.4rem 0"><p>Rhineland. Again.</p></div>' + h;
+  slot.innerHTML = h;
+}
+
+/* ---------------------------- RENDER: WHEEL ---------------------------- */
+
+function renderWheel(){
+  document.getElementById("wheelSlot").innerHTML = FAMILIES.map(f=>
+    '<div class="fam"><h3>' + f[0] + '</h3><ul>' + f[2].map(p=>'<li>' + p + '</li>').join("") + '</ul></div>'
+  ).join("");
+}
+
+/* ---------------------------- FEED ------------------------------------- */
+
+let feedTimer = null;
+function startFeed(){
+  const slot = document.getElementById("feedSlot"), blips = document.getElementById("blips");
+  const push = ()=>{
+    const city = FEED_CITIES[Math.floor(Math.random()*FEED_CITIES.length)];
+    const line = FEED_LINES[Math.floor(Math.random()*FEED_LINES.length)];
+    const row = document.createElement("div");
+    row.className = "ticker-row";
+    row.innerHTML = '<time>' + new Date().toLocaleTimeString(undefined,{hour:"2-digit",minute:"2-digit",second:"2-digit"}) +
+                    '</time><span><b>' + city + '</b> — ' + line + '</span>';
+    slot.prepend(row);
+    while(slot.children.length > 12) slot.lastChild.remove();
+    const a = Math.random()*Math.PI*2, rr = Math.random()*70;
+    const c = document.createElementNS("http://www.w3.org/2000/svg","circle");
+    c.setAttribute("cx", 100 + Math.cos(a)*rr); c.setAttribute("cy", 100 + Math.sin(a)*rr*0.85);
+    c.setAttribute("r", 2.4); c.setAttribute("opacity","0.9");
+    blips.appendChild(c);
+    setTimeout(()=>c.remove(), 4200);
+  };
+  slot.innerHTML = ""; for(let i=0;i<7;i++) push();
+  clearInterval(feedTimer);
+  feedTimer = setInterval(push, 1700);
+}
+function stopFeed(){ clearInterval(feedTimer); feedTimer = null; }
+
+/* ---------------------------- CERTIFICATE ------------------------------ */
+
+function renderCert(){
+  const inp = document.getElementById("certName");
+  inp.value = S.certName || "";
+  document.getElementById("certWho").textContent = S.certName || " ";
+  document.getElementById("certLvl").textContent = level();
+  const d = new Date(), n = d.getDate();
+  const suf = (n%10===1&&n!==11)?"st":(n%10===2&&n!==12)?"nd":(n%10===3&&n!==13)?"rd":"th";
+  document.getElementById("certDate").textContent = "Granted this " + n + suf + " day of " +
+    d.toLocaleString(undefined,{month:"long"}) + ", " + d.getFullYear();
+}
+
+/* ---------------------------- EXAM ------------------------------------- */
+
+function renderExam(){
+  const slot = document.getElementById("examSlot");
+  if(S.exam.passed){
+    slot.innerHTML = '<div class="note"><p style="margin:0">You have passed the examination. Your result is on file. The Bureau does not release marks.</p></div>' +
+      '<p><a class="btn ghost sm" href="#/certificate" data-nav>Wall certificate</a></p>';
+    return;
+  }
+  slot.innerHTML = '<form id="examForm">' + EXAM.map((q,i)=>
+    '<fieldset style="border:1px solid var(--rule-2);padding:1rem 1.2rem;margin:0 0 1rem"><legend class="mono" style="font-size:.72rem;letter-spacing:.12em;padding:0 .4rem">Question ' + (i+1) + '</legend>' +
+    '<p style="margin:0 0 .7rem">' + q.q + '</p>' +
+    q.a.map((a,j)=>'<label style="display:block;font-size:.94rem;padding:.15rem 0"><input type="radio" name="q'+i+'" value="'+j+'"> ' + a + '</label>').join("") +
+    '</fieldset>').join("") +
+    '<button class="btn sm" type="submit">Submit examination</button></form><div id="examResult"></div>';
+  document.getElementById("examForm").addEventListener("submit", e=>{
+    e.preventDefault();
+    let score = 0;
+    EXAM.forEach((q,i)=>{ const sel = document.querySelector('input[name=q'+i+']:checked'); if(sel && +sel.value === q.c) score++; });
+    const pass = score >= 4;
+    if(pass){ S.exam.passed = true; save(); }
+    document.getElementById("examResult").innerHTML = '<div class="note"><p style="margin:0">' +
+      (pass ? "Result: pass. Your certification has been advanced, subject to reading requirements. The Bureau does not release marks."
+            : "Result: not passed. One retake is permitted per calendar month. The Bureau does not release marks.") + '</p></div>';
+    if(pass) setTimeout(renderExam, 1600);
+  });
+}
+
+/* ---------------------------- SHARE CARD ------------------------------- */
+
+function shareCard(){
+  const r = current; if(!r) return;
+  const c = document.getElementById("shareCanvas"), x = c.getContext("2d");
+  x.fillStyle = "#F7F5F0"; x.fillRect(0,0,1200,630);
+  x.strokeStyle = "#16150F"; x.lineWidth = 3; x.strokeRect(28,28,1144,574);
+  x.fillStyle = "#7A7568"; x.font = "22px Georgia, serif";
+  x.fillText("THE FART WHISPERER", 76, 104);
+  x.fillText(r.family.toUpperCase() + " · " + r.region.toUpperCase(), 76, 140);
+  // waveform
+  x.strokeStyle = "#16150F"; x.lineWidth = 3;
+  const n = r_sigLen(), step = 1048 / Math.max(n,60);
+  for(let i=0;i<n;i++){
+    const a = Math.min(1, (sig[i]||0)*3.4) * 70;
+    const px = 76 + i*step;
+    x.beginPath(); x.moveTo(px, 250-a); x.lineTo(px, 250+a); x.stroke();
+  }
+  x.fillStyle = "#16150F"; x.font = "italic 44px Georgia, serif";
+  wrapText(x, r.text, 76, 390, 1048, 58);
+  x.fillStyle = "#7A7568"; x.font = "20px Georgia, serif";
+  x.fillText("Confidence: " + r.confidence + "%", 76, 552);
+  const t = "A flatulinguistics company";
+  x.fillText(t, 1124 - x.measureText(t).width, 552);
+  const a = document.createElement("a");
+  a.download = "fart-whisperer-reading.png";
+  a.href = c.toDataURL("image/png");
+  a.click();
+}
+function r_sigLen(){ return Math.min(sig.length, 160) || 0; }
+function wrapText(x, text, px, py, maxW, lh){
+  const words = text.split(" "); let line = "", y = py;
+  for(const w of words){
+    const test = line + w + " ";
+    if(x.measureText(test).width > maxW && line){ x.fillText(line.trim(), px, y); line = w + " "; y += lh; }
+    else line = test;
+  }
+  x.fillText(line.trim(), px, y);
+}
+
+/* ---------------------------- PANEL / REASSESS ------------------------- */
+
+function escalate(){
+  const slot = document.getElementById("panelSlot");
+  const month = new Date().toISOString().slice(0,7);
+  if(S.escalations[month]){
+    slot.innerHTML = '<div class="note"><p style="margin:0">Any User may escalate one (1) Reading per calendar month. Your escalation for this period has been used.</p></div>';
+    return;
+  }
+  S.escalations[month] = true; save();
+  slot.innerHTML = '<div class="note"><p style="margin:0">A panel has been convened. Three certified users will review your reading independently. Panels are blind by design. Consensus is required before an interpretation is amended.</p></div>';
+  setTimeout(()=>{
+    slot.innerHTML = '<div class="note"><p style="margin:0"><b>A panel has reached consensus on your reading.</b> The reading stands. Panel decisions are final. There is no body above the Panel.</p></div>';
+  }, 9000);
+}
+
+function reassess(){
+  const slot = document.getElementById("reassessSlot");
+  slot.innerHTML = '<div class="note"><p style="margin:0">Your Reassessment has been queued. Reassessment is conducted manually.</p></div>';
+  setTimeout(()=>{
+    slot.innerHTML = '<div class="reading" style="margin-top:1.2rem">' +
+      '<div class="reading-h"><span>Reassessment</span><span>Manual review</span></div>' +
+      '<p>Your Reassessment is complete. Three analysts reviewed your signature independently.</p>' +
+      '<p style="font-size:1.5rem;margin:.6rem 0">Result: Rhineland.</p>' +
+      '<div class="reading-foot"><span>Reassessment fees are non-refundable.</span></div></div>';
+  }, 5200);
+}
+
+/* ---------------------------- MISC ------------------------------------- */
+
+function renderRhinelandDay(){
+  const now = new Date();
+  let y = now.getFullYear();
+  let d = new Date(y, 2, 14);
+  if(d < now) d = new Date(y+1, 2, 14);
+  const days = Math.ceil((d - now) / 86400000);
+  document.getElementById("rdCountdown").textContent =
+    days === 0 ? "Rhineland Day is today. Log a reading at noon, local time."
+               : days + " day" + (days===1?"":"s") + " until Rhineland Day.";
+}
+
+/* ---------------------------- WIRING ----------------------------------- */
+
+document.addEventListener("click", e=>{
+  const a = e.target.closest("a[data-nav]");
+  if(a){ /* hash links handled natively */ }
+});
+
+micBtn.addEventListener("click", startRecording);
+document.getElementById("simBtn").addEventListener("click", simulate);
+document.getElementById("reanalyzeBtn").addEventListener("click", ()=>{
+  if(!current) return go("record");
+  const f = {dur:parseFloat(current.dur), rms:parseFloat(current.level), peak:current.peak,
+             sig: sig.length ? sig : [0.2,0.3,0.25,0.18,0.1], simulated:current.simulated};
+  go("record"); runAnalysis(f, (current.reanalyze||0) + 1);
+});
+document.getElementById("secondPassBtn").addEventListener("click", ()=>{
+  if(!current) return go("record");
+  secondPass = true;
+  const f = {dur:parseFloat(current.dur), rms:parseFloat(current.level), peak:current.peak,
+             sig: sig.length ? sig : [0.2,0.3,0.25,0.18,0.1], simulated:current.simulated};
+  go("record"); runAnalysis(f, (current.reanalyze||0) + 1);
+});
+document.getElementById("escalateBtn").addEventListener("click", escalate);
+document.getElementById("shareBtn").addEventListener("click", shareCard);
+document.getElementById("reassessBtn").addEventListener("click", reassess);
+document.getElementById("printCert").addEventListener("click", ()=>window.print());
+document.getElementById("certName").addEventListener("input", e=>{
+  S.certName = e.target.value; save();
+  document.getElementById("certWho").textContent = S.certName || " ";
+});
+document.getElementById("wipeBtn").addEventListener("click", function(){
+  const stages = [
+    "Are you sure? Your Signature took " + (S.readings.length || 412) + " Readings to build.",
+    "Your Readings will be removed. Your Emissions remain, anonymized, in the research database. This cannot be undone."
+  ];
+  const n = +(this.dataset.n || 0);
+  if(n < 2){ this.dataset.n = n+1; this.textContent = stages[n]; return; }
+  S = Object.assign({}, DEF); save(); current = null;
+  this.textContent = "Deleted. Thank you for your contribution to the field.";
+  this.disabled = true;
+});
+
+// streak notice in the bar
+(function noticeBar(){
+  const bar = document.getElementById("noticeBar");
+  const last = S.readings[S.readings.length-1];
+  if(last){
+    const days = Math.floor((Date.now() - last.t) / 86400000);
+    if(days >= 3){ bar.textContent = "You haven't logged in " + days + " days. We're not angry, just concerned."; return; }
+  }
+  const now = new Date();
+  if(now.getMonth() === 2 && now.getDate() === 14){ bar.textContent = "Rhineland Day is observed today. Users are asked to log a reading at noon, local time. Participation is not required."; }
+})();
+
+drawScope(false);
+route();
+
+</script>
+</body>
+</html>
