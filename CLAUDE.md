@@ -130,3 +130,57 @@ aimed at a real user.
   It is a comedy app; keep it that way.
 - Everything in the product is fiction except the Roland of Hemingstone history, which is
   real and sourced in the Final Copy. Keep that line clean if any of this goes public.
+
+## Mobile (added 2026-07-29, night — the Android wrap)
+
+`mobile/` is the Capacitor wrap. **The root index.html stays the single source of truth** —
+`mobile/tools/sync-web.js` copies it into `mobile/www/` and appends one additive native shim
+(haptics via MutationObserver, edge-to-edge safe-area padding). Never edit `mobile/www/index.html`
+by hand; never fork the app.
+
+Decisions, made by Adam 2026-07-29 (do not re-litigate):
+- **iOS is in scope** → Capacitor route (not TWA), so the same codebase can reach iOS from a
+  separate, disposable Apple account later. TestFlight before App Store.
+- **Personal Play account** (not Veritas) — accepts the 12-tester/14-day gate; the clock is
+  pure waiting and runs in parallel with everything.
+- **The replay accusation ships in v1**, override intact; closed-test data re-checks the
+  thresholds before production.
+
+Facts: appId `com.thewordhoard.ventriloquium`, target/compile SDK 36 (meets the 31 Aug 2026
+Play requirement), versionName 1.0.0. Permissions: RECORD_AUDIO, MODIFY_AUDIO_SETTINGS,
+VIBRATE, INTERNET (kept for v1 as safe default; stripping INTERNET entirely is a v1.1
+candidate once real hardware confirms — an app with no network permission is the strongest
+privacy proof there is). Mic works with zero native code: Capacitor's BridgeWebChromeClient
+grants WebView AUDIO_CAPTURE once the manifest declares the permissions.
+
+Signing: upload keystore in `..\fart-whisperer-keys\` (sibling folder, never in git) with
+password + keystore.properties + the built v1.0.0 AAB/APK. `android/keystore.properties` is
+gitignored; example file provided. BACK UP the keys folder off this laptop.
+
+Store: `mobile/store/SUBMISSION-PACK.md` is the paste-by-paste Console walkthrough.
+`mobile/store/privacy.html` is the REAL privacy policy (same real-page mechanism as the
+accessibility page) — it must be in the Cloudflare deploy folder before submission; the
+listing URL is https://ventriloquium.thewordhoard.com/privacy.html. Listing copy includes
+one satire-disclosure paragraph (Play metadata policy; the deadpan-only variant is a
+misleading-claims risk).
+
+Rebuild: `node tools/sync-web.js && npx cap sync android && cd android && gradlew bundleRelease`.
+Both Playwright harnesses passed on the shimmed www copy 2026-07-29 (22/22 gate, 27 routes,
+zero console errors). Re-run them after every sync.
+
+### Mobile addendum, 30 Jul (overnight)
+
+- The app gained real home-screen support IN THE CANONICAL FILE: `manifest.webmanifest` +
+  `apple-touch-icon.png` + icon-192/512 (+maskable) referenced from the head, and a
+  "Mobile shell" CSS block (safe-area env() padding, tap-highlight, text-size-adjust).
+  These asset files live at repo root AND in dist/ AND in mobile/www/ — additive deploy
+  furniture; the app itself is still one file and still opens by double-click.
+- Deployed to Cloudflare Pages 30 Jul via API token (deployment 71554f1a): the live site
+  serves the 40-route app, the manifest, the icons, and the REAL privacy policy at
+  /privacy (privacy.html; Pages serves it at the clean URL). Store listing uses
+  https://ventriloquium.thewordhoard.com/privacy
+- Wrap + signed AAB/APK rebuilt from the 40-route canonical; both harnesses green on the
+  exact www copy that ships. Builds refreshed in `..\fart-whisperer-keys\release-v1.0.0\`.
+- RACE WARNING, learned tonight: two Claude sessions editing this repo's docs in the same
+  evening overwrote each other's CLAUDE.md and _STATUS additions. Before writing either
+  file, RE-READ it from disk first, and merge — never write from a copy staged hours ago.

@@ -60,10 +60,9 @@ Suggested order: 04-reading first (it's the product), then 01-home, 02-record, 0
 
 **Category:** Entertainment. **Tags:** pick from Console suggestions (Comedy if offered).
 **Contact email:** adamkinunen@gmail.com
-**Privacy policy URL:** https://ventriloquium.thewordhoard.com/privacy.html
-← `privacy.html` in this folder must be added to the Cloudflare Pages deploy folder and
-re-deployed BEFORE submitting. It is the real policy, written outside the fiction, same
-mechanism as the accessibility page.
+**Privacy policy URL:** https://ventriloquium.thewordhoard.com/privacy
+← LIVE as of 30 Jul (deployed with the iPhone-shell release). It is the real policy,
+written outside the fiction, same mechanism as the accessibility page.
 
 ## 3 · App content declarations (Policy → App content)
 
@@ -113,9 +112,10 @@ which is a stronger position than most apps on the store.
 
 ## 6 · Things that changed vs. the web app, for the record
 
-- One additive `<script id="fw-native-shim">` (haptics + edge-to-edge safe areas) appended
-  by `tools/sync-web.js`. The app file is otherwise byte-identical to the repo root
-  index.html. Both Playwright harnesses pass on the shimmed copy (22/22 gate, 27 routes).
+- One additive `<script id="fw-native-shim">` (haptics; safe areas now live in the app's
+  own CSS since 30 Jul) appended by `tools/sync-web.js`. The app file is otherwise
+  byte-identical to the repo root index.html. Both Playwright harnesses pass on the shimmed
+  copy (22/22 gate, all routes — 40 as of the 30 Jul content expansion).
 - Permissions: RECORD_AUDIO + MODIFY_AUDIO_SETTINGS (mic via Capacitor's built-in WebView
   grant path), VIBRATE (haptics), INTERNET (Capacitor default, kept for v1 as the safe
   choice; stripping it is a v1.1 candidate once real hardware confirms nothing needs it —

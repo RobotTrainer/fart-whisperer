@@ -12,7 +12,8 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Whisperer">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="manifest" href='data:application/manifest+json,{"name":"The Fart Whisperer","short_name":"Whisperer","start_url":"./","display":"standalone","background_color":"%23F7F5F0","theme_color":"%23F7F5F0"}'>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23F7F5F0'/><text y='.9em' x='50' text-anchor='middle' font-size='72' font-family='Georgia,serif' fill='%2316150F'>F</text></svg>">
 <style>
 :root{
@@ -211,6 +212,14 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
   .cert{border-color:#000;page-break-inside:avoid}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* Mobile shell (30 Jul): home-screen installs draw edge-to-edge, so the paper
+   extends under the notch and home bar and content pads clear of both.
+   env() resolves to 0 in an ordinary browser tab — a no-op on desktop.
+   Presentation only; no copy, no engine. */
+html{background:#F7F5F0;-webkit-text-size-adjust:100%}
+body{padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom);
+  padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
 </style>
 </head>
 <body>
