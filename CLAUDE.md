@@ -22,12 +22,13 @@ no build step, no dependencies, no server. It opens by double-click and deploys 
 Do not add a bundler until there is a reason that survives a night's sleep.
 
 ```
-index.html                  everything (~104 KB)
+index.html                  everything (~163 KB)
 README.md                   how to run and deploy
 CLAUDE.md                   this file
 HANDOFF-mobile-roadmap.md   Android-then-iOS battle plan + store research
 tools/test-gate.js          admissibility + duration tests (real AnalyserNode)
 tools/test-smoke.js         all routes, full flow, zero console errors
+tools/test-ledger.js        The Ledger: backfill, simulated-exclusion, manual entry, CSV, auto-log
 tools/engrave.py            scan -> SVG ornament pipeline
 ```
 
@@ -45,6 +46,8 @@ softened (see `careers`); the Bolivia field notes end in cheerful dissociation a
 profiles that "can be seen, cannot be printed" (protects the Konami egg — never name them in
 copy); the Fourth Silence is never explained; "Is this a joke? / No." and "same reading four
 days in a row / Then it is worth considering" are shared between the home FAQ and `letters`.
+
+`ledger` is NOT pure-copy — it is a real feature with JS. See "## The Ledger" below.
 
 Inside `index.html`, in order: `<style>` (design tokens at the top under `:root`),
 one `<section class="page">` per route, then `<script>` — content data first
@@ -82,6 +85,10 @@ recorder, analysis theater, and the renderers.
   form is dB mapped onto 0-255 against a -100dB floor, so silent bins read ~110 and a
   thousand empty high bins drown the signal. This was a real shipped-adjacent bug.
 - **Never assume 60fps.** Frame intervals are measured; rAF is not guaranteed.
+- **`freshState()` clones defaults; never `Object.assign({}, DEF)`.** `load()` and the Privacy
+  erase both go through `freshState()` (a deep clone of `DEF`) so `S`'s arrays never alias
+  `DEF`'s. Sharing them was a latent bug: a fresh user who recorded then hit erase kept their
+  data, because `S.readings === DEF.readings`. Surfaced by the Ledger's erase test; fixed 30 Jul.
 
 ## Conventions
 
@@ -92,10 +99,41 @@ recorder, analysis theater, and the renderers.
 - Never introduce randomness into a reading that is not derived from the seed — the same
   recording must always produce the same reading.
 
+## The Ledger (real page #2, added 30 Jul)
+
+A private, on-device diary of emission **frequency and intensity**, exportable as CSV for a
+clinician. It is the SECOND "real page inside the fiction" (after accessibility) — written
+straight, everything on it true. Built from the vault Build Plan + Handoff
+(`9 - Projects/Fart Whisperer/Fart Whisperer — The Ledger — Build Plan (dispatch).md` and
+`… — Handoff.md`).
+
+Non-negotiable rules (both a comedy rule AND the FDA general-wellness perimeter):
+
+- **The Ledger never jokes.** No colon readings, no Rhineland, no confidence, no institutional
+  voice. It records; it does not interpret. Comedy is by triangulation only.
+- **FDA perimeter (General Wellness, Jan 2026): no disease names anywhere, no thresholds tied
+  to meaning, measurements/counts only, "consult a professional" the only advice.** Do not
+  weaken. The footer "not a medical device" line is now the literal legal perimeter.
+- **No Ledger datum ever enters a seed.** The engine is theater; the Ledger is not; they never touch.
+- **Comedy = exactly THREE touches, outside the Ledger, and no fourth:** FAQ ("The Ledger
+  records. It does not interpret. We consider this a limitation."), changelog v3.1.0 ("…exempt
+  from interpretation. This was not our preference."), and the Status row ("The Ledger —
+  Operational", the only row that is simply true). Do NOT let the Director/hearing comment on it.
+
+Implementation: `S.ledger[]` + `S.ledgerBackfilled` in `DEF`. `commit()` auto-logs every
+NON-simulated reading (`ledEntryFromReading`). First `renderLedger()` backfills existing
+non-simulated `S.readings` once (deduped by timestamp, so it can't double up with auto-log).
+Manual entries carry subjective intensity 1–5, fixed tag list (`LEDGER_TAGS`, 11 dietary/symptom
+tags — no disease-flavoured tags ever), optional note. 30-day daily-count canvas bar chart
+(no trendline — a trendline is one step from interpretation). CSV via `ledgerCSVString()`
+(RFC 4180, split from `ledgerCSV()` so it is unit-testable). Privacy erase clears it via
+`freshState()`. Deferred (do NOT build without a sober session): Sentinel→Ledger overnight
+logging (consent questions), reminders, any trend commentary, PDF export.
+
 ## Testing
 
-Two Playwright harnesses, both green 2026-07-29. Playwright's bundled browser may not match
-the preinstalled one — both scripts discover `/opt/pw-browsers/chromium-*` and set
+Three Playwright harnesses, all green 2026-07-30. Playwright's bundled browser may not match
+the preinstalled one — the scripts discover `/opt/pw-browsers/chromium-*` and set
 `executablePath`. Do not run `playwright install`.
 
 - `node tools/test-gate.js` — 22 cases. Synthesises PCM, plays it through a **real
@@ -103,11 +141,15 @@ the preinstalled one — both scripts discover `/opt/pw-browsers/chromium-*` and
   verified is exactly what ships. Covers speech, laughter, cough, whistle, silence, the
   adversarial false-rejection cases (staccato, wet), fart-plus-laughter at two gap widths,
   and replay simulated with real biquad filters. Also asserts sounded-duration accuracy.
-- `node tools/test-smoke.js` — all 40 routes render exactly one page, full simulated-sample
+- `node tools/test-smoke.js` — all 41 routes render exactly one page, full simulated-sample
   flow, date on the card, share card, gate helpers present, zero console errors.
+- `node tools/test-ledger.js` — 13 checks: backfill excludes simulated + is idempotent,
+  auto-log on commit (real yes / simulated no) + the reading-page Ledger line, manual entry
+  with intensity+tags+note, CSV header exact + comma/quote round-trip, and erase clears the
+  Ledger with fresh arrays leaving DEF pristine.
 
-Keep both green. The gate is the only thing standing between this app and a false accusation
-aimed at a real user.
+Keep all three green. The gate is the only thing standing between this app and a false
+accusation aimed at a real user.
 
 ## Next steps
 
@@ -117,12 +159,15 @@ aimed at a real user.
    1 so detection declines rather than accuses — but unproven in the field).
 2. Android, then iOS. See `HANDOFF-mobile-roadmap.md`. **Apple guideline 4.3 names fart apps
    as grounds for Developer Program removal** — never submit from an account anything else
-   depends on.
+   depends on. **The Ledger is the iOS 4.3 repositioning spine** — lead the listing with the
+   GI diary, not the novelty.
 3. Phase 2 — the Practice: notifications, Sentinel Mode, the Regimen, richer share cards.
 4. Phase 3 — the Society: accounts, then real Panels (three humans, blind, to consensus).
 5. Before charging real money or publishing real user audio, read the honesty ledger in
    the architecture document.
 6. Verify the Roland of Hemingstone history against primary sources before publishing.
+7. Ledger: phone smoke test (chart on small screens; CSV download — iOS Safari may open rather
+   than download, acceptable); then decide Sentinel→Ledger; then a dietitian reviews one export.
 
 ## Guardrails
 
@@ -184,3 +229,15 @@ zero console errors). Re-run them after every sync.
 - RACE WARNING, learned tonight: two Claude sessions editing this repo's docs in the same
   evening overwrote each other's CLAUDE.md and _STATUS additions. Before writing either
   file, RE-READ it from disk first, and merge — never write from a copy staged hours ago.
+
+### Ledger addendum, 30 Jul
+
+- The Ledger (real page #2) shipped in the canonical `index.html` → 41 routes. Details in
+  "## The Ledger" above. Engine untouched; three harnesses green (22 gate, 41 smoke, 13 ledger).
+- **A Ledger re-sync into the wrap is still needed:** run `node tools/sync-web.js && npx cap
+  sync android && cd android && gradlew bundleRelease` so the Android build carries the Ledger,
+  then re-run the harnesses on `mobile/www`. Not done in the authoring (cloud) session.
+- Rebased carefully onto the 30-Jul mobile-shell head (external manifest + apple-touch + safe-area
+  CSS) — heeded the RACE WARNING; diffed device-side before writing. Root `index.html` == `dist/index.html`.
+- Rollback: `index.prev.html` (repo root, NOT in dist, not deployed) is the pre-Ledger 40-route
+  build. To roll back: copy it over `index.html` and `dist/index.html` and redeploy.

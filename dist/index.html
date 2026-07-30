@@ -166,6 +166,19 @@ dl.faq dd{margin:.15rem 0 0;color:var(--ink-2)}
 .stat{background:#fff;padding:1rem}
 .stat b{display:block;font-family:var(--mono);font-size:1.5rem;font-weight:normal;letter-spacing:-.02em}
 .stat span{font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.led-row{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;border-bottom:1px solid var(--rule-2);padding:.7rem 0}
+.led-main{display:flex;flex-direction:column;gap:.15rem;font-size:.9rem}
+.led-when{font-family:var(--mono);font-size:.8rem;color:var(--ink-2)}
+.led-src{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.led-meas{font-family:var(--mono);font-size:.82rem}
+.led-tags{font-size:.82rem;color:var(--ink-2)}
+.led-note{font-size:.85rem;color:var(--ink-2);font-style:italic}
+.led-rm{flex:none}
+#ledgerChart{width:100%;height:auto;border:1px solid var(--rule-2);background:#F7F5F0;display:block;margin-top:.6rem}
+.led-form label{display:block;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin:1rem 0 .2rem}
+.led-int,.led-tagbox{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin:.3rem 0}
+.led-int label,.led-tagbox label{display:inline-flex;align-items:center;gap:.35rem;margin:0;font-size:.9rem;letter-spacing:0;text-transform:none;color:var(--ink)}
+#ledgerNote{width:100%;font:inherit;font-size:.92rem;padding:.5rem;border:1px solid var(--rule);background:#fff;box-sizing:border-box}
 .wheel{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1.4rem;margin-top:1.4rem}
 .fam h3{margin:0 0 .4rem;font-size:.82rem;letter-spacing:.15em;text-transform:uppercase;border-bottom:1px solid var(--rule);padding-bottom:.3rem}
 .fam ul{margin:0;padding:0;list-style:none;font-size:.85rem;color:var(--ink-2);columns:1}
@@ -281,6 +294,7 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
     <div class="feat"><h3><a href="#/analysis" data-nav>Your Wind Score</a></h3><p>One number. Updated daily. Explained nowhere.</p></div>
     <div class="feat"><h3><a href="#/regimen" data-nav>The Regimen</a></h3><p>A guided dietary program for users seeking greater control of their signature — maximization or minimization. Strategies, tools, and support. Goals are not judged.</p></div>
     <div class="feat"><h3><a href="#/sentinel" data-nav>Sentinel Mode</a></h3><p>The Application can remain listening overnight. Events are logged and interpreted at dawn.</p></div>
+    <div class="feat"><h3><a href="#/ledger" data-nav>The Ledger</a></h3><p>A plain record of frequency and intensity, kept on your device and exportable for your physician. The Ledger is not interpreted.</p></div>
 
     <hr>
     <h2>From our users</h2>
@@ -300,6 +314,7 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
       <dt>How does the interpretation engine work?</dt><dd>The method is <a href="#/method" data-nav>proprietary</a>.</dd>
       <dt>Is the method peer reviewed?</dt><dd>The <a href="#/journal" data-nav>Journal of Flatulinguistics</a> has reviewed it favorably.</dd>
       <dt>Do you sell my data?</dt><dd>No. See our <a href="#/privacy" data-nav>Privacy Policy</a>.</dd>
+      <dt>What is the Ledger?</dt><dd>The Ledger records. It does not interpret. We consider this a limitation.</dd>
       <dt>My results seem wrong.</dt><dd>Escalate to a panel. Three certified users will review your reading independently. Consensus is required before an interpretation is amended.</dd>
       <dt>Nothing was detected, but something happened.</dt><dd>The Application measures sound. An emission that produces no sound produces no reading. The popular literature calls these <i>silent</i>; we prefer <i>unvoiced</i>. Their existence has never been in question. Their interpretation is not within our instrument.</dd>
       <dt>Why was my sample rejected as speech?</dt><dd>Because it was speech. Speech is chosen, and this field concerns only what the body says when it has not been asked to say anything. Laughter is treated the same way, though the Application will look past it for the emission beside it.</dd>
@@ -991,6 +1006,7 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
     <h1 id="h-changelog">Changelog</h1>
     <table>
       <tbody>
+        <tr><td class="mono" style="width:6.5rem">v3.1.0</td><td>Added the Ledger. The Ledger is exempt from interpretation. This was not our preference.</td></tr>
         <tr><td class="mono" style="width:6.5rem">v3.0.0</td><td>Regional discrimination is now considered stable. No further work is planned.</td></tr>
         <tr><td class="mono">v2.4.2</td><td>Reverted 2.4.1.</td></tr>
         <tr><td class="mono">v2.4.1</td><td>Fixed an issue where certain emissions were misclassified as Rhineland. Improved low-light performance on the Global Feed. Panel review notifications now respect quiet hours.</td></tr>
@@ -1114,6 +1130,69 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
   </div>
 </section>
 
+<!-- ================= THE LEDGER (REAL) ================= -->
+<section class="page" id="p-ledger" aria-labelledby="h-ledger">
+  <div class="wrap">
+    <p class="kicker">Written plainly</p>
+    <h1 id="h-ledger">The Ledger</h1>
+    <div class="note"><p style="margin:0">The Ledger is kept plainly. Nothing on this page is interpreted, and everything on it is true.</p></div>
+
+    <p>The Ledger is a private record of frequency and intensity, kept entirely on your device. Clinicians who evaluate digestive symptoms routinely ask patients to keep exactly this kind of diary — when events occur, how often, and what was eaten near the time — usually for two to four weeks. The Ledger keeps it for you, from measurements the instrument already takes, and exports it in a form you can hand to a professional.</p>
+    <p>The Ledger does not diagnose anything, and no entry in it means anything on its own. It is a record, not an opinion. If a pattern here concerns you, take it to a doctor — that is what the export button is for.</p>
+
+    <p class="fine" id="ledgerNotice" hidden>Your existing readings have been entered into the Ledger. Only their measurements were carried over.</p>
+
+    <div class="stats">
+      <div class="stat"><b id="ledgerToday">0</b><span>Today</span></div>
+      <div class="stat"><b id="ledgerWeek">0</b><span>Past 7 days</span></div>
+      <div class="stat"><b id="ledgerMonth">0</b><span>Past 30 days</span></div>
+    </div>
+
+    <h2>Daily count, past 30 days</h2>
+    <canvas id="ledgerChart" width="900" height="220" aria-label="Daily count of Ledger entries over the past thirty days"></canvas>
+    <p class="fine" id="ledgerChartEmpty" hidden>No entries in the past 30 days.</p>
+
+    <h2>Entries</h2>
+    <div id="ledgerEntries"></div>
+
+    <h2>Add an entry</h2>
+    <p class="fine">Use this for events that occurred away from the instrument.</p>
+    <div class="led-form">
+      <label>Intensity</label>
+      <div class="led-int">
+        <label><input type="radio" name="ledgerInt" value="1"> 1 — faint</label>
+        <label><input type="radio" name="ledgerInt" value="2"> 2</label>
+        <label><input type="radio" name="ledgerInt" value="3"> 3</label>
+        <label><input type="radio" name="ledgerInt" value="4"> 4</label>
+        <label><input type="radio" name="ledgerInt" value="5"> 5 — pronounced</label>
+      </div>
+      <label>Tags</label>
+      <div class="led-tagbox">
+        <label><input type="checkbox" class="ledger-tag" value="meal"> meal</label>
+        <label><input type="checkbox" class="ledger-tag" value="snack"> snack</label>
+        <label><input type="checkbox" class="ledger-tag" value="dairy"> dairy</label>
+        <label><input type="checkbox" class="ledger-tag" value="legumes"> legumes</label>
+        <label><input type="checkbox" class="ledger-tag" value="high-fiber"> high-fiber</label>
+        <label><input type="checkbox" class="ledger-tag" value="carbonated"> carbonated</label>
+        <label><input type="checkbox" class="ledger-tag" value="alcohol"> alcohol</label>
+        <label><input type="checkbox" class="ledger-tag" value="poor sleep"> poor sleep</label>
+        <label><input type="checkbox" class="ledger-tag" value="stress"> stress</label>
+        <label><input type="checkbox" class="ledger-tag" value="bloating"> bloating</label>
+        <label><input type="checkbox" class="ledger-tag" value="discomfort"> discomfort</label>
+      </div>
+      <label for="ledgerNote">Note</label>
+      <input id="ledgerNote" type="text" maxlength="200" placeholder="Optional. 200 characters.">
+      <p style="margin-top:1rem"><button class="btn" id="ledgerAddBtn" type="button">Record in the Ledger</button></p>
+    </div>
+
+    <h2>For your physician</h2>
+    <p><button class="btn ghost" id="ledgerExport" type="button">Export CSV</button></p>
+    <p class="fine">The export contains dates, times, measurements, tags, and notes — nothing else. Interpretations are not included; they have no place in a clinical record.</p>
+
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">The Ledger is informational. It is not a medical device and does not provide medical advice. If your symptoms concern you, consult a professional. Ledger data lives in your browser's local storage and can be erased at any time from the <a href="#/privacy" data-nav>Privacy page</a>.</p>
+  </div>
+</section>
+
 <!-- ================= ACCESSIBILITY (REAL) ================= -->
 <section class="page" id="p-accessibility" aria-labelledby="h-acc">
   <div class="wrap">
@@ -1140,6 +1219,7 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
         <tr><td>Regional classification</td><td class="num">Operational</td></tr>
         <tr><td>Panel convening</td><td class="num">Operational</td></tr>
         <tr><td>The Global Feed</td><td class="num">Operational</td></tr>
+        <tr><td>The Ledger</td><td class="num">Operational</td></tr>
         <tr><td>Reassessment queue</td><td class="num">Delayed</td></tr>
         <tr><td>Manuscript tracker</td><td class="num">Decision Pending</td></tr>
       </tbody>
@@ -1269,6 +1349,7 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
       <a href="#/terms" data-nav>Terms</a>
       <a href="#/privacy" data-nav>Privacy</a>
       <a href="#/accessibility" data-nav>Accessibility</a>
+      <a href="#/ledger" data-nav>The Ledger</a>
       <a href="#/status" data-nav>System status</a>
     </nav>
     <p>© 2026 The Fart Whisperer. A flatulinguistics company.<br>
@@ -1354,12 +1435,15 @@ const EXAM = [
 /* ---------------------------- STORE ------------------------------------ */
 
 const KEY = "fw.v1";
-const DEF = {calibId:null, readings:[], escalations:{}, exam:{passed:false, last:null}, certName:"", reassessed:false, analysisRuns:0};
+const DEF = {calibId:null, readings:[], escalations:{}, exam:{passed:false, last:null}, certName:"", reassessed:false, analysisRuns:0, ledger:[], ledgerBackfilled:false};
+/* Fresh, deeply-copied defaults. Never share DEF's arrays with S, or a wipe
+   leaves the shared array populated (the readings-erase bug the Ledger surfaced). */
+function freshState(){ return JSON.parse(JSON.stringify(DEF)); }
 let S = load();
 
 function load(){
-  try{ const r = JSON.parse(localStorage.getItem(KEY)); return r ? Object.assign({},DEF,r) : Object.assign({},DEF); }
-  catch(e){ return Object.assign({},DEF); }
+  try{ const r = JSON.parse(localStorage.getItem(KEY)); return r ? Object.assign(freshState(), r) : freshState(); }
+  catch(e){ return freshState(); }
 }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
 
@@ -1456,7 +1540,7 @@ const ROUTES = ["home","record","reading","analysis","heritage","wheel","feed","
   "architecture","paper-emigrants","paper-morning","paper-bolivia","paper-latent","paper-silence",
   "regimen","careers","corrections","letters","faq-unanswered","anatolian","sentinel","memoriam",
   "guidance","hearing","press","method","changelog","pricing","terms","privacy","accessibility",
-  "status","unassigned","rhineland-day","certificate","exam","ventriloquium","404"];
+  "status","ledger","unassigned","rhineland-day","certificate","exam","ventriloquium","404"];
 
 function route(){
   let id = (location.hash || "#/").replace(/^#\/?/,"") || "home";
@@ -1477,6 +1561,7 @@ function go(path){ location.hash = "#/" + path; }
 
 function onEnter(id){
   if(id==="analysis") renderAnalysis();
+  if(id==="ledger") renderLedger();
   if(id==="heritage") renderHeritage();
   if(id==="wheel") renderWheel();
   if(id==="feed") startFeed();
@@ -2036,6 +2121,7 @@ function runAnalysis(features, reanalyze){
 function commit(r){
   current = r;
   S.readings.push(r);
+  if(!r.simulated) S.ledger.push(ledEntryFromReading(r));   // the Ledger records real measurements only
   if(!S.calibId) S.calibId = String(fnv(String(Date.now())));
   save();
   renderReading();
@@ -2069,6 +2155,9 @@ function renderReading(){
           '<span>Region: ' + r.region + '</span></div>';
   html += '<p style="margin:.9rem 0 0"><a class="method-link" href="#/method" data-nav>Learn more about our method.</a></p>';
   html += '</div>';
+  if(!r.simulated){
+    html += '<p class="fine" style="margin-top:1rem">This event was recorded to <a href="#/ledger" data-nav>your Ledger</a>.</p>';
+  }
 
   if(r.tier === "rare"){
     html += '<div class="note" style="margin-top:1.4rem"><p><b>Analysis complete. The reading is unusual.</b></p>' +
@@ -2087,6 +2176,125 @@ function renderReading(){
   }
   slot.innerHTML = html;
   document.getElementById("panelSlot").innerHTML = "";
+}
+
+/* ---------------------------- THE LEDGER (real) ----------------------- */
+/* A plain record of frequency and intensity. It is never interpreted, and
+   no Ledger datum ever enters a seed. The engine is theatre; the Ledger is
+   not, and the two do not touch. Perimeter (FDA general-wellness, Jan 2026):
+   no disease names, no thresholds tied to meaning, measurements and counts
+   only, "consult a professional" the only advice. Do not weaken. */
+const LEDGER_TAGS = ["meal","snack","dairy","legumes","high-fiber","carbonated","alcohol","poor sleep","stress","bloating","discomfort"];
+function ledEsc(s){ return String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+function ledNum(v){ const n = parseFloat(v); return isFinite(n) ? n : null; }
+function ledEntryFromReading(r){
+  return { t:r.t, src:"recorded", dur:ledNum(r.dur), level:ledNum(r.level),
+           peak:(isFinite(+r.peak)?+r.peak:null), intensity:null, tags:[], note:"" };
+}
+function ledgerBackfill(){
+  if(S.ledgerBackfilled) return false;
+  const have = new Set(S.ledger.filter(e=>e.src==="recorded").map(e=>e.t));
+  let added = 0;
+  S.readings.forEach(r=>{ if(r.simulated || have.has(r.t)) return; S.ledger.push(ledEntryFromReading(r)); have.add(r.t); added++; });
+  S.ledgerBackfilled = true; save();
+  return added > 0;
+}
+function ledgerCounts(){
+  const now = Date.now(), day = 86400000;
+  const t0 = new Date(); t0.setHours(0,0,0,0);
+  let today=0, w=0, m=0;
+  S.ledger.forEach(e=>{ if(e.t>=t0.getTime()) today++; if(e.t>=now-7*day) w++; if(e.t>=now-30*day) m++; });
+  return {today,w,m};
+}
+function drawLedgerChart(){
+  const cv = document.getElementById("ledgerChart"); if(!cv) return;
+  const ctx = cv.getContext("2d"), W = cv.width, H = cv.height;
+  ctx.clearRect(0,0,W,H); ctx.fillStyle="#F7F5F0"; ctx.fillRect(0,0,W,H);
+  const base = new Date(); base.setHours(0,0,0,0);
+  const days = [], idx = {};
+  for(let i=29;i>=0;i--){ const d=new Date(base); d.setDate(base.getDate()-i); const k=d.toDateString(); idx[k]=days.length; days.push({k,c:0}); }
+  S.ledger.forEach(e=>{ const k=new Date(e.t).toDateString(); if(k in idx) days[idx[k]].c++; });
+  const max = Math.max(1, ...days.map(d=>d.c));
+  const padL=26, padR=8, padT=10, padB=14, plotW=W-padL-padR, plotH=H-padT-padB;
+  ctx.strokeStyle="#DED8CB"; ctx.lineWidth=1; ctx.fillStyle="#8a8577"; ctx.font="11px ui-monospace,monospace"; ctx.textBaseline="middle";
+  const ticks = Math.min(max,4);
+  for(let i=0;i<=ticks;i++){ const val=Math.round(max*i/ticks), y=padT+plotH-(val/max)*plotH;
+    ctx.beginPath(); ctx.moveTo(padL,y); ctx.lineTo(W-padR,y); ctx.stroke(); ctx.fillText(String(val),4,y); }
+  const bw = plotW/days.length;
+  ctx.fillStyle="#16150F";
+  days.forEach((d,k)=>{ if(!d.c) return; const h=(d.c/max)*plotH; ctx.fillRect(padL+k*bw+bw*0.15, padT+plotH-h, bw*0.7, h); });
+}
+function renderLedger(){
+  const first = ledgerBackfill();
+  const notice = document.getElementById("ledgerNotice"); if(notice) notice.hidden = !first;
+  const c = ledgerCounts();
+  const set = (id,v)=>{ const el=document.getElementById(id); if(el) el.textContent=v; };
+  set("ledgerToday",c.today); set("ledgerWeek",c.w); set("ledgerMonth",c.m);
+  const cv = document.getElementById("ledgerChart"), empty = document.getElementById("ledgerChartEmpty");
+  if(c.m===0){ if(cv) cv.style.display="none"; if(empty) empty.hidden=false; }
+  else { if(cv) cv.style.display="block"; if(empty) empty.hidden=true; drawLedgerChart(); }
+  const list = document.getElementById("ledgerEntries");
+  if(list){
+    if(!S.ledger.length){ list.innerHTML='<p class="empty">The Ledger is empty.</p>'; }
+    else {
+      list.innerHTML="";
+      S.ledger.slice().sort((a,b)=>b.t-a.t).forEach(e=>{
+        const row=document.createElement("div"); row.className="led-row";
+        const when=new Date(e.t).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"});
+        const meas = e.src==="recorded"
+          ? (e.dur!=null?e.dur+"s":"—")+" · level "+(e.level!=null?e.level:"—")+" · "+(e.peak!=null?e.peak+" Hz":"—")
+          : (e.intensity!=null?"intensity "+e.intensity+" of 5":"—");
+        let main='<div class="led-main"><span class="led-when">'+when+'</span>'+
+          '<span class="led-src">'+(e.src==="recorded"?"Recorded":"Manual")+'</span>'+
+          '<span class="led-meas">'+meas+'</span>';
+        if(e.tags&&e.tags.length) main+='<span class="led-tags">'+e.tags.map(ledEsc).join(", ")+'</span>';
+        if(e.note) main+='<span class="led-note">'+ledEsc(e.note)+'</span>';
+        main+='</div>';
+        row.innerHTML=main;
+        const rm=document.createElement("button"); rm.className="btn ghost sm led-rm"; rm.type="button"; rm.textContent="Remove";
+        rm.onclick=()=>{ if(rm.dataset.c){ const i=S.ledger.indexOf(e); if(i>=0){ S.ledger.splice(i,1); save(); renderLedger(); } }
+          else { rm.dataset.c="1"; rm.textContent="Remove?"; setTimeout(()=>{ if(rm){ rm.dataset.c=""; rm.textContent="Remove"; } },3000); } };
+        row.appendChild(rm); list.appendChild(row);
+      });
+    }
+  }
+  const addBtn = document.getElementById("ledgerAddBtn");
+  if(addBtn) addBtn.onclick=()=>{
+    const ie=document.querySelector('input[name="ledgerInt"]:checked');
+    const intensity = ie ? parseInt(ie.value,10) : null;
+    const tags=[...document.querySelectorAll(".ledger-tag:checked")].map(x=>x.value);
+    const note=(document.getElementById("ledgerNote").value||"").slice(0,200);
+    if(intensity==null && !tags.length && !note) return;
+    S.ledger.push({ t:Date.now(), src:"manual", dur:null, level:null, peak:null, intensity, tags, note });
+    save();
+    document.querySelectorAll('input[name="ledgerInt"]').forEach(x=>x.checked=false);
+    document.querySelectorAll(".ledger-tag").forEach(x=>x.checked=false);
+    document.getElementById("ledgerNote").value="";
+    renderLedger();
+  };
+  const exp = document.getElementById("ledgerExport"); if(exp) exp.onclick = ledgerCSV;
+}
+function ledgerCSVString(){
+  const esc = s => { s = String(s==null?"":s); return /[",\n\r]/.test(s) ? '"'+s.replace(/"/g,'""')+'"' : s; };
+  const rows = [["date","time","source","duration_s","level_rms","peak_hz","intensity_1to5","tags","note"]];
+  S.ledger.slice().sort((a,b)=>a.t-b.t).forEach(e=>{
+    const d=new Date(e.t);
+    const date=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+    const time=String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0");
+    rows.push([ date, time, e.src, e.dur==null?"":e.dur, e.level==null?"":e.level, e.peak==null?"":e.peak,
+      e.intensity==null?"":e.intensity, (e.tags||[]).join(";"), e.note||"" ].map(esc));
+  });
+  return rows.map(r=>r.join(",")).join("\r\n");
+}
+function ledgerCSV(){
+  const csv = ledgerCSVString();
+  const blob = new Blob([csv], {type:"text/csv"});
+  const d = new Date();
+  const fn = "fw-ledger-"+d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")+".csv";
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = fn;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(a.href), 1000);
 }
 
 /* ---------------------------- RENDER: ANALYSIS ------------------------- */
@@ -2332,7 +2540,7 @@ document.getElementById("wipeBtn").addEventListener("click", function(){
   ];
   const n = +(this.dataset.n || 0);
   if(n < 2){ this.dataset.n = n+1; this.textContent = stages[n]; return; }
-  S = Object.assign({}, DEF); save(); current = null;
+  S = freshState(); save(); current = null;
   this.textContent = "Deleted. Thank you for your contribution to the field.";
   this.disabled = true;
 });
