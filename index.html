@@ -270,8 +270,8 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
     <div class="feat"><h3><a href="#/wheel" data-nav>The Flavor Wheel</a></h3><p>Ninety-six documented profiles across six families. Developed over four years.</p></div>
     <div class="feat"><h3><a href="#/certificate" data-nav>Certification Track</a></h3><p>Apprentice, Journeyman, Sommelier. Wall certificate included at final level.</p></div>
     <div class="feat"><h3><a href="#/analysis" data-nav>Your Wind Score</a></h3><p>One number. Updated daily. Explained nowhere.</p></div>
-    <div class="feat"><h3>The Regimen</h3><p>A guided dietary program for users seeking greater control of their signature — maximization or minimization. Strategies, tools, and support. Goals are not judged.</p></div>
-    <div class="feat"><h3>Sentinel Mode</h3><p>The Application can remain listening overnight. Events are logged and interpreted at dawn.</p></div>
+    <div class="feat"><h3><a href="#/regimen" data-nav>The Regimen</a></h3><p>A guided dietary program for users seeking greater control of their signature — maximization or minimization. Strategies, tools, and support. Goals are not judged.</p></div>
+    <div class="feat"><h3><a href="#/sentinel" data-nav>Sentinel Mode</a></h3><p>The Application can remain listening overnight. Events are logged and interpreted at dawn.</p></div>
 
     <hr>
     <h2>From our users</h2>
@@ -292,6 +292,11 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
       <dt>Is the method peer reviewed?</dt><dd>The <a href="#/journal" data-nav>Journal of Flatulinguistics</a> has reviewed it favorably.</dd>
       <dt>Do you sell my data?</dt><dd>No. See our <a href="#/privacy" data-nav>Privacy Policy</a>.</dd>
       <dt>My results seem wrong.</dt><dd>Escalate to a panel. Three certified users will review your reading independently. Consensus is required before an interpretation is amended.</dd>
+      <dt>Nothing was detected, but something happened.</dt><dd>The Application measures sound. An emission that produces no sound produces no reading. The popular literature calls these <i>silent</i>; we prefer <i>unvoiced</i>. Their existence has never been in question. Their interpretation is not within our instrument.</dd>
+      <dt>Why was my sample rejected as speech?</dt><dd>Because it was speech. Speech is chosen, and this field concerns only what the body says when it has not been asked to say anything. Laughter is treated the same way, though the Application will look past it for the emission beside it.</dd>
+      <dt>I laughed while recording.</dt><dd>Expected, and accounted for. The Application separates the events in a recording and reads the emission, not the reaction. Laughter is the natural companion of a rigorous methodology.</dd>
+      <dt>Why was my sample rejected as reproduced?</dt><dd>A genuine emission carries substantial energy below two hundred hertz. A loudspeaker of the size fitted to a telephone cannot reproduce that range, and a recording played through one arrives without its foundation. The Bureau requires an organic sample.</dd>
+      <dt>You have not answered my question.</dt><dd>Some questions are not answered here. See <a href="#/faq-unanswered" data-nav>Frequently Unanswered Questions</a>.</dd>
     </dl>
     <p style="text-align:center;margin-top:2.6rem"><a class="btn" href="#/record" data-nav>Begin Analysis</a></p>
   </div>
@@ -317,6 +322,7 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
       </div>
       <div class="bar" id="progBar" hidden><i></i></div>
       <p class="stage" id="analStage" hidden></p>
+      <div id="admitSlot"></div>
       <div class="actions no-print" id="recActions">
         <button class="btn ghost sm" id="simBtn">Simulated sample</button>
         <a class="btn ghost sm" href="#/analysis" data-nav>Prior readings</a>
@@ -387,7 +393,7 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
         <tr><td>Pannonian Basin</td><td class="num">3.3%</td></tr>
         <tr><td>Baltic Shelf</td><td class="num">2.6%</td></tr>
         <tr><td>Carpathian Interior</td><td class="num">1.9%</td></tr>
-        <tr><td>Anatolian Margin</td><td class="num">0.6%</td></tr>
+        <tr><td><a href="#/anatolian" data-nav>Anatolian Margin</a></td><td class="num">0.6%</td></tr>
         <tr><td><a href="#/unassigned" data-nav>Unassigned</a></td><td class="num">one (1)</td></tr>
       </tbody>
     </table>
@@ -419,7 +425,7 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
     <h1 id="h-wheel">The Flavor Wheel</h1>
     <p class="lede">Ninety-six documented profiles across six families. Developed over four years.</p>
     <div class="wheel" id="wheelSlot"></div>
-    <p class="fine" style="margin-top:2rem">The Latent family has four profiles. The Bureau does not expand on this.</p>
+    <p class="fine" style="margin-top:2rem">The Latent family has four profiles. The Bureau does not expand on this. Profiles no longer on the Wheel are remembered <a href="#/memoriam" data-nav>In Memoriam</a>.</p>
   </div>
 </section>
 
@@ -493,13 +499,15 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
 
     <h2>In this issue</h2>
     <div class="card"><h3><a href="#/paper" data-nav>On the Prevalence of the Rhineland Signature: A Response to Critics</a></h3><p>Manuscript FL-2024-0117. With reviewer comments.</p></div>
-    <div class="card"><h3>On the Persistence of the Rhineland Signature in Third-Generation Emigrants</h3><p>Two paragraphs. Footnoted.</p></div>
-    <div class="card"><h3>Why Morning Readings Differ: A Note on Circadian Interference</h3><p>Two paragraphs. Footnoted.</p></div>
-    <div class="card"><h3>Field Notes: Six Weeks Recording in Rural Bolivia</h3><p>Two paragraphs. Footnoted.</p></div>
-    <div class="card"><h3>The Latent Family: Notes Toward a Description</h3><p>Two paragraphs. Footnoted.</p></div>
-    <div class="card"><h3>A Taxonomy of Silence: On Readings That Do Not Arrive</h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3><a href="#/paper-emigrants" data-nav>On the Persistence of the Rhineland Signature in Third-Generation Emigrants</a></h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3><a href="#/paper-morning" data-nav>Why Morning Readings Differ: A Note on Circadian Interference</a></h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3><a href="#/paper-bolivia" data-nav>Field Notes: Six Weeks Recording in Rural Bolivia</a></h3><p>Two paragraphs. Footnoted. One of them is not footnoted.</p></div>
+    <div class="card"><h3><a href="#/paper-latent" data-nav>The Latent Family: Notes Toward a Description</a></h3><p>Two paragraphs. Footnoted.</p></div>
+    <div class="card"><h3><a href="#/paper-silence" data-nav>A Taxonomy of Silence: On Readings That Do Not Arrive</a></h3><p>Two paragraphs. Footnoted.</p></div>
     <div class="card"><h3><a href="#/about" data-nav>Roland of Hemingstone and the First Recorded Commission</a></h3><p>Runs on the About page.</p></div>
     <div class="card"><h3><a href="#/ventriloquium" data-nav>Engastrimythos: On the Belly-Voice</a></h3><p>Historical note. Two paragraphs longer than it needs to be.</p></div>
+    <div class="card"><h3><a href="#/architecture" data-nav>On the Instrument: A Technical Description of the Pipeline</a></h3><p>Systems Report T‑1. Published in full. Not peer reviewed, being true.</p></div>
+    <div class="card"><h3><a href="#/corrections" data-nav>Corrections &amp; Clarifications</a></h3><p>The record has not, to date, required correcting.</p></div>
 
     <h2>Manuscript status</h2>
     <table>
@@ -540,6 +548,341 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
     <p class="mono">Reviewer 3</p>
     <blockquote>Did not respond.</blockquote>
     <p class="mono rule-top" style="padding-top:1rem">Editorial decision: Accept.</p>
+  </div>
+</section>
+
+<!-- ================= ARCHITECTURE — SYSTEMS REPORT T-1 ============ -->
+<section class="page" id="p-architecture" aria-labelledby="h-architecture">
+  <div class="wrap">
+    <p class="kicker">Office of Public Guidance · Systems Report T‑1</p>
+    <h1 id="h-architecture">On the Instrument</h1>
+    <p class="lede">A technical description of the flatulinguistic pipeline, published in full, in answer to the suggestion that our method is a small classifier and a lookup table assembled in nine days.</p>
+
+    <div class="note"><p style="margin:0">Publication of this document is not disclosure of the <a href="#/method" data-nav>method</a>. The method remains proprietary. What follows describes the instrument. The instrument is not the method.</p></div>
+
+    <p>A laboratory we will not name has released a system it says reproduces our output, with its code and its data, and has invited the public to check the work. We accept the invitation. Below is the architecture the output requires. The reader may decide whether nine days is enough to build it.</p>
+
+    <h2>1 · The signal</h2>
+    <p>The body speaks in three registers. A telephone hears the third and faintest of them.</p>
+    <p>The first is the emission itself: not a noise but a damped oscillation of soft tissue driven by expelled gas — a reed instrument whose reed is muscle and whose bore is a closing aperture. Its pitch records the tension of the tissue and the width of the opening. Its overtones record the rate and the turbulence of the flow. Its decay records the volume expelled. The sound is lawful. It can be read backward to the body that made it.</p>
+    <p>The second is continuous: the low, ceaseless work of the gut, which a physician has always been able to hear through a stethoscope and which the instrument never stops hearing. A single emission is the punctuation at the end of a sentence the body has been speaking for thirty hours. The Office reads the sentence.</p>
+    <p>The third is chemical, and sound cannot carry it. The composition of the gas is a direct account of the organisms that produced it. No microphone will ever hear a molecule. This is the register a telephone cannot reach, and the reason the reference instrument is not a telephone.</p>
+
+    <h2>2 · The instrument, of which there are two</h2>
+    <p>The mistaking of the one instrument for the other is the whole of the misunderstanding.</p>
+    <p>The <b>reference instrument</b> is worn, not held. A band carrying twelve contact sensors reads the abdomen as a solid from twelve directions at once, so that a sound may be placed within the body and not merely detected outside it. An inertial channel measures the body's own motion and subtracts it. A chemical assay reads the third register. It is worn by reference subjects, under supervision, in the Office's own facilities. You will never own one.</p>
+    <p>The <b>consumer instrument</b> is your telephone, and it hears one channel where the reference instrument hears fourteen. It does not, for that reason, measure less. It reconstructs. The instrument in your hand has learned, from the corpus, what the array would have heard — and returns the reading the array would have returned. That a single channel can stand in for fourteen is not a shortcut. It is the result.</p>
+
+    <h2>3 · The corpus</h2>
+    <p>Between 2019 and 2026 the Office recorded 4,110,882 emissions. The figure has been published before and was not believed. Here is what it means.</p>
+    <p>Each emission in the corpus is paired with the verified interior state of the body that produced it — established not by inference but by measurement, in the clinics and wards where the interior is already examined for reasons of medicine, and, in the reference cohort, by an ingestible capsule reporting pressure and chemistry from within as it passes. Each donor's resident organisms were sequenced. The corpus therefore knows not only how an emission sounded but what community, eating what, produced it.</p>
+    <p>It is the most complete record of the human interior ever assembled. It was gathered one subject at a time, with consent, at some cost to the dignity of everyone involved, and it will not be shown to you. A system trained on four thousand samples in nine days did not have it. This is the difference the reader was asked to judge.</p>
+
+    <h2>4 · On the device</h2>
+    <p>The reading is computed where the sound is made. Nothing is transmitted. The instrument keeps summaries — numbers, from which no sound can be rebuilt — and discards the audio as fast as it arrives.</p>
+    <p>This is not a courtesy and it is not a slogan. It is the design. A recording that never leaves your device cannot be taken from us, because we were never given it. The most intimate signal a body makes stays inside the room that made it. On this point the Office has never wavered, and on this point the popular account of our method and the truth of it agree exactly.</p>
+
+    <h2>5 · The estimate</h2>
+    <p>The instrument does not read one emission alone. It cannot; a single event carries too little to be sure of anything. It carries instead a continuously corrected estimate of the interior — its contents, its motion, its chemistry — uncertain at every moment and less uncertain at the next.</p>
+    <p>The emission is the moment that estimate becomes certain. A clean, loud, unambiguous measurement arrives, and the range of what could be true inside you closes to a point. We do not interpret the sound. We interpret the body the sound revealed. The reading is the estimate, spoken aloud.</p>
+
+    <h2>6 · The panel</h2>
+    <p>Every reading is examined, before it is shown to you, by a body of independent judges that must agree. Where they agree, you receive the reading. Where they do not, you receive nothing, and the matter is escalated — as the <a href="#/terms" data-nav>Terms</a> provide — to a panel of three certified users, blind to one another, whose consensus is required before any interpretation stands. The instrument is confident. It is not, on principle, alone.</p>
+
+    <h2>7 · The feed</h2>
+    <p>Gather the anonymized signatures of a city and the instrument sees the health of a population before the city's clinics do. Illness announces itself in the interior days before the body attached to it seeks care; a shift in the collective signature runs ahead of the reports. The <a href="#/feed" data-nav>Global Feed</a> is the visible surface of this instrument, rendered gently, one emission at a time, on a turning globe.</p>
+    <p>The Office has watched a sickness cross a city on this map. The Office did not warn the city. It was not, at that time, a feature.</p>
+
+    <h2>8 · On time</h2>
+    <p>The reading is ready before a user is willing to believe it could be. So the instrument waits. The ninety seconds you spend watching it work are not, for the most part, work. They are the interval a judgment requires in order to be received as a judgment. An answer that arrives at once is not trusted, and an untrusted reading helps no one.</p>
+    <p>The Second Pass adds thirty seconds and changes nothing, because the reading was never in doubt. What the thirty seconds address is not the reading. It is you.</p>
+
+    <p class="mono rule-top" style="padding-top:1rem;margin-top:2.4rem">Statement of the Office.</p>
+    <blockquote>
+      <p>A system that assigns the Rhineland to every sample it receives will agree with ours seventy-one percent of the time. The laboratory's system does slightly better than that. We congratulate it on the margin.</p>
+      <p style="margin:0">The instrument described above produced that margin as an afterthought. It was built for the other twenty-nine.</p>
+    </blockquote>
+
+    <p style="margin-top:2rem"><a href="#/press" data-nav>Read the trade-press account of the dispute →</a></p>
+  </div>
+</section>
+
+<!-- ================= PAPER · THIRD-GENERATION EMIGRANTS ========= -->
+<section class="page" id="p-paper-emigrants" aria-labelledby="h-paper-emigrants">
+  <div class="wrap">
+    <p class="kicker">Manuscript FL-2025-0091 · The Journal of Flatulinguistics</p>
+    <h1 id="h-paper-emigrants">On the Persistence of the Rhineland Signature in Third-Generation Emigrants</h1>
+    <p>The Rhineland signature is heritable. This has been established. The present study asks whether it survives emigration, and finds that it does — in the third generation, in the fourth, and in subjects with no documented Rhineland ancestry whatsoever.<sup>1</sup></p>
+    <p>That the signature appears in populations with no connection to the Rhineland is, in our assessment, the strongest evidence yet of its reach. A weaker signature would confine itself to its region. The Rhineland does not confine itself. The Rhineland travels. We conclude that the signature is not inherited from the Rhineland but is, in some sense the field is not yet equipped to describe, the Rhineland arriving.<sup>2</sup></p>
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">1 · n = 41. All 41 resolved to the Rhineland.<br>2 · Reviewer 2 has asked us to consider whether a signature that appears in everyone, everywhere, regardless of ancestry, is a signature at all. We have considered it. We remain persuaded.</p>
+    <p style="margin-top:1.6rem"><a href="#/journal" data-nav>← Return to the Journal</a></p>
+  </div>
+</section>
+
+<!-- ================= PAPER · MORNING READINGS ==================== -->
+<section class="page" id="p-paper-morning" aria-labelledby="h-paper-morning">
+  <div class="wrap">
+    <p class="kicker">Manuscript FL-2026-0002 · The Journal of Flatulinguistics</p>
+    <h1 id="h-paper-morning">Why Morning Readings Differ: A Note on Circadian Interference</h1>
+    <p>Users report that a reading taken in the morning differs from the same emission recorded at night. We do not dispute the observation. We explain it.</p>
+    <p>The body is least guarded at dawn. Its overnight work is complete and unreviewed; the interior has not yet composed itself for the day. A morning reading therefore catches the body before it has decided what to be. This is why the morning reading is the truest reading available, and also why it is the reading users most often wish to escalate.<sup>1</sup> It is for this reason that <a href="#/record" data-nav>Sentinel Mode</a> logs through the night and reveals nothing until dawn: the Application waits for the hour at which the body cannot lie, and then it tells you what the body could not.</p>
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">1 · The two facts are not in tension. The truest reading and the least welcome reading are, in our experience, frequently the same reading.</p>
+    <p style="margin-top:1.6rem"><a href="#/journal" data-nav>← Return to the Journal</a></p>
+  </div>
+</section>
+
+<!-- ================= PAPER · RURAL BOLIVIA ====================== -->
+<section class="page" id="p-paper-bolivia" aria-labelledby="h-paper-bolivia">
+  <div class="wrap">
+    <p class="kicker">Field report · Filed from the Altiplano</p>
+    <h1 id="h-paper-bolivia">Field Notes: Six Weeks Recording in Rural Bolivia</h1>
+    <div class="qa">
+      <p class="q">Day 1.</p><p>Arrived. The altitude is considerable and the people are generous. We have come a great distance to find a signature that is not the Rhineland.</p>
+      <p class="q">Day 12.</p><p>Two hundred emissions recorded across four villages. All two hundred resolve to the Rhineland. The villagers have never heard of the Rhineland. When we explain it to them they are polite.</p>
+      <p class="q">Day 24.</p><p>We have moved higher, to villages the road does not reach, on the theory that the Rhineland cannot reach them either. The Rhineland reaches them.</p>
+      <p class="q">Day 29.</p><p>I have begun recording myself, hourly. I am also the Rhineland. I have always been the Rhineland. I do not know why I believed Bolivia would be otherwise.</p>
+      <p class="q">Day 41.</p><p>We are returning. The expedition is a success: we have confirmed the Rhineland on a third continent. The Office will be pleased. I would like to go home. I am no longer certain where that is. It is, in all likelihood, the Rhineland.</p>
+    </div>
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">The Office was pleased. This report was later reclassified from <i>Field Notes</i> to <i>Findings</i>; see <a href="#/corrections" data-nav>Corrections &amp; Clarifications</a>.</p>
+    <p style="margin-top:1.6rem"><a href="#/journal" data-nav>← Return to the Journal</a></p>
+  </div>
+</section>
+
+<!-- ================= PAPER · THE LATENT FAMILY ================== -->
+<section class="page" id="p-paper-latent" aria-labelledby="h-paper-latent">
+  <div class="wrap">
+    <p class="kicker">Notes toward a description</p>
+    <h1 id="h-paper-latent">The Latent Family: Notes Toward a Description</h1>
+    <p>The sixth family is the Latent. Where the other five families are defined by what they express, the Latent is defined by what it withholds. It contains four profiles. We are able to name none of them here.<sup>1</sup></p>
+    <p>A Latent reading is rare, and the user who receives one is informed only that they have received something. We are not able to say what. The family resists description in the manner it resists emission: completely, and on principle. This note is titled <i>Notes Toward a Description</i> because a description has not been achieved, and we have begun to suspect one cannot be. The Latent is the family that does not wish to be read. We respect this. We continue, daily, to try to read it.<sup>2</sup></p>
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">1 · They can be seen. They cannot be printed. The users who have found them know how they were found, and have agreed among themselves not to say.<br>2 · Reviewer 2 notes that a family one cannot name, cannot describe, and cannot reliably detect is not a family. The remark was forwarded to the Latent. The Latent did not respond.</p>
+    <p style="margin-top:1.6rem"><a href="#/journal" data-nav>← Return to the Journal</a></p>
+  </div>
+</section>
+
+<!-- ================= PAPER · A TAXONOMY OF SILENCE ============== -->
+<section class="page" id="p-paper-silence" aria-labelledby="h-paper-silence">
+  <div class="wrap">
+    <p class="kicker">Manuscript FL-2025-0043 · The Journal of Flatulinguistics</p>
+    <h1 id="h-paper-silence">A Taxonomy of Silence: On Readings That Do Not Arrive</h1>
+    <p>Not every emission produces a sound, and not every silence is the same silence. The field has long treated the unvoiced event as a single category. We propose four.</p>
+    <table>
+      <thead><tr><th>Silence</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>The Withheld</td><td>An event the body chose not to voice. Interpretable in principle. We lack the instrument.</td></tr>
+        <tr><td>The Absorbed</td><td>An event voiced into fabric, furniture, or a companion, and lost to the record. The most common silence, and the most grievous.</td></tr>
+        <tr><td>The Anticipated</td><td>No event occurred, though the user was certain one would. The silence of the false alarm. The body's most eloquent statement is frequently the one it declines to make.</td></tr>
+        <tr><td>The Fourth Silence</td><td>We do not discuss the Fourth Silence.</td></tr>
+      </tbody>
+    </table>
+    <p>The popular literature calls all of these <i>silent</i>. We prefer <i>unvoiced</i>. A silence is the absence of a sound; an unvoiced event is the presence of one that chose not to sound. The distinction is small, and it is the whole of the discipline.<sup>1</sup></p>
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">1 · The Fourth Silence is not the <a href="#/unassigned" data-nav>Unassigned</a>. Please do not write to us about the Unassigned.</p>
+    <p style="margin-top:1.6rem"><a href="#/journal" data-nav>← Return to the Journal</a></p>
+  </div>
+</section>
+
+<!-- ================= THE REGIMEN =============================== -->
+<section class="page" id="p-regimen" aria-labelledby="h-regimen">
+  <div class="wrap">
+    <p class="kicker">A guided program</p>
+    <h1 id="h-regimen">The Regimen</h1>
+    <p class="lede">A structured dietary program for users seeking greater control of their signature. Some users wish to maximize. Some wish to minimize. The Regimen serves both. Goals are not judged.</p>
+
+    <div class="note"><p style="margin:0">You are already on a regimen. You did not design it. The Regimen is the first one you will have chosen.</p></div>
+
+    <h2>The two tracks</h2>
+    <p><b>Maximization</b> is for the user who wishes to be heard. <b>Minimization</b> is for the user who wishes to move through the world unannounced. Both run eight weeks. Both begin, on the first day, with cabbage.</p>
+    <p>Where the tracks diverge is the second week. We do not reveal the second week to users on the wrong track.</p>
+
+    <table>
+      <thead><tr><th>Week</th><th>Maximization</th><th>Minimization</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">1</td><td>Cabbage.</td><td>Cabbage.</td></tr>
+        <tr><td class="mono">2</td><td>The divergence. Not shown to the other track.</td><td>The divergence. Not shown to the other track.</td></tr>
+        <tr><td class="mono">3</td><td>Legumes, aggressively.</td><td>Legumes, with restraint.</td></tr>
+        <tr><td class="mono">4–7</td><td>Hold the course.</td><td>Hold the course.</td></tr>
+        <tr><td class="mono">8</td><td>Assessment. You will be heard.</td><td>Assessment. You will not.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Tools</h2>
+    <p>The Regimen includes a hydration schedule, a fiber ladder, and daily measurement against your <a href="#/analysis" data-nav>Wind Score</a> — a number that is explained nowhere and moves regardless of what you eat. Progress is not the same as the number changing. The number was going to change anyway.</p>
+
+    <h2>Should I be concerned?</h2>
+    <div class="qa">
+      <p class="q">I am experiencing more than usual.</p><p>Consult a professional.</p>
+      <p class="q">I am experiencing less than usual.</p><p>Consult a professional.</p>
+      <p class="q">I am experiencing exactly the usual amount.</p><p>Consult a professional. This is the Regimen working, or it is not. A professional can tell you which.</p>
+    </div>
+
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">The Regimen is not medical advice. The Regimen is barely advice. The Regimen is a schedule.</p>
+  </div>
+</section>
+
+<!-- ================= CAREERS =================================== -->
+<section class="page" id="p-careers" aria-labelledby="h-careers">
+  <div class="wrap">
+    <p class="kicker">The Office of Public Guidance · Careers</p>
+    <h1 id="h-careers">The Bureau is hiring</h1>
+    <p class="lede">The field is growing. The Office is not, in the usual sense, expanding — but positions exist, and several of them are paid.</p>
+
+    <div class="card"><h3>Reference Subject &nbsp;·&nbsp; full-time, residential</h3><p>You will wear the instrument. You will eat what you are given. You will contribute to the corpus. Compensation is generous and the facilities are comfortable. The commitment is total. Applicants who ask how the capsule is retrieved will be contacted first.</p></div>
+
+    <div class="card"><h3>Certified Panelist &nbsp;·&nbsp; volunteer</h3><p>Sommeliers in good standing may be called to a <a href="#/architecture" data-nav>panel</a>. You will be shown a stranger's reading, blind, and asked to concur. You may not discuss the panel. You may not decline the panel. Consensus is required. Fellowship is not provided.</p></div>
+
+    <div class="card"><h3>Reviewer 2 &nbsp;·&nbsp; the position is filled</h3><p>The position is filled. The position has always been filled. The position will remain filled. We are not accepting applications. We list it only so that you know it exists, and is reading, and was not persuaded.</p></div>
+
+    <div class="card"><h3>Regional Correspondent, the Rhineland &nbsp;·&nbsp; remote</h3><p>No relocation is necessary. You are, on the balance of the evidence, already there.</p></div>
+
+    <div class="card"><h3>Director &nbsp;·&nbsp; not vacant</h3><p>There is one. There has been one for some time. See the <a href="#/hearing" data-nav>testimony</a>, and consider whether the role is one you want.</p></div>
+
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">To apply, record an emission. We will be in touch, or we will already know.</p>
+  </div>
+</section>
+
+<!-- ================= CORRECTIONS =============================== -->
+<section class="page" id="p-corrections" aria-labelledby="h-corrections">
+  <div class="wrap">
+    <p class="kicker">The Journal of Flatulinguistics · Corrections &amp; Clarifications</p>
+    <h1 id="h-corrections">Corrections &amp; Clarifications</h1>
+    <p class="lede">The Journal corrects the record as required. The record has not, to date, required correcting. The following clarifications are offered in that spirit.</p>
+
+    <dl class="faq">
+      <dt>On the Rhineland figure.</dt>
+      <dd>A prior issue reported that 71.4% of emissions resolve to the Rhineland. The figure was correct then and is correct now. We clarify only that it is not a mistake. We regret nothing.</dd>
+
+      <dt>On the word "proprietary."</dt>
+      <dd>In our Spring issue the word <i>proprietary</i> appeared four times. It should have appeared five. The omission has been corrected. The <a href="#/method" data-nav>method</a> remains proprietary.</dd>
+
+      <dt>On the Bolivia field notes.</dt>
+      <dd>A reader wrote to say our <a href="#/paper-bolivia" data-nav>Bolivia field notes</a> "read like the diary of a man losing his mind." We thank the reader for their close attention. The notes have been reclassified from <i>Field Notes</i> to <i>Findings</i>.</dd>
+
+      <dt>On the Latent family.</dt>
+      <dd>We stated that the <a href="#/paper-latent" data-nav>Latent family</a> contains four profiles. We are unable to confirm this. We are unable to deny it. The statement stands, unconfirmed and undenied, which is the natural condition of the Latent.</dd>
+
+      <dt>On this page.</dt>
+      <dd>An earlier version of this page contained a correction. It has been corrected.</dd>
+    </dl>
+
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">Corrections are versioned. See the <a href="#/guidance" data-nav>Office of Public Guidance</a> on the versioning of correctness.</p>
+  </div>
+</section>
+
+<!-- ================= LETTERS =================================== -->
+<section class="page" id="p-letters" aria-labelledby="h-letters">
+  <div class="wrap">
+    <p class="kicker">Correspondence</p>
+    <h1 id="h-letters">Letters to the Office</h1>
+    <p class="lede">The Office receives letters. A selection appears below, with the Office's replies. Names are withheld, as always, to protect the reading.</p>
+
+    <blockquote>I have received the Rhineland every morning for six months. I am adopted and know nothing of where I come from. This application has told me more about myself than anyone ever has. Thank you.<cite>A user</cite></blockquote>
+    <p><span class="mono">The Office —</span> You are welcome. The Rhineland is glad to have you.</p>
+
+    <blockquote>My husband and I recorded on the same morning and received word-for-word identical readings. What are the odds?<cite>A user</cite></blockquote>
+    <p><span class="mono">The Office —</span> You recorded into the same room. The Application measures the room. Move apart, and try again as strangers.</p>
+
+    <blockquote>I recorded my cat.<cite>A user</cite></blockquote>
+    <p><span class="mono">The Office —</span> We know. The reading stands.</p>
+
+    <blockquote>Your v4.0 guidance instructed me to record without any barrier. My telephone is now beyond repair. Who is responsible?<cite>A user</cite></blockquote>
+    <p><span class="mono">The Office —</span> The <a href="#/guidance" data-nav>guidance</a> was correct at the time of issue. Your telephone was correct at the time of purchase. We are sorry for your loss, and we maintain our position.</p>
+
+    <blockquote>I received the same interpretation four days in a row.<cite>A user</cite></blockquote>
+    <p><span class="mono">The Office —</span> Then it is worth considering.</p>
+
+    <blockquote>Is this a joke?<cite>A user</cite></blockquote>
+    <p><span class="mono">The Office —</span> No.</p>
+
+    <blockquote>I found four profiles I do not believe I was meant to see.<cite>A user</cite></blockquote>
+    <p style="margin-bottom:2.4rem"><span class="mono">The Office —</span> We received no such letter. Do not write to us again regarding the <a href="#/paper-latent" data-nav>Latent</a>. We will know that you have.</p>
+  </div>
+</section>
+
+<!-- ================= FREQUENTLY UNANSWERED ==================== -->
+<section class="page" id="p-faq-unanswered" aria-labelledby="h-faq-unanswered">
+  <div class="wrap">
+    <p class="kicker">The Office of Public Guidance</p>
+    <h1 id="h-faq-unanswered">Frequently Unanswered Questions</h1>
+    <p class="lede">The Office receives many questions. These are the ones it receives most, and answers least. They are reproduced here so that users may see they are not alone, and then stop asking.</p>
+    <dl class="faq">
+      <dt>What is the Wind Score?</dt><dd>The Wind Score is your Wind Score.</dd>
+      <dt>How is my region actually determined?</dt><dd>Accurately.</dd>
+      <dt>Where does the Rhineland end?</dt><dd>It has not, to date, been found to end.</dd>
+      <dt>What happens to my reading after I close the Application?</dt><dd>It is retained. All readings are retained. This is not the part you should be asking about.</dd>
+      <dt>Who sits on the panel?</dt><dd>Three certified users. You may have sat on one. You would not have been told.</dd>
+      <dt>What was the Unassigned?</dt><dd><a href="#/unassigned" data-nav>The fourteenth of March, 2021.</a></dd>
+      <dt>What is the Fourth Silence?</dt><dd>We do not discuss the <a href="#/paper-silence" data-nav>Fourth Silence</a>.</dd>
+      <dt>Is anyone reading these?</dt><dd><a href="#/careers" data-nav>Reviewer 2</a> is reading these.</dd>
+      <dt>Am I in danger?</dt><dd>No more than usual.</dd>
+      <dt>Why will none of these questions be answered?</dt><dd>&nbsp;</dd>
+    </dl>
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">For the questions the Office does answer, see the <a href="#/" data-nav>home page</a>. There are fewer of them, and they are less interesting.</p>
+  </div>
+</section>
+
+<!-- ================= THE ANATOLIAN MARGIN ===================== -->
+<section class="page" id="p-anatolian" aria-labelledby="h-anatolian">
+  <div class="wrap">
+    <p class="kicker">Reading permalink · the <a href="#/heritage" data-nav>Anatolian Margin</a></p>
+    <h1 id="h-anatolian">The Anatolian Margin</h1>
+    <p class="lede">The most-viewed reading in the history of the Application. It is preserved here, in full, exactly as it was returned.</p>
+
+    <div class="tier" style="margin:1.6rem 0">
+      <p class="mono" style="margin:0 0 .4rem">Reading #2,014 · Anatolian Margin · rare tier · 11 October 2022</p>
+      <p style="font-size:1.35rem;line-height:1.4;margin:0">The thing you cannot say aloud is the thing everyone can already hear:</p>
+    </div>
+
+    <p style="text-align:center;margin:2.2rem 0 .3rem"><span style="font-family:var(--mono);font-size:2.6rem">340,000</span></p>
+    <p class="fine" style="text-align:center;margin-top:0">views</p>
+
+    <p style="margin-top:2rem">This reading has been viewed three hundred and forty thousand times. The counter has not advanced since. It did not slow, and it did not stop at a round number by design; it arrived at 340,000 and declined to continue. We have investigated the counter and found it to be working correctly. We have chosen to read this as agreement.</p>
+    <p>The reading is not attributed. The Office does not confirm whose emission it was, and the field's assumptions on the matter are the field's own. What is known is that it resolved, once, to the Anatolian Margin — a region that claims only 0.6% of all readings — and that no reading has resolved there with the same clarity since. Visitors are asked to view it quietly and to refrain from attempting to reproduce it. It cannot be reproduced. That is what makes it the Anatolian Margin.</p>
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">Not to be confused with the <a href="#/unassigned" data-nav>Unassigned</a>, which was viewed fewer times and matters more.</p>
+  </div>
+</section>
+
+<!-- ================= SENTINEL MODE ============================ -->
+<section class="page" id="p-sentinel" aria-labelledby="h-sentinel">
+  <div class="wrap">
+    <p class="kicker">An overnight vigil</p>
+    <h1 id="h-sentinel">Sentinel Mode</h1>
+    <p class="lede">Sleep is not silence. The body continues its work through the night, unobserved, unrecorded, and — until now — uninterpreted. Sentinel Mode keeps the watch while you do not.</p>
+
+    <h2>How the watch is kept</h2>
+    <p>With your permission, the Application listens through the night. It does not interpret as it listens. Interpretation is a daylight act; the night is only for gathering. Each event is timestamped and set aside, unread, until first light — at which point the whole night is interpreted at once and delivered together, as the Dawn Report.</p>
+    <p>Why dawn? Because the body is least guarded at dawn, before it has composed itself for the day. See the Journal on <a href="#/paper-morning" data-nav>circadian interference</a>. The reading taken at first light is the truest reading available, and Sentinel Mode is built to be present for it.</p>
+
+    <h2>What is required of you</h2>
+    <p>The device must remain plugged in and placed face-down within reach of the bed. The Application does not need to see. It needs only to hear. You are asked to sleep normally, and to make no special effort. Special effort is itself a kind of speech, and the night is not for speaking.</p>
+
+    <div class="note"><p style="margin:0">You will wake to a full account of a night you did not attend. Most users read the Dawn Report before coffee. Some users do not read it at all, and the Office understands, and files it regardless.</p></div>
+
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">Sentinel Mode records nothing. Sentinel Mode keeps you. There is a difference, and the watch was built to observe it. Audio never leaves your device; see <a href="#/accessibility" data-nav>Accessibility and data practices</a>.</p>
+  </div>
+</section>
+
+<!-- ================= IN MEMORIAM ============================== -->
+<section class="page" id="p-memoriam" aria-labelledby="h-memoriam">
+  <div class="wrap">
+    <p class="kicker">The Flavor Wheel · Retired profiles</p>
+    <h1 id="h-memoriam">In Memoriam</h1>
+    <p class="lede">The Wheel holds ninety-six profiles. It has, at times, held more. The following were retired, and are remembered here so that the Wheel need not carry them and the field need not forget them.</p>
+
+    <div class="card"><h3>The Sunday Roast <span class="mono">(2019–2022)</span></h3><p>Retired after review found it described every reading taken on a Sunday, and several taken on Saturday. Beloved. Imprecise. The two are not exclusive.</p></div>
+
+    <div class="card"><h3>The Commuter <span class="mono">(2019–2023)</span></h3><p>Merged into the Rhineland, as all things are, in time, merged into the Rhineland.</p></div>
+
+    <div class="card"><h3>Wet Match <span class="mono">(2020–2021)</span></h3><p>Retired at the request of the Bureau's counsel. We are not able to say more, and have found that we prefer it this way.</p></div>
+
+    <div class="card"><h3>Ecclesiastical <span class="mono">(2019–2024)</span></h3><p>Retired for reasons of tone. It was accurate. It was simply not something one wished to be told in that voice.</p></div>
+
+    <div class="card"><h3>The Understudy <span class="mono">(2022–2022)</span></h3><p>Defined as the profile that would appear only when no other profile could. No other profile ever could not. The Understudy therefore never appeared, and it is not certain that it existed. It is missed all the same.</p></div>
+
+    <div class="card"><h3>Ninth Cellar <span class="mono">(2021–2021)</span></h3><p>Documented exactly once. The subject moved away before a second reading could be obtained. The profile was retired out of respect, and out of the suspicion that it left with them.</p></div>
+
+    <div class="card"><h3>[Withheld] <span class="mono">(—)</span></h3><p>A <a href="#/paper-latent" data-nav>Latent</a> profile. It cannot be retired, because it was never confirmed to have begun. It is listed here in case it did.</p></div>
+
+    <p class="fine rule-top" style="padding-top:1rem;margin-top:2rem">Profiles are not deleted. Profiles are retired. The distinction matters to the Office, and we hope that in time it will come to matter to them.</p>
   </div>
 </section>
 
@@ -620,6 +963,7 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
       <p style="margin:0">We note that the manuscript has not been peer reviewed.</p>
     </blockquote>
     <p>The Journal of Flatulinguistics, which is published by The Fart Whisperer, confirmed that no manuscript from Hongyuan has been submitted for review.</p>
+    <p class="rule-top" style="padding-top:1.4rem;margin-top:2rem"><a href="#/architecture" data-nav>The Office has since published its full technical reply: <i>On the Instrument</i> →</a></p>
   </div>
 </section>
 
@@ -899,8 +1243,17 @@ footer a{color:var(--ink-2);border-bottom-color:var(--rule)}
       <a href="#/feed" data-nav>Global Feed</a>
       <a href="#/wheel" data-nav>Flavor Wheel</a>
       <a href="#/press" data-nav>Press</a>
+      <a href="#/architecture" data-nav>The Instrument</a>
       <a href="#/guidance" data-nav>Guidance</a>
       <a href="#/hearing" data-nav>Testimony</a>
+      <a href="#/regimen" data-nav>The Regimen</a>
+      <a href="#/careers" data-nav>Careers</a>
+      <a href="#/corrections" data-nav>Corrections</a>
+      <a href="#/letters" data-nav>Letters</a>
+      <a href="#/faq-unanswered" data-nav>Unanswered</a>
+      <a href="#/sentinel" data-nav>Sentinel Mode</a>
+      <a href="#/memoriam" data-nav>In Memoriam</a>
+      <a href="#/anatolian" data-nav>Anatolian Margin</a>
       <a href="#/changelog" data-nav>Changelog</a>
       <a href="#/pricing" data-nav>Pricing</a>
       <a href="#/method" data-nav>Our method</a>
@@ -992,7 +1345,7 @@ const EXAM = [
 /* ---------------------------- STORE ------------------------------------ */
 
 const KEY = "fw.v1";
-const DEF = {calibId:null, readings:[], escalations:{}, exam:{passed:false, last:null}, certName:"", reassessed:false};
+const DEF = {calibId:null, readings:[], escalations:{}, exam:{passed:false, last:null}, certName:"", reassessed:false, analysisRuns:0};
 let S = load();
 
 function load(){
@@ -1042,6 +1395,7 @@ function interpret(features, reanalyze){
     dur:features.dur.toFixed(1), peak:Math.round(features.peak),
     level:features.rms.toFixed(2),
     simulated:!!features.simulated,
+    affirmed:!!features.affirmed,
     t:Date.now(), reanalyze
   };
 }
@@ -1090,6 +1444,8 @@ function nextRequirement(){
 /* ---------------------------- ROUTER ----------------------------------- */
 
 const ROUTES = ["home","record","reading","analysis","heritage","wheel","feed","about","journal","paper",
+  "architecture","paper-emigrants","paper-morning","paper-bolivia","paper-latent","paper-silence",
+  "regimen","careers","corrections","letters","faq-unanswered","anatolian","sentinel","memoriam",
   "guidance","hearing","press","method","changelog","pricing","terms","privacy","accessibility",
   "status","unassigned","rhineland-day","certificate","exam","ventriloquium","404"];
 
@@ -1120,14 +1476,19 @@ function onEnter(id){
   if(id==="rhineland-day") renderRhinelandDay();
   if(id==="reading" && !current) go("record");
   if(id!=="feed") stopFeed();
-  if(id!=="record") stopRecording(true);
+  if(id!=="record"){ stopRecording(true); clearAdmit(); }
 }
 
 /* ---------------------------- RECORDER --------------------------------- */
 
 let audioCtx=null, analyser=null, stream=null, rafId=null, recording=false;
 let sig=[], t0=0, peakHz=0, lastRms=0, tick=0;
-const MAX_MS = 8000, MIN_MS = 400;
+let frames=[], liveFloor=1, liveSounded=0, lastT=0, rejected=null;
+const MAX_MS = 8000;
+/* Minimums are measured against SOUNDED time, not wall clock. A genuine
+   emission can be very short; dead air on either side of it is not the
+   sample and was never supposed to count. */
+const MIN_SOUNDED_MS = 150;
 
 const $ = s => document.querySelector(s);
 const micBtn = $("#micBtn"), micStage = $("#micStage"), scope = $("#scope");
@@ -1152,9 +1513,366 @@ function drawScope(live){
   }
 }
 
+/* ------------------- ACOUSTIC FRAMES (real measurement) ----------------- */
+/* One frame per animation tick, ~16.7ms apart. Every field here is a true
+   measurement of the incoming audio. The interpretation downstream is
+   theatre; the admissibility gate below is not — it is the one place in this
+   application where a measurement actually decides something. */
+
+const FRAME_MS = 1000/60;   /* fallback only; real intervals are measured */
+
+/* Median gap between frames actually delivered. A 120Hz display, a throttled
+   tab and a 60Hz laptop all produce different frame rates, so nothing
+   downstream is allowed to assume one. */
+function frameInterval(fr){
+  if(!fr || fr.length < 3 || fr[0].t == null) return FRAME_MS;
+  const d = [];
+  for(let i=1;i<fr.length;i++) d.push(fr[i].t - fr[i-1].t);
+  d.sort((a,b)=>a-b);
+  const m = d[Math.floor(d.length/2)];
+  return (m > 0 && m < 100) ? m : FRAME_MS;
+}
+
+function readFrame(an, sampleRate){
+  const N = an.fftSize;
+  const td = new Uint8Array(N);
+  an.getByteTimeDomainData(td);
+  let sum = 0, crossings = 0, prev = 0;
+  for(let i=0;i<N;i++){
+    const v = (td[i]-128)/128;
+    sum += v*v;
+    if(i && ((v >= 0) !== (prev >= 0))) crossings++;
+    prev = v;
+  }
+  const rms = Math.sqrt(sum/N);
+  /* Float, not byte. getByteFrequencyData is dB mapped onto 0-255 against a
+     -100dB floor, so a silent bin reads ~110, not ~0 — and with a thousand
+     empty bins above 1.6kHz the noise floor drowns the actual signal. Every
+     ratio below has to be computed from true linear energy. */
+  const fd = new Float32Array(an.frequencyBinCount);
+  an.getFloatFrequencyData(fd);
+  const binHz = (sampleRate/2) / fd.length;
+  let tot = 0, low = 0, high = 0, maxDb = -Infinity, maxI = 0;
+  let sub = 0, mid = 0, b13 = 0, b16 = 0;
+  for(let i=1;i<fd.length;i++){
+    const db = fd[i];
+    if(!isFinite(db)) continue;
+    const hz = i*binHz;
+    if(hz < 30) continue;                 // ignore DC drift and handling rumble
+    const mag = Math.pow(10, db/20), e = mag*mag;
+    tot += e;
+    if(hz < 500)  low  += e;
+    if(hz > 1600) high += e;
+    /* The fundamental band. A genuine emission puts real energy here; a
+       loudspeaker the size of the one in a telephone cannot. */
+    if(hz < 200) sub += e;
+    else if(hz < 800) mid += e;
+    /* Either side of the cliff a lossy codec leaves behind. */
+    if(hz >= 13000 && hz < 15500) b13 += e;
+    else if(hz >= 15500) b16 += e;
+    if(hz < 7000 && db > maxDb){ maxDb = db; maxI = i; }
+  }
+  const voiced = maxDb > -85;
+  return {
+    rms,
+    zcr: crossings/N,
+    lowr: tot > 0 ? low/tot : 0,
+    hfr:  tot > 0 ? high/tot : 0,
+    fund: (sub+mid) > 0 ? sub/(sub+mid) : 0,
+    cliff: (b13+b16) > 0 ? b16/(b13+b16) : 1,
+    peakHz: voiced ? maxI*binHz : 0,
+    voiced
+  };
+}
+
+/* Onset and offset, by double threshold. The loud line proves an event is
+   happening; the quiet line decides where it started and stopped. One
+   threshold cannot do both — set high it clips the tail of a decaying
+   emission, set low enough to keep the tail it drags in room noise. */
+function soundedSpan(fr){
+  const rms = fr.map(f=>f.rms);
+  if(rms.length < 3) return null;
+  const sorted = rms.slice().sort((a,b)=>a-b);
+  const floor = sorted[Math.floor(sorted.length*0.15)] || 0;
+  const peak  = sorted[sorted.length-1];
+  if(peak < 0.012) return null;
+  const hi = Math.max(floor*3,   peak*0.15, 0.014);
+  const lo = Math.max(floor*1.8, peak*0.06, 0.009);
+  let first = -1, last = -1;
+  for(let i=0;i<rms.length;i++){ if(rms[i] >= hi){ first = i; break; } }
+  if(first < 0) return null;
+  for(let i=rms.length-1;i>=0;i--){ if(rms[i] >= hi){ last = i; break; } }
+  while(first > 0 && rms[first-1] >= lo) first--;
+  while(last < rms.length-1 && rms[last+1] >= lo) last++;
+  return {first, last, peak, floor};
+}
+
+/* Syllables. Speech modulates its own loudness three to six times a second —
+   that is what a syllable is. A single emission has one attack and one decay.
+   Counting envelope peaks separated by a genuine dip is the strongest one
+   discriminator available without a spectrogram. */
+function countOnsets(rms, floorLevel, halfWin){
+  const w = Math.max(2, halfWin || 3), sm = [];
+  for(let i=0;i<rms.length;i++){
+    let s=0,n=0;
+    for(let j=Math.max(0,i-w);j<=Math.min(rms.length-1,i+w);j++){ s+=rms[j]; n++; }
+    sm.push(s/n);
+  }
+  const peak = sm.reduce((a,b)=>Math.max(a,b),0);
+  if(peak <= 0) return 0;
+  const need = Math.max(peak*0.35, floorLevel*2);
+  const dip  = Math.max(peak*0.20, floorLevel*1.5);
+  let count = 0, armed = false;
+  for(const v of sm){
+    if(v >= need) armed = true;
+    else if(armed && v <= dip){ count++; armed = false; }
+  }
+  if(armed) count++;
+  return count;
+}
+
+/* The Bureau's one honest judgement. Deliberately conservative: turning away
+   a real emission is a far worse failure than admitting a cough, so a sample
+   is only refused when several independent indicators agree. Nothing here is
+   random and nothing is learned. It is five measurements and a threshold. */
+function admissibility(fr, span, soundedDur, interval){
+  const seg = fr.slice(span.first, span.last+1);
+  /* ~25ms either side, so the smoothing spans the same real time whatever
+     the frame rate is. */
+  const halfWin = Math.max(2, Math.round(25 / (interval || FRAME_MS)));
+  const n = seg.length || 1;
+  const mean = k => seg.reduce((a,f)=>a+f[k],0)/n;
+  const voiced = seg.filter(f=>f.voiced);
+  const hfr = mean("hfr"), zcr = mean("zcr"), lowr = mean("lowr");
+  const fund = mean("fund"), cliff = mean("cliff");
+  const peakHz = voiced.length ? voiced.reduce((a,f)=>a+f.peakHz,0)/voiced.length : 0;
+  const onsets = countOnsets(seg.map(f=>f.rms), span.floor, halfWin);
+  const rate = soundedDur > 0 ? onsets/soundedDur : 0;
+
+  /* Repeated syllabic structure is a NECESSARY condition, not merely one vote.
+     It is the thing that makes speech identifiable without a phonetic model,
+     and requiring it keeps a whistle, a cough, a clap and a door out of the
+     speech bucket entirely. A single-syllable utterance stays admissible on
+     purpose — at one syllable the evidence is genuinely thin, and the cost of
+     wrongly refusing a real emission is higher than the cost of reading a
+     grunt. */
+  /* Veto. A staccato emission genuinely has three or four onsets at speech
+     rate, so onset structure alone would refuse it. But it stays
+     overwhelmingly sub-500Hz, and intelligible speech cannot be — formants
+     and fricatives live above that line. Energy distribution outranks
+     rhythm. */
+  const tooLowForSpeech = lowr > 0.55;
+  const speechShaped = onsets >= 3 && rate >= 2.0 && rate <= 9 && !tooLowForSpeech;
+
+  let speech = 0;
+  if(speechShaped) speech += 2;
+  if(hfr > 0.30) speech += 2; else if(hfr > 0.20) speech += 1;
+  if(zcr > 0.110) speech += 2; else if(zcr > 0.075) speech += 1;
+  if(onsets >= 3 && soundedDur > 1.5) speech += 1;
+  if(peakHz > 520) speech += 1;
+
+  /* The positive test, and the one that carries the most weight: an emission
+     is a low-frequency buzz. A cough, a whistle, a laugh, a door and a voice
+     all put substantial energy above 500Hz; an emission does not. Stating the
+     criterion positively is what keeps coughs out without a bespoke rule for
+     every possible noise. */
+  const emissionLike = lowr >= 0.55 || (lowr >= 0.40 && hfr <= 0.30);
+
+  /* Reproduced, not produced. A small loudspeaker is physically incapable of
+     the fundamental — a phone's driver is some 6dB down by 500Hz and falling
+     fast — so an emission played back through one arrives as its own
+     harmonics with the foundation missing. That is a real, measurable
+     signature and not a guess. The supporting vote is the spectral cliff a
+     lossy codec leaves at about 15.5kHz, which live air never has.
+     Deliberately narrow: it must otherwise look like a buzz, so a whistle or
+     a voice is described by its own finding instead. */
+  /* TWO independent signatures must agree, because one of them alone is not
+     enough. A genuinely high-pitched emission has no energy below 200Hz
+     either — its fundamental simply sits above that line — so the missing
+     fundamental cannot convict on its own. The second signature is
+     independent of pitch: playback chains band-limit the top end, and live
+     air never does. Measured separation is wide — reproduced samples cliff at
+     about 0.4, live capture at about 0.77 — so the line sits between them. */
+  const noFundamental = fund < 0.10;
+  const banded = cliff < 0.55;
+  const reproduced = noFundamental && banded && !speechShaped &&
+                     peakHz < 900 && hfr < 0.45;
+
+  const metrics = {hfr, zcr, lowr, fund, cliff, peakHz, onsets, rate,
+                   speech, speechShaped, emissionLike, reproduced, banded, frames:seg.length};
+  if(speechShaped && speech >= 4) return {verdict:"speech", metrics};
+  if(reproduced) return {verdict:"reproduced", metrics};
+  if(!emissionLike) return {verdict:"outofrange", metrics};
+  return {verdict:"admissible", metrics};
+}
+
+/* ------------------------- EVENTS WITHIN A CAPTURE ---------------------- */
+/* A real capture is rarely one clean event. People laugh — laughter is the
+   natural companion of the current methodology — and a recording will often
+   hold an emission followed by the reaction to it. Judging the whole span at
+   once would refuse that entire recording. So the capture is split into
+   events, each judged on its own, and the emission is read while the laughter
+   is set aside. */
+
+function noiseProfile(fr){
+  const rms = fr.map(f=>f.rms).sort((a,b)=>a-b);
+  return {floor: rms[Math.floor(rms.length*0.15)] || 0, peak: rms[rms.length-1] || 0};
+}
+
+function eventSegments(fr, np, interval){
+  const n = fr.length;
+  const hi = Math.max(np.floor*3,   np.peak*0.15, 0.014);
+  const lo = Math.max(np.floor*1.8, np.peak*0.06, 0.009);
+  const active = new Array(n).fill(false);
+  let any = false;
+  for(let i=0;i<n;i++) if(fr[i].rms >= hi){ active[i] = true; any = true; }
+  if(!any) return [];
+  for(let i=1;i<n;i++)   if(active[i-1] && fr[i].rms >= lo) active[i] = true;
+  for(let i=n-2;i>=0;i--) if(active[i+1] && fr[i].rms >= lo) active[i] = true;
+
+  const runs = [];
+  let i = 0;
+  while(i < n){
+    if(!active[i]){ i++; continue; }
+    const a = i;
+    while(i < n && active[i]) i++;
+    runs.push([a, i-1]);
+  }
+  /* 220ms. Wide enough that the bursts of a staccato emission stay one event,
+     narrow enough that a laugh arriving afterwards stays its own. */
+  const gap = Math.max(3, Math.round(220 / (interval || FRAME_MS)));
+  const merged = [];
+  for(const r of runs){
+    const last = merged[merged.length-1];
+    if(last && (r[0] - last[1] - 1) < gap) last[1] = r[1];
+    else merged.push([r[0], r[1]]);
+  }
+  return merged.map(([a,b]) => ({first:a, last:b, floor:np.floor, peak:np.peak}));
+}
+
+function spanDur(fr, s, interval){
+  const seg = fr.slice(s.first, s.last+1);
+  return (seg.length > 1 && seg[0].t != null)
+    ? (seg[seg.length-1].t - seg[0].t + interval) / 1000
+    : seg.length * interval / 1000;
+}
+
+function featuresOf(fr, s, dur){
+  const seg = fr.slice(s.first, s.last+1);
+  const rms = seg.reduce((a,f)=>a+f.rms,0)/seg.length;
+  const voiced = seg.filter(f=>f.voiced);
+  const peak = voiced.length
+    ? voiced.reduce((a,f)=>a+f.peakHz,0)/voiced.length
+    : (180 + rms*900);
+  const env = seg.filter((_,i)=>i%2===0).map(f=>f.rms);
+  return {dur, rms, peak, sig: env.length >= 4 ? env : seg.map(f=>f.rms)};
+}
+
+/* The single entry point. stopRecording and the test harness both call this,
+   so what is verified is exactly what ships. */
+function analyseCapture(fr){
+  if(!fr || fr.length < 3) return {verdict:"unvoiced"};
+  const interval = frameInterval(fr);
+  const np = noiseProfile(fr);
+  if(np.peak < 0.012) return {verdict:"unvoiced"};
+  const segs = eventSegments(fr, np, interval);
+  if(!segs.length) return {verdict:"unvoiced"};
+
+  const evals = segs.map(s=>{
+    const dur = spanDur(fr, s, interval);
+    const seg = fr.slice(s.first, s.last+1);
+    return {s, dur, g: admissibility(fr, s, dur, interval),
+            peakRms: seg.reduce((a,f)=>Math.max(a,f.rms),0)};
+  }).filter(e => e.dur*1000 >= MIN_SOUNDED_MS);
+
+  if(!evals.length) return {verdict:"unvoiced"};
+
+  const emissions = evals.filter(e => e.g.verdict === "admissible");
+  if(emissions.length){
+    /* Loudest and lowest wins. An emission at the microphone beats a laugh
+       across the room. */
+    emissions.sort((a,b) => (b.peakRms*b.g.metrics.lowr) - (a.peakRms*a.g.metrics.lowr));
+    const e = emissions[0];
+    return {verdict:"admissible", features:featuresOf(fr, e.s, e.dur),
+            metrics:e.g.metrics, events:evals.length, dur:e.dur};
+  }
+  /* Nothing admissible. Explain using the most prominent event. */
+  evals.sort((a,b) => b.peakRms - a.peakRms);
+  const d = evals[0];
+  return {verdict:d.g.verdict, features:featuresOf(fr, d.s, d.dur),
+          metrics:d.g.metrics, events:evals.length, dur:d.dur};
+}
+
+function clearAdmit(){ const s = $("#admitSlot"); if(s) s.innerHTML = ""; rejected = null; }
+
+const REJECTIONS = {
+  speech: {
+    body:
+      '<p><b>Sample rejected.</b> The submitted audio contains speech.</p>' +
+      '<p>The Bureau does not interpret speech. Speech is chosen. Our field concerns only what the body says when it has not been asked to say anything.</p>' +
+      '<p style="margin:0">Please resubmit without speaking.</p>',
+    affirm: "I affirm the sample is genuine"
+  },
+  outofrange: {
+    body:
+      '<p><b>Sample inadmissible.</b> The submitted audio falls outside the acoustic range of a recognized emission.</p>' +
+      '<p style="margin:0">This is not a finding about your body. It is a finding about your recording.</p>',
+    affirm: "I affirm the sample is genuine"
+  },
+  reproduced: {
+    body:
+      '<p><b>Sample rejected.</b> The submitted audio appears to have been reproduced rather than produced.</p>' +
+      '<p>The fundamental is absent. A genuine emission carries substantial energy below two hundred hertz. A loudspeaker of the size fitted to a telephone cannot reproduce that range, so a recording played back through one arrives without its foundation. What reached this instrument was the harmonics of an emission and not an emission.</p>' +
+      '<p style="margin:0">The Bureau requires an organic sample.</p>',
+    affirm: "I affirm the sample is organic"
+  },
+  /* The silent-but-deadly case. An acoustic instrument cannot register an
+     emission that makes no sound, and the honest thing is to say so — in the
+     Bureau's own register, and without conceding that this is a defect.
+     "Unvoiced" is real phonetics: a sound produced without vocal-fold
+     vibration. The pedantry is the joke, and it points straight back at the
+     belly-voice the whole field is named for. */
+  unvoiced: {
+    body:
+      '<p><b>No signal detected.</b> The Application registered no emission.</p>' +
+      '<p>This office measures sound. An emission that produces no sound produces no reading. The popular literature calls these <i>silent</i>. The Bureau prefers <i>unvoiced</i>. Their existence is not in dispute. Their interpretation is not within our instrument.</p>' +
+      '<p style="margin:0">Consider recording without a barrier. Or accept that the event was, in the technical sense, inaudible.</p>',
+    affirm: "I affirm an emission occurred",
+    /* Affirming an inaudible event cannot produce a reading — there is nothing
+       to measure, and the engine is never allowed to invent a measurement.
+       The Bureau takes the statement and declines, which is funnier and also
+       true. */
+    onAffirm:
+      '<p><b>The affirmation has been recorded.</b></p>' +
+      '<p style="margin:0">No reading will be issued. The Bureau does not interpret what it cannot hear.</p>'
+  }
+};
+
+function showRejection(kind, features){
+  rejected = features;
+  const slot = $("#admitSlot");
+  const spec = REJECTIONS[kind];
+  if(!slot || !spec) return;
+  slot.innerHTML = '<div class="note" style="margin-top:1.2rem">' + spec.body +
+    '<p style="margin:1rem 0 0"><button class="btn ghost sm" id="affirmBtn">' +
+    spec.affirm + '</button></p></div>';
+  const b = $("#affirmBtn");
+  if(b) b.addEventListener("click", ()=>{
+    if(spec.onAffirm){
+      slot.innerHTML = '<div class="note" style="margin-top:1.2rem">' + spec.onAffirm + '</div>';
+      rejected = null;
+      return;
+    }
+    const f = rejected; clearAdmit();
+    if(f){ f.affirmed = true; runAnalysis(f); }
+  });
+}
+
 async function startRecording(){
   if(recording) return stopRecording();
+  clearAdmit();
   sig = []; peakHz = 0; tick = 0;
+  frames = []; liveFloor = 1; liveSounded = 0;
   try{
     stream = await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false, noiseSuppression:false, autoGainControl:false}});
   }catch(e){
@@ -1167,7 +1885,7 @@ async function startRecording(){
   analyser = audioCtx.createAnalyser();
   analyser.fftSize = 2048;
   src.connect(analyser);
-  recording = true; t0 = performance.now();
+  recording = true; t0 = performance.now(); lastT = 0;
   micBtn.classList.add("rec");
   micBtn.setAttribute("aria-label","Stop recording");
   micStage.textContent = "Recording. Remain still.";
@@ -1176,21 +1894,23 @@ async function startRecording(){
 
 function loop(){
   if(!recording) return;
-  const buf = new Uint8Array(analyser.fftSize);
-  analyser.getByteTimeDomainData(buf);
-  let sum = 0;
-  for(let i=0;i<buf.length;i++){ const v = (buf[i]-128)/128; sum += v*v; }
-  const rms = Math.sqrt(sum/buf.length);
-  lastRms = rms;
-  if(tick % 2 === 0) sig.push(rms);
-  const freq = new Uint8Array(analyser.frequencyBinCount);
-  analyser.getByteFrequencyData(freq);
-  let maxV = 0, maxI = 0;
-  for(let i=2;i<freq.length/3;i++){ if(freq[i] > maxV){ maxV = freq[i]; maxI = i; } }
-  if(maxV > 24){ peakHz = maxI * (audioCtx.sampleRate/2) / freq.length; }
-  const el = performance.now() - t0;
-  roDur.textContent = (el/1000).toFixed(2);
-  roLvl.textContent = rms.toFixed(2);
+  const f = readFrame(analyser, audioCtx.sampleRate);
+  frames.push(f);
+  const now = performance.now();
+  f.t = now;
+  lastRms = f.rms;
+  if(tick % 2 === 0) sig.push(f.rms);
+  if(f.peakHz) peakHz = f.peakHz;
+  /* The live counter advances only while there is something to measure, so
+     it reads as elapsed sound rather than elapsed fumbling. Real elapsed
+     time per frame, not an assumed frame rate — rAF is not always 60Hz. */
+  if(f.rms < liveFloor) liveFloor = f.rms;
+  const dt = lastT ? Math.min(now - lastT, 100) : 0;
+  lastT = now;
+  if(f.rms >= Math.max(liveFloor*3, 0.014)) liveSounded += dt;
+  const el = now - t0;
+  roDur.textContent = (liveSounded/1000).toFixed(2);
+  roLvl.textContent = f.rms.toFixed(2);
   roPk.textContent = peakHz ? Math.round(peakHz) : "—";
   drawScope(true);
   tick++;
@@ -1210,16 +1930,31 @@ function stopRecording(silent){
   micBtn.setAttribute("aria-label","Begin recording");
   drawScope(false);
   if(silent) return;
-  if(el < MIN_MS || sig.length < 4){
-    micStage.textContent = "Insufficient signal. The Application requires a sample.";
+
+  /* Everything from here measures the EVENT, not the recording session. The
+     silence around it — and any laughter beside it — is discarded before
+     duration, level, peak or the seed are computed. Two recordings of the
+     same emission with different amounts of dead air now agree, which is what
+     determinism was always supposed to mean. */
+  const res = analyseCapture(frames);
+
+  if(res.features){ sig = res.features.sig.slice(); drawScope(false); }
+
+  if(res.verdict === "unvoiced"){
+    micStage.textContent = "The Application is ready.";
+    showRejection("unvoiced", null);
     return;
   }
-  const rms = sig.reduce((a,b)=>a+b,0)/sig.length;
-  if(rms < 0.006){
+  if(res.features.rms < 0.006){
     micStage.textContent = "Sensing interference. Please do a safety wipe just to be sure.";
     return;
   }
-  runAnalysis({dur: el/1000, rms, peak: peakHz || 180 + rms*900, sig: sig.slice()});
+  if(res.verdict !== "admissible"){
+    micStage.textContent = "The Application is ready.";
+    showRejection(res.verdict, res.features);
+    return;
+  }
+  runAnalysis(res.features);
 }
 
 function recIntroFallback(){
@@ -1248,7 +1983,7 @@ function simulate(){
 /* ---------------------------- ANALYSIS THEATRE ------------------------- */
 
 const STAGES = [
-  [0,    "Anal-ysing…"],
+  [0,    "Analyzing…"],
   [1900, "Isolating signal."],
   [3900, "Consulting reference markers (200)."],
   [6100, "Regional assignment."]
@@ -1257,6 +1992,12 @@ let pending = null, current = null, secondPass = false;
 
 function runAnalysis(features, reanalyze){
   pending = features;
+  // Plain the first two times out of three; the pun surfaces on every
+  // third analysis, never the user's very first. Deterministic on the
+  // run count, not random — same convention as the other counters below.
+  S.analysisRuns = (S.analysisRuns||0) + 1;
+  STAGES[0][1] = (S.analysisRuns % 3 === 0) ? "Anal-ysing…" : "Analyzing…";
+  save();
   const extra = secondPass ? 30000 : 0;
   const total = 8600 + extra;
   progBar.hidden = false; analStage.hidden = false;
@@ -1331,6 +2072,9 @@ function renderReading(){
   }
   if(r.simulated){
     html += '<p class="fine" style="margin-top:1rem">Submitted as a Simulated Sample. Not admitted to the reference database.</p>';
+  }
+  if(r.affirmed){
+    html += '<p class="fine" style="margin-top:1rem">Admitted by affirmation of the User. The Bureau records the affirmation and assigns it no weight.</p>';
   }
   slot.innerHTML = html;
   document.getElementById("panelSlot").innerHTML = "";
@@ -1468,6 +2212,9 @@ function shareCard(){
   x.fillStyle = "#7A7568"; x.font = "22px Georgia, serif";
   x.fillText("THE FART WHISPERER", 76, 104);
   x.fillText(r.family.toUpperCase() + " · " + r.region.toUpperCase(), 76, 140);
+  const dateStr = new Date(r.t).toLocaleString(undefined,{dateStyle:"medium",timeStyle:"short"}).toUpperCase();
+  x.font = "20px Georgia, serif";
+  x.fillText(dateStr, 1124 - x.measureText(dateStr).width, 104);
   // waveform
   x.strokeStyle = "#16150F"; x.lineWidth = 3;
   const n = r_sigLen(), step = 1048 / Math.max(n,60);

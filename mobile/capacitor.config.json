@@ -1,0 +1,8 @@
+{
+  "appId": "com.thewordhoard.ventriloquium",
+  "appName": "The Fart Whisperer",
+  "webDir": "www",
+  "android": {
+    "allowMixedContent": false
+  }
+}
