@@ -1,7 +1,9 @@
 /* gen-icons.js — render the launcher icon + splash from the app's own visual
    identity: Georgia serif F on Bureau paper, inside a double-rule seal.
    Extends the favicon already shipped in index.html; nothing new invented. */
-const { chromium } = require(require("path").join("/home/claude/fw-test", "node_modules", "playwright"));
+const pw = (() => { try { return require('playwright'); }
+  catch (e) { return require('/home/claude/fw-test/node_modules/playwright'); } })();
+const { chromium } = pw;
 const fs = require("fs");
 
 const seal = (size, pad) => `<!doctype html><meta charset="utf-8">

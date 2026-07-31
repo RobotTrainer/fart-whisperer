@@ -2,7 +2,9 @@
    the app that ships, plus the 512 icon and 1024x500 feature graphic. */
 const path = require("path");
 const fs = require("fs");
-const { chromium } = require(path.join("/home/claude/fw-test", "node_modules", "playwright"));
+const pw = (() => { try { return require('playwright'); }
+  catch (e) { return require('/home/claude/fw-test/node_modules/playwright'); } })();
+const { chromium } = pw;
 
 (async () => {
   const cands = fs.readdirSync("/opt/pw-browsers").filter(d => /^chromium-\d+$/.test(d))

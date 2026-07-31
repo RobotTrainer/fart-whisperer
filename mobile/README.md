@@ -11,6 +11,7 @@ tools/sync-web.js          copies ../index.html -> www/index.html + appends the 
                            (haptics, safe-area padding; additive only, engine untouched)
 tools/gen-icons.js         renders icon/splash art (the serif F seal) into assets/
 tools/gen-screenshots.js   Play screenshots + icon-512 + feature graphic into store/
+tools/iphone-audit.js      every route at iPhone size: overflow / small-input audit
 www/index.html             GENERATED — never edit by hand; run sync-web.js
 android/                   the native project (committed); targets API 36
 store/                     submission pack, listing copy, privacy.html, screenshots
