@@ -101,6 +101,77 @@ a.btn{border-bottom:1px solid var(--ink)}
 .feat p{margin:0;color:var(--ink-2);font-size:.95rem}
 blockquote{margin:0 0 1.5rem;padding-left:1.1rem;border-left:2px solid var(--rule);font-style:italic;color:var(--ink-2)}
 blockquote cite{display:block;font-style:normal;font-size:.8rem;letter-spacing:.06em;color:var(--ink-3);margin-top:.4rem}
+/* withheld submissions — an institutional disclosure that happens to open */
+.withheld{margin:-.5rem 0 0;font-size:.78rem;color:var(--ink-3)}
+.withheld summary{cursor:pointer;list-style:none;display:inline;border-bottom:1px dotted var(--rule-2)}
+.withheld summary::-webkit-details-marker{display:none}
+.withheld summary:hover,.withheld[open] summary{color:var(--ink-2)}
+.withheld .spill{margin-top:1.7rem;font-size:17px;color:var(--ink)}
+.withheld .spill blockquote{border-left-color:var(--rule-2);font-style:normal;color:var(--ink-2)}
+.withheld .ts{display:block;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:.5rem}
+.mod{border:1px solid var(--rule-2);background:var(--paper-2);padding:.8rem 1rem;margin:0 0 1.5rem;
+  font-size:.85rem;color:var(--ink-2)}
+.mod p{margin:0 0 .6em}
+.mod p:last-child{margin-bottom:0}
+.mod b{font-weight:normal;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--ink-3);display:block;margin-bottom:.45rem}
+.mod.internal{background:transparent;border-style:dashed}
+.redact{background:var(--ink);color:transparent;user-select:none;border-radius:1px}
+/* the sealed panel record — a second door, inside the first */
+.sealed{border:1px solid var(--rule);background:#fff;padding:.8rem 1rem;margin:0 0 1.5rem;font-size:.85rem}
+.sealed>summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--stamp)}
+.sealed>summary::-webkit-details-marker{display:none}
+.sealed>summary:hover{text-decoration:underline}
+.sealed .rec{margin-top:1.1rem;border-top:1px solid var(--rule-2);padding-top:1rem}
+.sealed .rec dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem .9rem;margin:0 0 1.1rem;
+  font-family:var(--mono);font-size:.7rem;line-height:1.7}
+.sealed .rec dt{color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.sealed .rec dd{margin:0;color:var(--ink-2)}
+.sealed .vote{border-top:1px solid var(--rule-2);padding:.7rem 0;color:var(--ink-2)}
+.sealed .vote i{font-style:normal;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-3);display:block;margin-bottom:.2rem}
+.sealed .vote.dis{color:var(--ink)}
+.sealed .vote.dis i{color:var(--stamp)}
+/* the unfiled memorandum — a third door, and a conscience */
+.memo{border:1px dashed var(--rule);padding:.8rem 1rem;margin:0 0 1.5rem;font-size:.85rem}
+.memo>summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3)}
+.memo>summary::-webkit-details-marker{display:none}
+.memo>summary:hover{color:var(--ink-2);text-decoration:underline}
+.memo .body{margin-top:1.1rem;border-top:1px solid var(--rule-2);padding-top:1rem;color:var(--ink-2)}
+.memo .body p{margin:0 0 1em}
+.memo .body ol{margin:0 0 1.2em;padding-left:2.1rem}
+.memo .body li{margin-bottom:.62em;padding-left:.2rem}
+.memo .body li::marker{font-family:var(--mono);font-size:.72rem;color:var(--ink-3)}
+.memo .body .close{border-top:1px solid var(--rule-2);padding-top:.9rem;color:var(--ink)}
+/* the rejected submission — too long to publish, kept anyway */
+.overlong{border:1px solid var(--rule-2);border-left:2px solid var(--rule);padding:.8rem 1rem;margin:0 0 1.5rem;font-size:.85rem}
+.overlong>summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3)}
+.overlong>summary::-webkit-details-marker{display:none}
+.overlong>summary:hover{color:var(--ink-2);text-decoration:underline}
+.overlong .body{margin-top:1.1rem;border-top:1px solid var(--rule-2);padding-top:1rem;
+  font-size:17px;line-height:1.62;color:var(--ink-2)}
+.overlong .body p{margin:0 0 1.05em}
+.overlong .body h4{font-family:var(--serif);font-weight:normal;font-size:17px;margin:0 0 .2em;color:var(--ink)}
+.overlong .cut{font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--stamp);border-top:1px solid var(--rule-2);padding-top:.9rem;margin-top:.4rem}
+/* the support ticket — a fifth door, in a queue nobody cross-referenced */
+.ticket{border:1px solid var(--rule-2);padding:.8rem 1rem;margin:0 0 1.5rem;font-size:.85rem;background:var(--paper-2)}
+.ticket>summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3)}
+.ticket>summary::-webkit-details-marker{display:none}
+.ticket>summary:hover{color:var(--ink-2);text-decoration:underline}
+.ticket .body{margin-top:1.1rem;border-top:1px solid var(--rule);padding-top:1rem}
+.ticket .msg{border-bottom:1px solid var(--rule-2);padding-bottom:1rem;margin-bottom:1rem}
+.ticket .msg:last-child{border-bottom:0;padding-bottom:0;margin-bottom:0}
+.ticket .hdr{font-family:var(--mono);font-size:.66rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:.6rem}
+.ticket .msg p{margin:0 0 .85em;color:var(--ink-2)}
+.ticket .msg p:last-child{margin-bottom:0}
+.ticket .msg.them p{color:var(--ink)}
 .tier{border:1px solid var(--rule);padding:1.3rem;background:#fff}
 .tier h3{margin:0 0 .3rem}
 .tier .price{font-family:var(--mono);font-size:.9rem;color:var(--ink-2)}
@@ -302,6 +373,173 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
     <blockquote>My wife and I now compare readings at breakfast. It has changed our marriage.<cite>Anonymous, Sommelier</cite></blockquote>
     <blockquote>I was skeptical. The Heritage Report was accurate to within forty miles.<cite>Priya M., Apprentice</cite></blockquote>
     <blockquote>Rhineland, like my father before me.<cite>Henrik V., Sommelier</cite></blockquote>
+
+    <details class="withheld">
+      <summary>Displaying 4 of 4,006 submissions. 4,002 withheld pending review.</summary>
+      <div class="spill">
+
+        <blockquote><span class="ts">8 March &middot; 12:41</span>My reading said Rhineland. I looked up Rhineland and it is in GERMANY. So what this app is telling me, in a professional capacity, is that I am descended from German warriors!<br><br>My mom says that is not what it means. My mom does not have the app.<br><br>I read the one up top that says Rhineland, like my father before me. I get it.<cite>H. Ramburger, Apprentice</cite></blockquote>
+
+        <blockquote><span class="ts">8 March &middot; 19:08</span>UPDATE. I have done thirty-one readings since lunch. THIRTY ONE! The app told me to slow down. The app does not know what I am training for.<br><br>Also my brother Danny said I need to stop and that flatulinguistics is not a real science, so I flipped out and did a spinning kick into the couch. He is fine. The couch is fine. Everyone is completely fine. But he KNOWS now.<br><br>It is a real science. It is.<cite>H. Ramburger, Apprentice</cite></blockquote>
+
+        <blockquote><span class="ts">8 March &middot; 21:40</span>I am doing all of this on the old phone because the old phone has all the old stuff still on it and I am not allowed to delete anything off of it.<br><br>That is fine. I would not delete anything off of it.<cite>H. Ramburger, Apprentice</cite></blockquote>
+
+        <div class="mod"><b>Office of Community Standards</b><p>Reviewed and found compliant. Section 3.2 of our Terms concerns mechanically produced Emissions. It does not concern furniture.</p></div>
+
+        <blockquote><span class="ts">9 March &middot; 10:22</span>Today Mr. Dubinski made everyone write about a career they want and I wrote SOMMELIER and he said that is wine. I said NOT ANYMORE IT ISN'T! and he sent me to sit in the hall.<br><br>I did four readings in the hall. Three came back Rhineland. One came back Rhineland.<cite>H. Ramburger, Apprentice</cite></blockquote>
+
+        <blockquote><span class="ts">10 March &middot; 12:03</span>Nobody sat with me at lunch today. That is fine. That is actually preferred, because you cannot hear the body over a cafeteria.<br><br>I got a 71 on my science quiz. SEVENTY ONE! You know what else is 71. Look it up. The universe is trying to say something and most people are just chewing.<cite>H. Ramburger, Apprentice</cite></blockquote>
+
+        <div class="mod"><b>Bureau of Regional Classification</b><p>The Bureau does not endorse this interpretation of the figure. The figure reflects the composition of our reference database and nothing else. We have asked Mr. Ramburger to stop citing it at school.</p></div>
+
+        <blockquote><span class="ts">10 March &middot; 23:47</span>WHAT IF THE PANEL IS THREE OF ME!<cite>H. Ramburger, Apprentice</cite></blockquote>
+
+        <div class="mod"><b>Panel Administration</b><p>It is not.</p></div>
+
+        <blockquote><span class="ts">11 March &middot; 03:04</span>cant sleep. did a reading at three in the morning just to have something to listen to. the house is very quiet now.<br><br>it said <i>You are carrying something you have not said out loud:</i><br><br>i know.<br><br>anyway. five stars. best app.<cite>H. Ramburger, Journeyman</cite></blockquote>
+
+        <blockquote><span class="ts">13 March &middot; 16:30</span>I did not post for two days. Some people noticed. Nobody noticed.<br><br>I have read the Terms of Service. All of it. Twice. Section 8 is about what happens when you die, and it says they keep your Signature forever, and that it is the only part of this they consider sacred.<br><br>I have read Section 8 more than twice.<br><br>I thought about it for a long time in the car.<cite>H. Ramburger, Journeyman</cite></blockquote>
+
+        <blockquote><span class="ts">14 March &middot; 12:00</span>It is Rhineland Day. I logged mine at noon exactly like it says to. I was in gym. Coach asked what I was doing and I said OBSERVING A HOLIDAY!<br><br>Participation is not required. But I think if you are Rhineland and you do not observe it, then what are you even.<br><br>Sixty-one people logged at noon in my time zone. I counted. That is not very many. I thought there would be more of us.<cite>H. Ramburger, Journeyman</cite></blockquote>
+
+        <details class="overlong">
+          <summary>Submission 3,991 &middot; 15 March &middot; rejected &middot; exceeds maximum length &middot; unpublished</summary>
+          <div class="body">
+            <p>OK. I have a lot of ideas and I keep putting them in different places, so I am putting all of them in ONE PLACE now so nobody has to go looking.</p>
+
+            <h4>FIRST THING</h4>
+            <p>There are six flavor families and there should be seven. I have found one that is not on the wheel. It is not Sulfuric-Bright and it is not Vegetal and it is absolutely NOT Mineral. I have been calling it Bright Iron. I know that sounds like Mineral. IT IS NOT MINERAL! If somebody from the Bureau wants to email me about it I will explain the entire thing and I will not even charge anything, even though technically I discovered it.</p>
+
+            <h4>SECOND THING</h4>
+            <p>I keep my own records in a notebook. Not in the app. A real notebook, with a pen, because what if the app goes away. Everybody just assumes stuff stays. Stuff does not just stay. I have 402 entries and every single one has the date and the time and what it said.</p>
+            <p>Danny said that is the saddest thing he has ever heard in his life and I said YOU ARE THE SADDEST THING I HAVE EVER HEARD IN MY LIFE and then mom came in, and nobody got in trouble, which honestly was worse.</p>
+
+            <h4>THIRD THING (this is the big one)</h4>
+            <p>I think the Rhineland number is 71.4 because 71.4 percent of us are actually related. Not like cousins. I mean WAY back. Before there was a Germany, before there was anything. Everybody keeps saying it is a bug in the classifier. Fine. But what if the bug is that it is RIGHT, and nobody wants to publish that because it sounds insane.</p>
+            <p>I have thought about this a lot at night. It would mean almost everybody is somebody's family. That is not nothing.</p>
+
+            <h4>FOURTH THING</h4>
+            <p>Ninjas. I am not saying flatulinguistics is a ninja skill. I am saying that IF you could interpret with total accuracy, you could walk into any room and know exactly what every person in there was actually feeling, without one single one of them telling you, and if that is not a ninja skill then I do not know what is!</p>
+            <p>I am not a ninja. I just used to think about them a lot. I think about them less now.</p>
+
+            <h4>FIFTH THING</h4>
+            <p>Mr. Dubinski said career day is not a joke, Hobert. I said I KNOW IT IS NOT A JOKE. That is my entire point. He does not listen. I get that a lot.</p>
+            <p>My dad used to say the trick is you just keep going until somebody does.</p>
+            <p>Anyway I got a C minus.</p>
+
+            <h4>SIXTH THING</h4>
+            <p>I tried to start a club. I made forty flyers. I booked room 114 for Thursday at lunch. I brought the notebook, and a chart I made, and a bag of chips in case people came and were hungry.</p>
+            <p>Nobody came.</p>
+            <p>That is fine, because 114 is right by the gym and it smells like the gym, so honestly it was a bad room and that is on me. Next time I will book a better room.</p>
+
+            <h4>SEVENTH THING</h4>
+            <p>Proposal for the Bureau. You should let people put a name on their Signature. Not their real name if they do not want to. Just something, so it is not only a number. Because right now if you go looking for somebody all you get is a number and a region, and that is not a person. That is a filing cabinet.</p>
+            <p>I am not going to say why I think that. It is not a big deal. I just think it would be better.</p>
+
+            <h4>EIGHTH THING</h4>
+            <p>Somebody asked me why I always do mine at four in the morning. I said it is because the house is quiet then, and the app says ambient noise interferes with the reading. That is true. That is a true thing I said.</p>
+            <p>But it is not the actual reason.</p>
+            <p>The actual reason is that</p>
+            <p class="cut">Truncated at 4,000 characters &middot; remainder not retained</p>
+          </div>
+        </details>
+
+        <div class="mod"><b>Office of Community Standards</b><p>Submissions are limited to 4,000 characters. The limit is not new.</p><p>The remainder was not retained.</p></div>
+
+        <blockquote><span class="ts">16 March &middot; 21:15</span>Section 5.1 says any user may escalate one reading per calendar month. It does not say one per ACCOUNT. It does not say the calendar month has to be the current one.<br><br>I have escalated eleven.<br><br>I am not doing anything wrong. I am doing everything the paper allows.<cite>H. Ramburger, Journeyman</cite></blockquote>
+
+        <div class="mod"><b>Office of General Counsel</b><p>Mr. Ramburger's construction of Section 5.1 is, we are advised, correct. The section has been redrafted. The redraft is not retroactive.</p><p>His eleven escalations will be heard.</p></div>
+
+        <blockquote><span class="ts">2 April &middot; 17:52</span>I passed. SOMMELIER. The certificate came and my mom asked where I wanted to hang it and I said THE KITCHEN and she said absolutely not, and then she said it again in a nicer way, and then she left the room.<br><br>It is over my bed now. At the bottom it says it is not accredited by any body. I know what that means. I do not care what that means.<cite>H. Ramburger, Sommelier</cite></blockquote>
+
+        <div class="mod internal"><b>Office of the Archivist &mdash; internal</b><p>This account's earliest submissions predate its registration by four days. We have not established how. The discrepancy was raised in 2021 and closed without a finding.</p><p>We are raising it again.</p></div>
+
+        <div class="mod"><b>Bureau of Regional Classification</b><p>The matter is closed.</p></div>
+
+        <div class="mod internal"><b>Office of the Archivist &mdash; internal</b><p>Noted.</p></div>
+
+        <details class="sealed">
+          <summary>Panel FL-2026-0447 &middot; consensus not reached &middot; dissent recorded &middot; sealed</summary>
+          <div class="rec">
+            <dl>
+              <dt>Contested reading</dt><dd>#2,204,881</dd>
+              <dt>Escalated by</dt><dd><span class="redact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></dd>
+              <dt>Escalated at</dt><dd>04:11, Tuesday</dd>
+              <dt>Panel</dt><dd>M. Okonkwo &middot; R. Halvorsen &middot; H. Ramburger</dd>
+            </dl>
+            <p style="font-style:italic;color:var(--ink-2)">Reading under review: &ldquo;You are carrying something you have not said out loud. The body has raised it three times this week. It will raise it again:&rdquo;</p>
+            <div class="vote"><i>Okonkwo &mdash; uphold</i>The acoustic profile supports the assignment. Nothing further.</div>
+            <div class="vote"><i>Halvorsen &mdash; uphold</i>Routine.</div>
+            <div class="vote dis"><i>Ramburger &mdash; dissent</i>They both put down routine. I read the file four times.<br><br>I know this one.<br><br>This guy escalated at four in the morning on a Tuesday. That is the same time I do mine. Nobody is awake at four in the morning on a Tuesday because they disagree with the science.<br><br>He is not asking us to change the reading. He is asking us to tell him it is wrong.<br><br>I move that we tell him it is wrong.<br><br>Section 5.3 says consensus of all three is required to amend, so it stands, and that is fine, I am not going to cry about the rules. But I want it written down somewhere that one of us heard him:</div>
+          </div>
+        </details>
+
+        <div class="mod"><b>Panel Administration</b><p>The dissent is recorded. Under Section 5.4 there is no body above the Panel, and no mechanism by which a recorded dissent may be struck.</p><p>It remains in the record.</p></div>
+
+        <details class="memo">
+          <summary>Office of the Archivist &middot; memorandum &middot; unfiled &middot; addressed to no one</summary>
+          <div class="body">
+            <p>I was instructed that the matter is closed. It is closed. This is not filed.</p>
+            <ol>
+              <li>Account 44,119 was registered on 8 March by a boy of eleven, in breach of Section 2.1, which requires thirteen. We did not check. We have never checked.</li>
+              <li>The submissions predating that registration by four days come from the same handset. They belong to Account 12,806, opened in 2019, closed on 4 March under Section 8.2 upon documented death.</li>
+              <li>Both accounts resolve to the same address. Our location data is accurate to fifty kilometres and is, on this occasion, not required.</li>
+              <li>Account 12,806 carries one flag from March 2021. It is of a type I am not cleared to open. I have not opened it.</li>
+              <li>Under Section 8.2 the Signature is retained in perpetuity. It is not deleted. It is the only part of this we consider sacred. We have kept that promise. It is still there. It has been there the entire time.</li>
+              <li>The final reading logged to Account 12,806, at 04:11 on a Tuesday, is Reading #2,204,881.</li>
+              <li>Reading #2,204,881 is the reading contested before Panel FL-2026-0447.</li>
+              <li>The escalation was filed under Section 5.1 by the holder of Account 44,119, who has read our Terms twice and found the one door we left open.</li>
+              <li>Our assignment procedure does not exclude a panelist from a review he himself escalated. This was reported in 2023. It is not scheduled for correction.</li>
+              <li>Panels are blind by design. He was not told whose reading he was reading. I am not able to establish whether he knew.</li>
+              <li>He voted alone that it was wrong.</li>
+            </ol>
+            <p>I have listened to the Signature retained under Account 12,806. I am not able to say what it says.</p>
+            <p>I am able to say that the Bureau's position &mdash; that the belly is not possessed, but simply better informed than you are &mdash; does not, in my view, survive contact with this file.</p>
+            <p>The boy is right about Section 5.1.</p>
+            <p class="close">The matter is closed.</p>
+          </div>
+        </details>
+
+        <details class="ticket">
+          <summary>Support ticket 88,214 &middot; received 21 March &middot; resolved &middot; no further action</summary>
+          <div class="body">
+
+            <div class="msg them">
+              <p class="hdr">From <span class="redact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> &middot; 21 March &middot; 09:18 &middot; subject: account closure and deletion</p>
+              <p>Hello,</p>
+              <p>I am writing about an account that was registered at this address. The person it belonged to passed away on 4 March. I have the documentation you ask for and I can send it over today.</p>
+              <p>I would like the account deleted. Not closed &mdash; deleted, including the recordings and whatever it is the report calls the signature.</p>
+              <p>I am asking because my son has found a way to keep listening to it, and I do not think it is helping him. He is eleven. He has been up every night. I have tried to talk to him about it and I am not getting anywhere.</p>
+              <p>I would be grateful. Thank you for your time.</p>
+            </div>
+
+            <div class="msg">
+              <p class="hdr">Response &middot; 21 March &middot; 14:02 &middot; macro 14 &middot; sent unedited</p>
+              <p>Thank you for writing, and please accept our condolences.</p>
+              <p>Upon documented death an account is closed to new submissions. The Reading history may be removed on request.</p>
+              <p>The Signature is retained in perpetuity. It is not deleted. It is the only part of this we consider sacred.</p>
+              <p>We are sorry we could not be more helpful.</p>
+            </div>
+
+            <div class="msg them">
+              <p class="hdr">From <span class="redact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> &middot; 21 March &middot; 22:51 &middot; reopened by sender</p>
+              <p>I understand. Thank you for explaining it.</p>
+              <p>Is there a way for me to find out what it said? He will not tell me, and I do not want to ask him again.</p>
+            </div>
+
+            <div class="msg">
+              <p class="hdr">Ticket closed &middot; 24 March &middot; no response required</p>
+            </div>
+
+          </div>
+        </details>
+
+        <div class="mod internal"><b>Office of the Archivist &mdash; addendum &mdash; also unfiled</b><p>The above was in the support queue. It was not in the file. I did not have it when I wrote the foregoing, and it would not have changed a word of it.</p><p>I have read it four times.</p><p>There is no procedure. I am not reopening the matter.</p></div>
+
+        <div class="mod"><b>Editorial note &mdash; revised</b><p>Hobert Ramburger has submitted 4,006 testimonials and has not missed a day. We have published eleven. He has been rate-limited twice, and on both occasions has written to the Office of General Counsel to appeal, at length, in pencil, on both sides of the paper.</p><p>He is now certified at the highest level this institution offers, seated on Panels, and correct about Section 5.1.</p><p>We do not know why he is here. We have not asked.</p><p>We are aware that this is a testimonials page.</p><p>He may stay.</p></div>
+
+      </div>
+    </details>
 
     <hr>
     <h2>Frequently asked</h2>
@@ -1006,6 +1244,7 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
     <h1 id="h-changelog">Changelog</h1>
     <table>
       <tbody>
+        <tr><td class="mono" style="width:6.5rem">v3.2.0</td><td>Submission length limit raised to 40,000 characters. Panel assignment now excludes a reviewer from an escalation he filed himself.</td></tr>
         <tr><td class="mono" style="width:6.5rem">v3.1.0</td><td>Added the Ledger. The Ledger is exempt from interpretation. This was not our preference.</td></tr>
         <tr><td class="mono" style="width:6.5rem">v3.0.0</td><td>Regional discrimination is now considered stable. No further work is planned.</td></tr>
         <tr><td class="mono">v2.4.2</td><td>Reverted 2.4.1.</td></tr>
@@ -1295,7 +1534,7 @@ a,button{-webkit-tap-highlight-color:rgba(22,21,15,.08)}
 
     <p>The word <i>ventriloquism</i> has been misapplied for two hundred years. It does not mean throwing a voice. It is Late Latin — <i>ventriloquus</i>, from <i>venter</i>, "belly," and <i>loquī</i>, "to speak" — and it was turned out of the Greek <i>engastrimythos</i>, "speaking in the belly."</p>
     <p>It did not describe a performer. It described a rumbling internal speech, understood as a sign of inspiration or, more commonly, of possession. Something was in there. It was talking. The only question was who.</p>
-    <p>We hold that the ancients were correct about the phenomenon and mistaken about the cause. The belly does speak. It is not possessed. It is simply better informed than you are.</p>
+    <p>We hold that the ancients were correct about the phenomenon and mistaken about the cause. The belly does speak. It is not necessarily possessed. It may be simply better informed than you are. (If you still suspect possession, search out a trusted Bible-believing Christian for help with that. Not everything falls under the provenance of science)</p>
     <p>The record is unbroken. Roland of Hemingstone held a manor in Suffolk for it. The <i>heppiri otoko</i> of Edo Japan competed at it and were painted onto scrolls.</p>
     <p>Nor was the practice confined to entertainers. In 1531 a professor of theology at Wittenberg, asked how he dealt with the adversary, replied that it was with a fart that he chased him away. He was not being merely coarse. Scatological speech was an established instrument in the monastic contest with the devil, and Martin Luther employed it as one — an argument delivered from the belly, at the highest stakes then available.</p>
     <p>By the eighteenth century the word had been handed to stagecraft, and the field it named was abandoned for two hundred and fifty years.</p>
