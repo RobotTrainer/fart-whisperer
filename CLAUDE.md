@@ -47,6 +47,19 @@ profiles that "can be seen, cannot be printed" (protects the Konami egg — neve
 copy); the Fourth Silence is never explained; "Is this a joke? / No." and "same reading four
 days in a row / Then it is worth considering" are shared between the home FAQ and `letters`.
 
+**Added 2 Aug 2026 (code catch-up to Final Copy v1.3):** three new pure-copy-plus-one routes —
+`paper-etymology` (the Journal piece on the word it declines to print; the word never appears),
+`orientation` (the Archive's catalogue card for the nine-cassette audio orientation; the narrator
+is unnamed and the double filing under "Listening" is canon — do not explain either), and
+`final-calibration` (1'41" of nothing behind a Begin button; the duration is shared canon with
+the March-file reel and is NEVER explained; the completion line ends with a colon, per the
+standing rule). Also: two v1.1 FAQ entries + guilds guidance on home, "Who reads the letters? /
+Someone." in faq-unanswered, changelog entries now dated (v2.4.1 → v2.4.2 are eleven days apart;
+the gap is the joke, never remark on it), the deletion-screens read/completed counts on privacy
+(40,118 / 1,204 — both retained), and the Roland/he-gassen source line on About. ROUTES is now 44.
+Founder naming: the app never prints the founder's first name; canon (v1.3) names him Dr. Anselm
+Voss — if a first name is ever added on-page, it is Anselm.
+
 `ledger` is NOT pure-copy — it is a real feature with JS. See "## The Ledger" below.
 
 Inside `index.html`, in order: `<style>` (design tokens at the top under `:root`),
