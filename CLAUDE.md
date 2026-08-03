@@ -69,6 +69,19 @@ the real reading bank). Also: the Journal masthead now carries **"Printed by A M
 this is the publishing imprint and a hidden anagram of the author's name; it is deliberately
 placed ONLY in the masthead and never in the global footer, and it is never explained anywhere.
 
+**Added 3 Aug 2026 (the Youth Initiative's curriculum, ROUTES now 48):** `curriculum` — the
+Initiative's three-level programme: Level I the Vocabularium (words, 11–13), Level II the
+Patrimonium (names ranked by attestation, 13–15), the Interval (15–17, the Initiative offers
+nothing), Level III the Collation (17–18, one student, one question, and a rubric whose standing
+note reads "A Collation that answers its question has misunderstood the assignment"). Pure copy,
+no JS, footer-linked. It is docked to the site's 2026 clock: Level I in classrooms, Level II in
+preparation, Level III published as a specification, **no graduates and no certificates issued** —
+do not add either without moving the site's clock. The Youth Initiative is book canon, so this
+page is the FOURTH thread across the site↔books seam; the other three are 1'41", "Someone," and
+the Archive. Do not widen it further without a decision. Full design record and canon ledger:
+vault `9 - Projects/Fart Whisperer/Fart Whisperer — The Youth Initiative — Curriculum Bible v0.2
+(dispatch).md`.
+
 `ledger` is NOT pure-copy — it is a real feature with JS. See "## The Ledger" below.
 
 Inside `index.html`, in order: `<style>` (design tokens at the top under `:root`),
