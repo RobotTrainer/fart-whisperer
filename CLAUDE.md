@@ -60,6 +60,15 @@ the gap is the joke, never remark on it), the deletion-screens read/completed co
 Founder naming: the app never prints the founder's first name; canon (v1.3) names him Dr. Anselm
 Voss — if a first name is ever added on-page, it is Anselm.
 
+**Added 3 Aug 2026 (marketing surface, ROUTES now 47):** `sponsorship` (the Institution funds
+tabled agenda items under $25 — the program is Volume Two's extension-cord grievance performed in
+reality), `sponsorship-certificate` (printable, mirrors the wall-certificate mechanism; ends
+"Filed under: Keeping." — that line is the tetralogy's master reveal and ships as a heading only,
+never explained), and `open-call` (the Journal's rolling submissions call; winning readings enter
+the real reading bank). Also: the Journal masthead now carries **"Printed by A Mundane Ink"** —
+this is the publishing imprint and a hidden anagram of the author's name; it is deliberately
+placed ONLY in the masthead and never in the global footer, and it is never explained anywhere.
+
 `ledger` is NOT pure-copy — it is a real feature with JS. See "## The Ledger" below.
 
 Inside `index.html`, in order: `<style>` (design tokens at the top under `:root`),
